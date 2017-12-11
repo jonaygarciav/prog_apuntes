@@ -4,7 +4,7 @@
 
 __Ejercicio 1__
 
-Crear un programa en _Java_ que imprima por pantalla el mensaje "¡Hola Mundo!" (ver [Anexo I](../anexos/anexo_i.md)).
+Crear un programa en _Java_ que imprima por pantalla el mensaje "¡Hola Mundo!" (ver [Anexo II](../anexos/anexo_ii.md)).
 
 __Ejercicio 2__
 
