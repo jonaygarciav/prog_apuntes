@@ -321,7 +321,7 @@ Valor en formato long: 13338
 
 ## La Clase Scanner
 
-La clase __Scanner__ de Java provee métodos para leer vlaores de entrada de varios tipos y forma parte del paquete __java.util__. Los valores de entrada pueden venir de varias fuentes, ya sea desde teclado o desde fichero.
+La clase __Scanner__ de Java provee métodos para leer valores de entrada de varios tipos y forma parte del paquete __java.util__. Los valores de entrada pueden venir de varias fuentes, ya sea desde teclado o desde fichero.
 
 Para utilizar esa clase tenemos que crear primero un objeto de ella para poder invocar sus métodos. La siguiente declaración crea un objeto de la clase Scanner que lee valores de entrada del teclado.
 
@@ -343,7 +343,7 @@ Luego que se tenga un objeto de la clase Scanner asociado al sistema estándar d
 | nextLine()   | String o = teclado.nextLine();   |
 
 
-El método __next()__ sive para leer una palabra sola, por ejemplo "Javier".
+El método __next()__ sirve para leer una palabra sola, por ejemplo "Javier".
 
 El método __nextLine()__ sirve para leer varias palabras, por ejemplo "Javier Rodríguez Medina".
 
