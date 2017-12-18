@@ -295,3 +295,4 @@ Existen dos tipos de _CamelCase_:
 Aunque la definición exacta de la indentación (espacios vs tabuladores) no se especifica en el lenguaje Java, se recomienda emplear una secuencia de __cuatro espacios como unidad de indentación__.
 
 Por otro lado se recomienda __evitar las lineas de más de 80 caracteres en el código fuente__ ya que no se manejan correctamente por muchos terminales y herramientas de edición.
+

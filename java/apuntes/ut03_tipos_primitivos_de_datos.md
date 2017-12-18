@@ -162,41 +162,43 @@ Las __constantes reales__ o en coma flotante se expresan con coma decimal y opci
 
 Como se verá más adelante cada tipo de dato primitivo tiene una clase correspondiente (_Boolean_, _Character_, _Byte_, _Short_, _Integer_, _Long_, _Float_ y _Double_), llamadas __wrappers__, que definen también constantes y métodos útiles.
 
-
 ### Declaraciones de variables
 
-Una variable es un espacio de la memoria correspondiente a un dato cuyo valor puede modificarse durante la ejecución de un programa y que está asociado a un identificador. Toda variable ha de declararse antes de ser usada en el código de un programa en Java. En la declaración de una variable debe indicarse explícitamente el identificador de la variable y el tipo de dato asociado. El tipo de dato determina el espacio reservado en memoria, los diferentes valores que puede tomar la variable y las operaciones que pueden realizarse con ella. La declaración de una variable en el código fuente de un programa de Java puede hacerse de la siguiente forma:
+Una __variable__ es un espacio de la memoria correspondiente a un dato cuyo valor puede modificarse durante la ejecución de un programa y que está asociado a un identificador. __Toda variable ha de declararse antes de ser usada en el código de un programa en Java__. En la declaración de una variable debe indicarse explícitamente el identificador de la variable y el tipo de dato asociado. El tipo de dato determina el espacio reservado en memoria, los diferentes valores que puede tomar la variable y las operaciones que pueden realizarse con ella. La declaración de una variable en el código fuente de un programa de Java puede hacerse de la siguiente forma:
 
     tipo_de_dato identificador_de_la_variable;
 
 o bien, la declaración de múltiples variables (con los correspondientes identificadores separados por comas) del mismo tipo:
 
-tipo_de_dato ident_1, ident_2, . . . , ident_n;
+    tipo_de_dato ident_1, ident_2, . . . , ident_n;
 
 Por ejemplo:
 
+```java
 int n;
 double x, y;
+``` 
 
-En el primer ejemplo se declara n como una variable de tipo int. En el segundo ejemplo se declaran dos variables x e y de tipo double. En Java una variable queda definida únicamente dentro del bloque de sentencias (entre llaves { } ) en el que ha sido declarada. De esta forma queda determinado su ámbito o alcance (scope) en el que puede emplearse.
+En el primer ejemplo se declara 'n' como una variable de tipo int. En el segundo ejemplo se declaran dos variables 'x' e 'y' de tipo _double_. En Java una variable queda definida únicamente dentro del bloque de sentencias (entre llaves { } ) en el que ha sido declarada. De esta forma queda determinado su ámbito o alcance (scope) en el que puede emplearse.
 
 El identificador elegido para designar una variable debe respetar las normas de construcción de identificadores de Java. Además, por convención:
 
-* los identificadores de las variables comienzan con una letra minúscula. Por ejemplo: n, x2, mes, clave, suma, ó nombre.
-* si el identificador es una palabra compuesta, las palabras restantes comienzan por una letra mayúscula. Por ejemplo: esDivisible.
+* Los identificadores de las variables comienzan con una letra minúscula. Por ejemplo: n, x2, mes, clave, suma, ó nombre.
+* Si el identificador es una palabra compuesta, las palabras restantes comienzan por una letra mayúscula. Por ejemplo: esDivisible.
 * El carácter del subrayado puede emplearse en cualquier lugar del identificador de una variable pero suele emplearse para separar nombres en identificadores de constantes.
 
-La declaración e inicialización de una variable de tipo primitivo puede realizarse de forma simultánea en la misma línea empleando el operador asignación =. Por ejemplo:
+La declaración e inicialización de una variable de tipo primitivo puede realizarse de forma simultánea en la misma línea empleando el operador asignación '='. Por ejemplo:
 
-int n = 15;
+    int n = 15;
 
 Independientemente de haber inicializado o no, el valor asignado a la variable puede modificarse las veces que se quiera durante la ejecución del programa. También puede realizarse la declaración e inicialización de varias variables del mismo tipo primitivo en la misma línea separándolas por comas. Por ejemplo:
 
-double x = 12.5, y = 25.0;
+    double x = 12.5, y = 25.0;
 
-En el caso de que no se inicialice explícitamente la variable, ésta toma el valor 0 si es numérica, false si es booleana y ‘\0’ si es de tipo carácter.Como se verá más adelante, la declaración de un objeto o instancia equivalente se realiza empleando la palabra new. Por ejemplo:
+En el caso de que no se inicialice explícitamente la variable, ésta toma el valor 0 si es numérica, false si es booleana y ‘\0’ si es de tipo carácter. Como se verá más adelante, la declaración de un objeto o instancia equivalente se realiza empleando la palabra __new__. Por ejemplo:
 
-Integer n = new Integer(15);
+    Integer n = new Integer(15);
+
 
 Esta declaración y el tipo de dato (clase) Integer se verá más adelante con detenimiento.
 
@@ -204,18 +206,20 @@ Esta declaración y el tipo de dato (clase) Integer se verá más adelante con d
 
 Las variables finales en Java son similares a las constantes empleadas en otros lenguajes de programación. Una vez inicializada una variable final su valor no puede ser modificado. La declaración de variables finales o constantes se realiza empleando la palabra reservada final antes del identificador del tipo de dato. Por ejemplo:
 
-final int MAXIMO = 15;
+    final int MAXIMO = 15;
 
 La asignación de valor se puede posponer en el código, aunque en ningún caso su valor puede modificarse una vez ha sido inicializada ya que se generaría un error. Ejemplo de inicialización posterior a la declaración de la constante:
 
+```java
 final int MAXIMO;
 ...
 MAXIMO = 15;
+```
 
 Al igual que ocurre con las variables, el identificador elegido para designar una constante debe respetar las normas de construcción de identificadores de Java. Por convención:
 
-* los identificadores de las constantes se componen de letras mayúsculas. Por ejemplo: MAXIMO.
-* el carácter de subrayado ( _ ) es aceptable en cualquier lugar dentro de un identificador, pero se suele emplear sólo para separar palabras dentro de los identificadores de las constantes. Por ejemplo: MAXIMO_VALOR.
+* Los identificadores de las constantes se componen de letras mayúsculas. Por ejemplo: MAXIMO.
+* El carácter de subrayado ( _ ) es aceptable en cualquier lugar dentro de un identificador, pero se suele emplear sólo para separar palabras dentro de los identificadores de las constantes. Por ejemplo: MAXIMO_VALOR.
 
 ### Conversiones entre tipos de dato
 
@@ -240,11 +244,10 @@ Las conversiones de promoción en Java se resumen en la Tabla 3.3:
 | float          | float, double                   |
 | double         | -                               |
 
-Las conversiones de contracción son más comprometidas ya que transforman un dato de un tipo a otro con menor espacio en memoria para almacenar información. En estos casos se corre el riesgo de perder o alterar sensiblemente la información. Las conversiones de contracción en Java se resumen en la Tabla 3.4.
-
-Tabla 3.4. Conversiones de contracción entre tipos de dato en Java
+Las conversiones de contracción son más comprometidas ya que transforman un dato de un tipo a otro con menor espacio en memoria para almacenar información. En estos casos se corre el riesgo de perder o alterar sensiblemente la información. Las conversiones de contracción en Java se resumen en la siguiente tabla
 
 | Tipo de origen | Tipo de destino                     |
+|----------------|-------------------------------------|
 | byte           | char                                |
 | short          | byte, char                          |
 | char           | byte, short                         |
@@ -257,15 +260,19 @@ Tanto las conversiones de promoción como las de contracción se realizan por __
 
 #### Por asignación
 
-Cuando una variable de un determinado tipo se asigna a una variable de otro tipo. Sólo admite conversiones de promoción. Por ejemplo: si n es una variable de tipo int que vale 25 y x es una variable de tipo double, entonces se produce una conversión por asignación al ejecutarse la sentencia
+Cuando una variable de un determinado tipo se asigna a una variable de otro tipo. Sólo admite conversiones de promoción. Por ejemplo: si 'n' es una variable de tipo int que vale 25 y 'x' es una variable de tipo double, entonces se produce una conversión por asignación al ejecutarse la sentencia:
 
     x = n;
 
-La variable x toma el valor 82.0 (valor en formato real). El valor de n no se modifica.
+La variable 'x' toma el valor 82.0 (valor en formato real). El valor de 'n' no se modifica.
 
 #### Por promoción aritmética
 
-Como resultado de una operación aritmética. Como en el caso anterior, sólo admite conversiones de promoción. Por ejemplo, si producto y factor1 son variables de tipo double y factor2 es de tipo int entonces la ejecutarse la sentencia _producto = factor1 * factor2;_. el valor de factor2 se convierte internamente en un valor en formato real para realizar la operación aritmética que genera un resultado de tipo double. El valor almacenado en formato entero en la variable factor2 no se modifica.
+Como resultado de una operación aritmética. Como en el caso anterior, sólo admite conversiones de promoción. Por ejemplo, si 'producto' y 'factor1' son variables de tipo double y 'factor2' es de tipo int entonces al ejecutarse la sentencia 
+
+    producto = factor1 * factor2;
+
+el valor de 'factor2' se convierte internamente en un valor en formato real para realizar la operación aritmética que genera un resultado de tipo double. El valor almacenado en formato entero en la variable factor2 no se modifica.
 
 #### Con casting o "moldes"
 
@@ -276,7 +283,7 @@ Con operadores que producen la conversión entre tipos. Admite las conversiones 
 
     n = (int) x;
 
-la variable n toma el valor 82 (valor en formato entero). El valor de x no se modifica. El código fuente del siguiente programa ilustra algunas de las conversiones que pueden realizarse entre datos de tipo numérico.
+la variable 'n' toma el valor 82 (valor en formato entero). El valor de 'x' no se modifica. El código fuente del siguiente programa ilustra algunas de las conversiones que pueden realizarse entre datos de tipo numérico.
 
 ```java
 /**
@@ -310,4 +317,33 @@ Valor en formato byte: 26
 Valor en formato short: 13338
 Valor en formato int: 13338
 Valor en formato long: 13338
+```
+
+## La Clase Scanner
+
+```java
+import java.util.Scanner;
+
+public class EntradaDatos
+{
+    public static void main(String[] args)
+    {
+        // Se crea el lector
+        Scanner sc = new Scanner(System.in);
+
+        // Se pide un dato al usuario
+        System.out.println("Por favor introduzca sun nombre: ");
+
+        // Se lee el nombre con nextLine() que retorna un String con el dato
+        String nombre = sc.nextLine();
+
+        // Se pide otro dato al usuario
+        System.out.println("Bienvenido " + nombre + ". Por favor, introduzca su edad:");
+
+        // Se guarda la edad directamente con nextInt()
+        int edad = sc.nextInt();
+
+        System.out.println("Gracias " + nombre + ", su edad es " + edad + " años."); 
+    }
+}
 ```

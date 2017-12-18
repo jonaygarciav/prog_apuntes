@@ -9,7 +9,7 @@ __BLOQUE I__
 
 __BLOQUE II__
 
-03. Tipos de datos
+03. Tipos de datos ([Apuntes](./java/apuntes/ut03_tipos_primitivos_de_datos.md) - [Ejercicios](./java/ejercicios/ut03_tipos_primitivos_de_datos.md) - [Practica a Entregar](./java/practicas_a_entregar/ut03_tipos_primitivos_de_datos.md))
 04. Operadores
 05. Sentencias condicionales
 06. Sentencias repetitivas
@@ -42,12 +42,3 @@ __ANEXOS__
 
 * [Anexo  I. Instalación y configuración de Java, y Eclipse](./java/anexos/anexo_i.md)
 * [Anexo II. Crear la aplicación "Hola Mundo" en Java utilizando Eclipse](./java/anexos/anexo_ii.md)
-
-## Programación en Python
-
-* Apuntes ([Apuntes](./python/apuntes/apuntes.md) - [Ejercicios](./python/ejercicios/ejercicios.md))
-
-__ANEXOS__
-
-* [Anexo  I. Instalación y configuración de Python y PyDev](./python/anexos/anexo_i.md)
-* [Anexo II. Crear la aplicación "Hola Mundo" en Python utilizando Eclipse](./python/anexos/anexo_ii.md)
