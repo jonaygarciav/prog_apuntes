@@ -321,29 +321,57 @@ Valor en formato long: 13338
 
 ## La Clase Scanner
 
+La clase __Scanner__ de Java provee métodos para leer vlaores de entrada de varios tipos y forma parte del paquete __java.util__. Los valores de entrada pueden venir de varias fuentes, ya sea desde teclado o desde fichero.
+
+Para utilizar esa clase tenemos que crear primero un objeto de ella para poder invocar sus métodos. La siguiente declaración crea un objeto de la clase Scanner que lee valores de entrada del teclado.
+
+    Scanner teclado = new Scanner(System.in);
+
+El propósito de pasar a __System.in__ como argumento es conectar o establecer una relación entre el objeto tipo Scanner, con nombre teclado en la declaración anterior, y el objeto __System.in__, que representa el sistema estándar de entrada de información en Java. Si no se indica lo contrario, el teclado es, por omisión, el sistema estándar de entrada de información en Java.
+
+Luego que se tenga un objeto de la clase Scanner asociado al sistema estándar de entrada _System.in_, llamamos, por ejemplo, su método __nextInt()__ para entrar un valor del tipo __int__. Para entrar otros valores de otros tipos de datos primitivos, se usan los métodos correspondientes como __nextByte()__ o __nextDouble()__.
+
+| Método       |  Ejemplo                         |
+|--------------|----------------------------------|
+| nextByte()   | byte b = teclado.nextByte();     |
+| nextDouble() | double d = teclado.nextDouble(); |
+| nextFloat()  | float f = teclado.nextFloat();   |
+| nextInt()    | int i = teclado.nextInt();       |
+| nextLong()   | long l = teclado.nextLong();     |
+| nextShort()  | short s = teclado.nextShort();   |
+| next()       | String p = teclado.next();       |
+| nextLine()   | String o = teclado.nextLine();   |
+
+Ejemplo de uso de la clase Scanner:
+
 ```java
 import java.util.Scanner;
 
-public class EntradaDatos
-{
-    public static void main(String[] args)
-    {
-        // Se crea el lector
-        Scanner sc = new Scanner(System.in);
+public class EntradaDatos {
 
-        // Se pide un dato al usuario
-        System.out.println("Por favor introduzca sun nombre: ");
+	public static void main(String[] args) {
+	
+		//Se crea el lector
+		Scanner sc = new Scanner(System.in);
 
-        // Se lee el nombre con nextLine() que retorna un String con el dato
-        String nombre = sc.nextLine();
+		//Se pide un dato al usuario
+		System.out.print("Por favor introduzca sun nombre: ");
 
-        // Se pide otro dato al usuario
-        System.out.println("Bienvenido " + nombre + ". Por favor, introduzca su edad:");
+		//Se lee el nombre con nextLine() que retorna un String con el dato
+		String nombre = sc.nextLine();
 
-        // Se guarda la edad directamente con nextInt()
-        int edad = sc.nextInt();
+		//Se pide otro dato al usuario
+		System.out.print("Bienvenido " + nombre + ". Por favor, introduzca su edad: ");
 
-        System.out.println("Gracias " + nombre + ", su edad es " + edad + " años."); 
-    }
+		//Se guarda la edad directamente con nextInt()
+		int edad = sc.nextInt();
+
+		System.out.println("Gracias " + nombre + ", tienes " + edad + " años.");
+		
+		// Cerramos el lector
+		sc.close();
+
+	}
+
 }
 ```
