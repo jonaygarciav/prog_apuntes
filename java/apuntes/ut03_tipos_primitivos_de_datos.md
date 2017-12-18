@@ -342,6 +342,11 @@ Luego que se tenga un objeto de la clase Scanner asociado al sistema estándar d
 | next()       | String p = teclado.next();       |
 | nextLine()   | String o = teclado.nextLine();   |
 
+
+El método __next()__ sive para leer una palabra sola, por ejemplo "Javier".
+
+El método __nextLine()__ sirve para leer varias palabras, por ejemplo "Javier Rodríguez Medina".
+
 Ejemplo de uso de la clase Scanner:
 
 ```java
