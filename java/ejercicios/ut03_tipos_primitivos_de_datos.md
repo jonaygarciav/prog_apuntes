@@ -33,3 +33,7 @@ Crear un programa que convierta _Euros_ en __Dólares Estadounidenses__, teniend
 Ahora convierte los _Euros_ a __Libra Esterlina__, teniendo en cuenta que el cambio está a:
 
     1 EUR = 0,881946 GBP
+
+__Ejercicio 5__
+
+Pedir tres números por pantalla y calcular su media.
