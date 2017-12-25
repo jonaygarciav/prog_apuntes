@@ -457,97 +457,6 @@ j = 1
 k = 4
 ```
 
-## Operadores de bit
-
-Tienen operandos de tipo entero (o char) y un resultado de tipo entero. Realizan operaciones con dígitos (ceros y unos) de la representación binaria de los operandos. Exceptuando al operador negación, los demás operadores son binarios.
-
-| Operador | Descripción                            | Ejemplo de expresión | Resultado del ejemplo |
-|----------|----------------------------------------|----------------------|-----------------------|
-| ~        |Negación ó complemento binario (unario) | ~12 -13
-| Suma lógica binaria – OR (binario) 12|10 8
-^ Suma lógica exclusiva – XOR (binario) 12^10 6
-& Producto lógico binario – AND (binario) 12&10 14
-<<
-Desplaza a la izquierda los bits del 1º operando
-tantas veces como indica el 2º operando (por la
-derecha siempre entra un cero)
-7<<2
--7<<2
-28
--28
->>
-Desplaza a la derecha los bits del 1º operando tantas
-veces como indica el 2º operando (por la izquierda
-entra siempre el mismo bit más significativo anterior)
-7>>2
--7>>2
-1
--2
->>>
-Desplaza a la derecha los bits del 1º operando tantas
-veces como indica el 2º operando – sin signo (por la
-izquierda entra siempre un cero).
-7>>>2
--7>>>2
-1
-1073741822
-Ejemplo de programa que emplea operadores de bit:
-/**
- * Demostracion de los operadores de bit enteros
- * A. Garcia-Beltran - enero, 2003
-*/
-public class OpBitEnteros2 {
- public static void main(String[] args) {
- int i,j;
- i = 12;
- j = 10;
- System.out.println("* Operandos enteros: i = " + i + " ; j = " + j);
-52  A. García-Beltrán y J.M. Arranz
- System.out.println(" Negacion o complemento: ~i es " + (~i));
- System.out.println(" Suma logica (binaria): i & j es " + (i&j));
- System.out.println(" Suma exclusiva (binaria): i ^ j es " + (i^j));
- System.out.println(" Producto logico (binaria): i | j es " + (i|j));
- i = 12;
- j = -10;
- System.out.println("* Operandos enteros: i = " + i + " ; j = " + j);
- System.out.println(" Negacion o complemento: ~i es " + (~i));
- System.out.println(" Suma logica (binaria): i & j es " + (i&j));
- System.out.println(" Suma exclusiva (binaria): i ^ j es " + (i^j));
- System.out.println(" Producto logico (binaria): i | j es " + (i|j));
- i = 7;
- j = 2;
- System.out.println("* Operandos enteros: i = " + i + " ; j = " + j);
- System.out.println(" Despl. a izquierdas: i << j es " + (i<<j));
- System.out.println(" Despl. a derechas: i >> j es " + (i>>j));
- System.out.println(" Despl. a derechas sin signo: i >>> j es " + (i>>>j));
- i = -7;
- j = 2;
- System.out.println("* Operandos enteros: i = " + i + " ; j = " + j);
- System.out.println(" Desplazamiento a izquierdas: i << j es " + (i<<j));
- System.out.println(" Despl. a derechas: i >> j es "+ (i>>j));
- System.out.println(" Despl. a derechas sin signo: i >>> j es " + (i>>>j));
- }
-}
-Salida por pantalla del programa anterior:
-* Operandos enteros: i = 12 ; j = 10
- Negacion o complemento: ~i es -13
- Suma logica (binaria): i & j es 8
- Suma exclusiva (binaria): i ^ j es 6
- Producto logico (binaria): i | j es 14
-* Operandos enteros: i = 12 ; j = -10
- Negacion o complemento: ~i es -13
- Suma logica (binaria): i & j es 4
- Suma exclusiva (binaria): i ^ j es -6
- Producto logico (binaria): i | j es -2
-* Operandos enteros: i = 7 ; j = 2
- Despl. a izquierdas: i << j es 28
- Despl. a derechas: i >> j es 1
- Despl. a derechas sin signo: i >>> j es 1
-* Operandos enteros: i = -7 ; j = 2
- Desplazamiento a izquierdas: i << j es -28
- Despl. a derechas: i >> j es -2
- Despl. a derechas sin signo: i >>> j es 1073741822
-
 ## Operador concatenación de cadenas
 
 El operador concatenación '+', es un operador binario que devuelve una cadena resultado de concatenar las dos cadenas que actúan como operandos. Si sólo uno de los operandos es de tipo cadena, el otro operando se convierte implícitamente en tipo cadena.
@@ -582,33 +491,26 @@ Si dos operadores se encuentran en la misma expresión, el orden en el que se ev
 | 1         | ++          | Aritmético       | Incremento previo o posterior (unario)                         |
 |           | --          | Aritmético       | Decremento previo o posterior (unario)                         |
 |           | +, -        | Aritmético       | Suma unaria, Resta unaria                                      |
-|           | ~           | Integral         | Cambio de bits (unario)                                        |
 |           | ¡           | Booleano         | Negación (unario)                                              |
 | 2         | (tipo)      | Cualquiera       |                                                                |
 | 3         | *, /, %     | Aritmético       | Multiplicación, división, resto                                |
 | 4         | +, -        | Aritmético       | Suma, resta                                                    |
 |           | +           | Cadena           | Concatenacion de cadenas                                       |
-| 5         | <<          | Integral         | Desplazamiento de bits hacia la izquierda                      |
-|           | >>          | Integral         | Desplazamiento de bits hacia la derecha con inclusión de signo |
-|           | >>>         | Integral         | Desplazamiento de bits hacia la derecha con inclusión de cero  |
-| 6         | <, <=       | Aritmético       | Menor que, menor o igual que                                   |
+| 5         | <, <=       | Aritmético       | Menor que, menor o igual que                                   |
 |           | >, >=       | Aritmético       | Mayor que, mayor o igula que                                   |
 |           | instanceof  | Objeto, tipo     | Comparación de tipos                                           |
-| 7         | ==          | Primitivo        | Igual (valores idénticos)                                      |
+| 6         | ==          | Primitivo        | Igual (valores idénticos)                                      |
 |           | ¡=          | Primitivo        | Distinto (valores diferentes)                                  |
 |           | ==          | Objeto           | Igual (referencia al mismo objeto)                             |
 |           | ¡=          | Objeto           | Distinto (referencia a distintos objetos)                      |
-| 8         | &           | Integral         | Cambio de bits AND                                             |
-|           | &           | Booleano         | Producto booleano                                              |
-| 9         | ^           | Integral         | Cambio de bits XOR                                             |
-|           | ^           | Booleano         | Suma exclusiva booleana                                        |
-| 10        | \|          | Integral         | Cambio de bits OR                                              | 
-|           | \|          | Booleano         | Suma booleana                                                  |
-| 11        | &&          | Booleano         | AND condicional                                                |
-| 12        | \|\|        | Booleano         | OR condicional                                                 |
-| 13        | ? :         | Booleano         | Operador condicional (ternario)                                |
-| 14        | =           | Variable         | Asignación                                                     |
-| 15        | *=, /=, %=  | Variable         | Asignación con operación                                       |
+| 7         | &           | Booleano         | Producto booleano                                              |
+| 8         | ^           | Booleano         | Suma exclusiva booleana                                        |
+| 9        | \|          | Booleano         | Suma booleana                                                  |
+| 10        | &&          | Booleano         | AND condicional                                                |
+| 11        | \|\|        | Booleano         | OR condicional                                                 |
+| 12        | ? :         | Booleano         | Operador condicional (ternario)                                |
+| 13        | =           | Variable         | Asignación                                                     |
+| 14        | *=, /=, %=  | Variable         | Asignación con operación                                       |
 |           | +=, -=      |                  |                                                                |
 |           | <<=, >>=    |                  |                                                                |
 |           | >>>=        |                  |                                                                |
