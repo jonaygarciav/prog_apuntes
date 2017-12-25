@@ -154,10 +154,10 @@ Los operadores aritméticos incrementales son operadores unarios (un único oper
 
 | Operador | Tipo        | Descripcion                                                           | Ejemplo de expresión | Resultado del ejemplo |
 |----------|-------------|-----------------------------------------------------------------------|----------------------|-----------------------|
-| ++       | Incremento  |                                                                       | 4++                  |                       |
+| ++       | Incremento  |                                                                       | 4++                  | 5                      |
 |          |             | i++ primero se utiliza la variable y luego se incrementa su valor     | a = 5; b = a++;      | a vale 6 y b vale 5   |
 |          |             | ++i primero se incrementa el valor de la variable y luego se utiliza  | a = 5; b = ++a;      | a vale 6 y b vale 6   |
-| --       | Decremento  |                                                                       | 4++                  |                       |
+| --       | Decremento  |                                                                       | 4--                  |  3                     |
 |          |             | i-- primero se utiliza la variable y luego se incrementa su valor     | a = 5; b = a--;      | a vale 4 y b vale 5   |
 |          |             | --i primero se incrementa el valor de la variable y luego se utiliza  | a = 5; b = --a;      | a vale 4 y b vale 4   |
 
