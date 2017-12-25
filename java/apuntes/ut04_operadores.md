@@ -334,146 +334,134 @@ Operador menor o igual que: i <= j es false
  
 ## Operadores lógicos o booleanos
 
-Realizan operaciones sobre datos booleanos y tienen como resultado un valor booleano. En la Tabla 4.6 se resumen los diferentes operadores de esta categoría.
+Realizan operaciones sobre datos booleanos y tienen como resultado un valor booleano. 
 
-Tabla 4.6 Operadores booleanos
-Operador Descripción Ejemplo de
-expresión
-Resultado
-del ejemplo
-! Negación - NOT (unario) !false
-!(5==5)
-true
-false
-| Suma lógica – OR (binario) true | false
-(5==5)|(5<4)
-true
-true
-^ Suma lógica exclusiva – XOR (binario) true ^ false
-(5==5)|(5<4)
-true
-true
-& Producto lógico – AND (binario) true & false
-(5==5)&(5<4)
-false
-false
-||
-Suma lógica con cortocircuito: si el primer
-operando es true entonces el segundo se
-salta y el resultado es true
-true || false
-(5==5)||(5<4) true
-true
-&&
-Producto lógico con cortocircuito: si el
-primer operando es false entonces el
-segundo se salta y el resultado es false
-false && true
-(5==5)&&(5<4)
-false
-false
-Para mejorar el rendimiento de ejecución del código es recomendable emplear en las
-expresiones booleanas el operador && en lugar del operador &. En este caso es conveniente situar la
-condición más propensa a ser falsa en el término de la izquierda. Esta técnica puede reducir el tiempo
-de ejecución del programa. De forma equivalente es preferible emplear el operador || al operador
-|. En este caso es conveniente colocar la condición más propensa a ser verdadera en el término de la
-izquierda.
-Ejemplo de programa que emplea operadores lógicos:
+| Operador | Descripción                           | Ejemplo de expresión | Resultado del ejemplo |
+|----------|---------------------------------------|----------------------|-----------------------|
+| !        | Negación - NOT (unario)               | !false               | true                  |
+|          |                                       | !(5==5)              | false                 |
+| \|       | Suma lógica – OR (binario)            | true \| false        | true                  |
+|          |                                       | (5==5) \| (5<4)      | true                  |
+| ^        | Suma lógica exclusiva – XOR (binario) | true ^ false         | true                  |
+|          |                                       | (5==5) \| (5<4)      | true                  |
+| &        | Producto lógico – AND (binario)       | true & false         | false                 |
+|          |                                       | (5==5) & (5<4)       | false                 |
+| \|\|     | Suma lógica con cortocircuito         | true \|\| false      | true                  |
+|          |                                       | (5==5) \|\| (5<4)    | true                  |
+| &&       | Producto lógico con cortocircuito     | false && true        | false                 |
+|          |                                       | (5==5) && (5<4)      | false                 |
+ 
+* __Suma lógica con corticircuito__: si el primer operando es _true_ entonces el segundo se salta y el resultado es _true_.
+* __Producto lógico con cortocircuito__: si el primer operando es _false_ entonces el segundo se salta y el resultado es _false_.
+
+Para mejorar el rendimiento de ejecución del código es recomendable emplear en las expresiones booleanas el operador '_&&_' en lugar del operador '_&_'. En este caso es conveniente situar la condición más propensa a ser falsa en el término de la izquierda. Esta técnica puede reducir el tiempo de ejecución del programa. De forma equivalente es preferible emplear el operador '\|\|' al operador '\|'. En este caso es conveniente colocar la condición más propensa a ser verdadera en el término de la izquierda.
+
+```java
 /**
- * Demostracion de los operadores logicos
- * A. Garcia-Beltran - marzo, 2008
+ * Ejemplo de uso de los operadores lógicos
 */
-public class OpBooleanos {
- public static void main(String [] args) {
- System.out.println("Demostracion de operadores logicos");
- System.out.println("Negacion: ! false es : " + (! false));
- System.out.println(" ! true es : " + (! true));
- System.out.println("Suma: false | false es : " + (false | false));
- System.out.println(" false | true es : " + (false | true));
- System.out.println(" true | false es : " + (true | false));
- System.out.println(" true | true es : " + (true | true));
- System.out.println("Producto: false & false es : " + (false & false));
- System.out.println(" false & true es : " + (false & true));
- System.out.println(" true & false es : " + (true & false));
- System.out.println(" true & true es : " + (true & true));
- }
+public class OperadoresBooleanos {
+    public static void main(String [] args) {
+        System.out.println("Demostracion de operadores logicos");
+        System.out.println("Negacion: ! false es : " + (! false));
+        System.out.println(" ! true es : " + (! true));
+        System.out.println("Suma: false | false es : " + (false | false));
+        System.out.println(" false | true es : " + (false | true));
+        System.out.println(" true | false es : " + (true | false));
+        System.out.println(" true | true es : " + (true | true));
+        System.out.println("Producto: false & false es : " + (false & false));
+        System.out.println(" false & true es : " + (false & true));
+        System.out.println(" true & false es : " + (true & false));
+        System.out.println(" true & true es : " + (true & true));
+    }
 }
-50  A. García-Beltrán y J.M. Arranz
+```
+
 Salida por pantalla del programa anterior:
+
+```bash
 Demostracion de operadores logicos
 Negacion: ! false es : true
- ! true es : false
+          ! true es : false
 Suma: false | false es : false
- false | true es : true
- true | false es : true
- true | true es : true
+      false | true es : true
+      true | false es : true
+      true | true es : true
 Producto: false & false es : false
- false & true es : false
- true & false es : false
- true & true es : true
-4.7. El operador condicional
-Este operador ternario tomado de C/C++ permite devolver valores en función de una
-expresión lógica. Sintaxis:
-expresionLogica ? expresion_1 : expresion_2
-Si el resultado de evaluar la expresión lógica es verdadero, devuelve el valor de la primera
-expresión, y en caso contrario, devuelve el valor de la segunda expresión.
-Tabla 4.7 Operador condicional
-Operador Descripción Ejemplo de expresión Resultado del
-ejemplo
-: operador condicional a = 4;
-b = a == 4 ? a+5 : 6-a;
-b = a > 4 ? a*7 : a+8;
-b vale 9
-b vale 12
+          false & true es : false
+          true & false es : false
+          true & true es : true
+```
+
+## El operador condicional
+
+Este operador ternario tomado de C/C++ permite devolver valores en función de una expresión lógica. Sintaxis:
+
+    expresionLogica ? expresion_1 : expresion_2
+
+Si el resultado de evaluar la expresión lógica es verdadero, devuelve el valor de la primera expresión, y en caso contrario, devuelve el valor de la segunda expresión.
+
+| Operador | Descripción          | Ejemplo de expresión      | Resultado del ejemplo |
+|----------|----------------------|---------------------------|-----------------------|
+| ?:       | operador condicional | a = 4;                    |                       |
+|          |                      | b = (a == 4 ? a+5 : 6-a;) | b vale 9              |
+|          |                      | b = (a > 4 ? a*7 : a+8;)  | b vale 12             |
+
 La sentencia de asignación:
-valor = (expresionLogica ? expresion_1 : expresion_2);
+
+    valor = (expresionLogica ? expresion_1 : expresion_2);
+
 como se verá más adelante es equivalente a:
+
+```java
 if (expresionLogica)
-valor = expresion_1;
+    valor = expresion_1;
 else
-valor = expresion_2
-Ejemplo de programa que emplea el operador condicional:
+    valor = expresion_2
+```
+
+```java
 /**
- * Demostracion del operador condicional
- * A. Garcia-Beltran - Abril, 2006
+ * Ejemplo de uso del operador condicional.
 */
-public class opCondicional {
- public static void main(String[] args) {
- int i,j,k;
- i = 1;
- j = 2;
- k = i > j ? 2*i : 3*j+1;
- System.out.println("i = " + i);
- System.out.println("j = " + j);
- Programación orientada a objetos con Java 51
- System.out.println("k = " + k);
- i = 2;
- j = 1;
- k = i > j ? 2*i : 3*j+1;
- System.out.println("i = " + i);
- System.out.println("j = " + j);
- System.out.println("k = " + k);
- }
+public class OperadorCondicional {
+    public static void main(String[] args) {
+        int i,j,k;
+        i = 1;
+        j = 2;
+        k = i > j ? 2*i : 3*j+1;
+
+        System.out.println("i = " + i);
+        System.out.println("j = " + j);
+        System.out.println("k = " + k);
+
+        i = 2;
+        j = 1;
+        k = i > j ? 2*i : 3*j+1;
+
+        System.out.println("i = " + i);
+        System.out.println("j = " + j);
+        System.out.println("k = " + k);
+    }
 }
+```
+
 Salida por pantalla del programa anterior:
+
+```bash
 i = 1
 j = 2
 k = 7
 i = 2
 j = 1
 k = 4
-4.8. Operadores de bit
-Tienen operandos de tipo entero (o char) y un resultado de tipo entero. Realizan
-operaciones con dígitos (ceros y unos) de la representación binaria de los operandos. Exceptuando al
-operador negación, los demás operadores son binarios. En la Tabla 4.8 se resumen los diferentes
-operadores de esta categoría.
-Tabla 4.8 Operadores de bit
-Operador Descripción
-Ejemplo
-de
-expresión
-Resultado del
-ejemplo
+```
+
+## Operadores de bit
+
+Tienen operandos de tipo entero (o char) y un resultado de tipo entero. Realizan operaciones con dígitos (ceros y unos) de la representación binaria de los operandos. Exceptuando al operador negación, los demás operadores son binarios.
+
+| Operador | Descripción | Ejemplo de expresión | Resultado del ejemplo |
 ~ Negación ó complemento binario (unario) ~12 -13
 | Suma lógica binaria – OR (binario) 12|10 8
 ^ Suma lógica exclusiva – XOR (binario) 12^10 6
