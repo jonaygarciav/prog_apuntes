@@ -461,8 +461,9 @@ k = 4
 
 Tienen operandos de tipo entero (o char) y un resultado de tipo entero. Realizan operaciones con dígitos (ceros y unos) de la representación binaria de los operandos. Exceptuando al operador negación, los demás operadores son binarios.
 
-| Operador | Descripción | Ejemplo de expresión | Resultado del ejemplo |
-~ Negación ó complemento binario (unario) ~12 -13
+| Operador | Descripción                            | Ejemplo de expresión | Resultado del ejemplo |
+|----------|----------------------------------------|----------------------|-----------------------|
+| ~        |Negación ó complemento binario (unario) | ~12 -13
 | Suma lógica binaria – OR (binario) 12|10 8
 ^ Suma lógica exclusiva – XOR (binario) 12^10 6
 & Producto lógico binario – AND (binario) 12&10 14
@@ -546,132 +547,69 @@ Salida por pantalla del programa anterior:
  Desplazamiento a izquierdas: i << j es -28
  Despl. a derechas: i >> j es -2
  Despl. a derechas sin signo: i >>> j es 1073741822
-4.9. Operador concatenación de cadenas
-El operador concatenación, +, es un operador binario que devuelve una cadena resultado de
-concatenar las dos cadenas que actúan como operandos. Si sólo uno de los operandos es de tipo
-cadena, el otro operando se convierte implícitamente en tipo cadena.
-Tabla 4.9 Operador concatenación
-Operador Descripción Ejemplo de expresión Resultado del
-ejemplo
-+ Operador concatenación “Hola” + “Juan” “HolaJuan”
- Programación orientada a objetos con Java 53
-4.10. Separadores
-Existen algunos caracteres que tienen un significado especial en el lenguaje Java. En la Tabla
-4.10 se resumen los diferentes separadores que pueden encontrarse en el código fuente de un
-programa.
-Tabla 4.10 Separadores en Java
-Separador Descripción
-() Permiten modificar la prioridad de una expresión, contener expresiones para el
-control de flujo y realizar conversiones de tipo. Por otro lado pueden contener la
-lista de parámetros o argumentos, tanto en la definición de un método como en la
-llamada al mismo.
-{} Permiten definir bloques de código y ámbitos y contener los valores iniciales de
-las variables array
-[] Permiten declarar variables de tipo array (vectores o matrices) y referenciar sus
-elementos
-; Permite separar sentencias
-, Permite separar identificadores consecutivos en la declaración de variables y en
-las listas de parámetros. También se emplea para encadenar sentencias dentro de
-un bucle for
-. Permite separar el nombre de un atributo o método de su instancia de
-referencia. También separa el identificador de un paquete de los de los
-subpaquetes y clases
-4.11. Expresiones
-Una expresión es una combinación de operadores y operandos que se evalúa generándose un
-único resultado de un tipo determinado.
-4.12. Prioridad entre operadores
-Si dos operadores se encuentran en la misma expresión, el orden en el que se evalúan puede
-determinar el valor de la expresión. En la Tabla 4.11 se muestra el orden o prioridad en el que se
-ejecutan los operadores que se encuentren en la misma sentencia. Los operadores de la misma
-prioridad se evalúan de izquierda a derecha dentro de la expresión.
-54  A. García-Beltrán y J.M. Arranz
-Tabla 4.11 Prioridad de los operadores
-Prior. Operador Tipo de
-operador Operación
-1 ++
---
-+, -
-~
-¡
-Aritmético
-Aritmético
-Aritmético
-Integral
-Booleano
-Incremento previo o posterior (unario)
-Incremento previo o posterior (unario)
-Suma unaria, Resta unaria
-Cambio de bits (unario)
-Negación (unario)
-2 (tipo) Cualquiera
-3 *, /, % Aritmético Multiplicación, división, resto
-4 +, -
-+
-Aritmético
-Cadena
-Suma, resta
-Concatenación de cadenas
-5 <<
->>
->>>
-Integral
-Integral
-Integral
-Desplazamiento de bits a izquierda
-Desplazamiento de bits a derecha con inclusión de signo
-Desplazamiento de bits a derecha con inclusión de cero
-6 <, <=
->, >=
-instanceof
-Aritmético
-Aritmético
-Objeto, tipo
-Menor que, Menor o igual que
-Mayor que, Mayor o igual que
-Comparación de tipos
-7 ==
-¡=
-==
-¡=
-Primitivo
-Primitivo
-Objeto
-Objeto
-Igual (valores idénticos)
-Desigual (valores diferentes)
-Igual (referencia al mismo objeto)
-Desigual (referencia a distintos objetos)
-8 &
-&
-Integral
-Booleano
-Cambio de bits AND
-Producto booleano
-9 ^
-^
-Integral
-Booleano
-Cambio de bits XOR
-Suma exclusiva booleana
-10 |
-|
-Integral
-Booleano
-Cambio de bits OR
-Suma booleana
-11 && Booleano AND condicional
-12 || Booleano OR condicional
-13 ? : Booleano,
-cualquiera,
-cualquiera
-Operador condicional (ternario)
-14 =
-*=, /=, %=
-+=, -=
-<<=, >>=
->>>=
-&=, ^=, |=
-Variable,
-cualquiera
-Asignación
-Asignación con operación
+
+## Operador concatenación de cadenas
+
+El operador concatenación '+', es un operador binario que devuelve una cadena resultado de concatenar las dos cadenas que actúan como operandos. Si sólo uno de los operandos es de tipo cadena, el otro operando se convierte implícitamente en tipo cadena.
+
+| Operador | Descripción            | Ejemplo de expresión | Resultado del ejemplo |
+|----------|------------------------|----------------------|-----------------------|
+| +        | Operador concatenación | “Hola” + “Juan”      | “HolaJuan”            |
+
+## Separadores
+
+Existen algunos caracteres que tienen un significado especial en el lenguaje Java.
+
+| Separador | Descripción |
+|-----------|-------------|
+| ()        | Permiten modificar la __prioridad de una expresión__, contener expresiones para el control de flujo y realizar __conversiones de tipo__. Por otro lado pueden contener la __lista de parámetros o argumentos__, tanto en la definición de un método como en la llamada al mismo. |
+| {}        | Permiten definir bloques de código y ámbitos y contener los valores iniciales de las variables array. |
+| []        | Permiten declarar __variables de tipo array__ (vectores o matrices) y referenciar sus elementos
+| ;         | Permite __separar sentencias__. |
+| ,         | Permite __separar identificadores__ consecutivos en la declaración de variables y en las listas de parámetros. También se emplea para encadenar sentencias dentro de un __bucle for__. |
+| .         | Permite __separar el nombre de un atributo o método__ de su instancia de referencia. También separa el identificador de un __paquete__ de los de los subpaquetes y clases.
+
+## Expresiones
+
+Una expresión es una combinación de operadores y operandos que se evalúa generándose un único resultado de un tipo determinado.
+
+## Prioridad entre operadores
+
+Si dos operadores se encuentran en la misma expresión, el orden en el que se evalúan puede determinar el valor de la expresión. En la siguiente tabla se muestra el orden o prioridad en el que se ejecutan los operadores que se encuentren en la misma sentencia. Los operadores de la misma prioridad se evalúan de izquierda a derecha dentro de la expresión.
+
+| Prioridad | Operador    | Tipo de operador | Operación                                                      |
+|-----------|-------------|------------------|----------------------------------------------------------------|
+| 1         | ++          | Aritmético       | Incremento previo o posterior (unario)                         |
+|           | --          | Aritmético       | Decremento previo o posterior (unario)                         |
+|           | +, -        | Aritmético       | Suma unaria, Resta unaria                                      |
+|           | ~           | Integral         | Cambio de bits (unario)                                        |
+|           | ¡           | Booleano         | Negación (unario)                                              |
+| 2         | (tipo)      | Cualquiera       |                                                                |
+| 3         | *, /, %     | Aritmético       | Multiplicación, división, resto                                |
+| 4         | +, -        | Aritmético       | Suma, resta                                                    |
+|           | +           | Cadena           | Concatenacion de cadenas                                       |
+| 5         | <<          | Integral         | Desplazamiento de bits hacia la izquierda                      |
+|           | >>          | Integral         | Desplazamiento de bits hacia la derecha con inclusión de signo |
+|           | >>>         | Integral         | Desplazamiento de bits hacia la derecha con inclusión de cero  |
+| 6         | <, <=       | Aritmético       | Menor que, menor o igual que                                   |
+|           | >, >=       | Aritmético       | Mayor que, mayor o igula que                                   |
+|           | instanceof  | Objeto, tipo     | Comparación de tipos                                           |
+| 7         | ==          | Primitivo        | Igual (valores idénticos)                                      |
+|           | ¡=          | Primitivo        | Distinto (valores diferentes)                                  |
+|           | ==          | Objeto           | Igual (referencia al mismo objeto)                             |
+|           | ¡=          | Objeto           | Distinto (referencia a distintos objetos)                      |
+| 8         | &           | Integral         | Cambio de bits AND                                             |
+|           | &           | Booleano         | Producto booleano                                              |
+| 9         | ^           | Integral         | Cambio de bits XOR                                             |
+|           | ^           | Booleano         | Suma exclusiva booleana                                        |
+| 10        | \|          | Integral         | Cambio de bits OR                                              | 
+|           | \|          | Booleano         | Suma booleana                                                  |
+| 11        | &&          | Booleano         | AND condicional                                                |
+| 12        | \|\|        | Booleano         | OR condicional                                                 |
+| 13        | ? :         | Booleano         | Operador condicional (ternario)                                |
+| 14        | =           | Variable         | Asignación                                                     |
+| 15        | *=, /=, %=  | Variable         | Asignación con operación                                       |
+|           | +=, -=      |                  |                                                                |
+|           | <<=, >>=    |                  |                                                                |
+|           | >>>=        |                  |                                                                |
+|           | &=, ^=, \|= |                  |                                                                |
