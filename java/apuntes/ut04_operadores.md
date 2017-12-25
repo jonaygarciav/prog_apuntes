@@ -505,7 +505,7 @@ Si dos operadores se encuentran en la misma expresión, el orden en el que se ev
 |           | ¡=          | Objeto           | Distinto (referencia a distintos objetos)                      |
 | 7         | &           | Booleano         | Producto booleano                                              |
 | 8         | ^           | Booleano         | Suma exclusiva booleana                                        |
-| 9        | \|          | Booleano         | Suma booleana                                                  |
+| 9         | \|          | Booleano         | Suma booleana                                                  |
 | 10        | &&          | Booleano         | AND condicional                                                |
 | 11        | \|\|        | Booleano         | OR condicional                                                 |
 | 12        | ? :         | Booleano         | Operador condicional (ternario)                                |
