@@ -52,7 +52,7 @@ La tirada más alta es 10.
 El ganador es el jugador 2.
 ```
 
-__Opcional__: Calcular la media de los 4 dados: 
+__Opcional__: Calcular la media de los 4 dados. Redondear la media a un número entero: 
 
 ```bash
 Jugador 1 hace su lanzamiento:
@@ -77,8 +77,6 @@ La tirada más alta es 10.
 El ganador es el jugador 2.
 La media de los 4 dados es 3,2
 ```
-
-
 
 Añadir el fichero _.gitignore_ en la raíz del proyecto y configurar Git en el proyecto:
 

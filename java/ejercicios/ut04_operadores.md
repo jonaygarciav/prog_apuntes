@@ -34,4 +34,6 @@ __Ejercicio 5__
 
 Generar un númer aleatorio entre 1 y 10.
 
-> Utilizar el método __random()__ de la clase _Math_. 
+> Utilizar el método __random()__ de la clase _Math_.
+
+__Ejercicio 6__
