@@ -1,4 +1,4 @@
-# TIPOS PRIMITIVOS DE DATOS
+# OPERADORES Y LA CLASE MATH
 
 ## Objetivos
 
@@ -6,29 +6,24 @@
 * Evaluar expresiones que empleen datos primitivos, operadores y paréntesis.
 * Construir expresiones que empleen combinaciones de datos primitivos, operadores y paréntesis.
 
-Un __operador__ lleva a cabo operaciones sobre uno (operador unario), dos (operador binario) o
-tres (operador ternario) datos u operandos de tipo primitivo devolviendo un valor determinado
-también de un tipo primitivo. El tipo de valor devuelto tras la evaluación depende del operador y del tipo de los operandos. Por ejemplo, los operadores aritméticos trabajan con operandos numéricos, llevan a cabo operaciones aritméticas básicas y devuelven el valor numérico  correspondiente. Los operadores se pueden clasificar en distintos grupos según se muestra en los siguientes apartados.
+Un __operador__ lleva a cabo operaciones sobre uno (operador unario), dos (operador binario) o tres (operador ternario) datos u operandos de tipo primitivo devolviendo un valor determinado también de un tipo primitivo. El tipo de valor devuelto tras la evaluación depende del operador y del tipo de los operandos. Por ejemplo, los operadores aritméticos trabajan con operandos numéricos, llevan a cabo operaciones aritméticas básicas y devuelven el valor numérico  correspondiente. Los operadores se pueden clasificar en distintos grupos según se muestra en los siguientes apartados.
 
 ## Operador asignación
 
-El operador asignación, =, es un operador binario que asigna el valor del término de la
-derecha al operando de la izquierda. El operando de la izquierda suele ser el identificador de una variable. El término de la derecha es, en general, una expresión de un tipo de dato compatible; en particular puede ser una constante u otra variable. Como caso particular, y a diferencia de los demás operadores, este operador no se evalúa devolviendo un determinado valor.
+El operador asignación '=' es un operador binario que asigna el valor del término de la derecha al operando de la izquierda. El operando de la izquierda suele ser el identificador de una variable. El término de la derecha es, en general, una expresión de un tipo de dato compatible; en particular puede ser una constante u otra variable. Como caso particular, y a diferencia de los demás operadores, este operador no se evalúa devolviendo un determinado valor.
 
 | Operador | Descripción         | Ejemplo de expresión | Resultado del ejemplo |
 |----------|---------------------|----------------------|-----------------------|
 | =        | Operador asignación | n = 4                | n vale 4              |
 
-No debe confundirse el operador asignación (=) con el operador relacional de igualdad (==)
-que se verá más adelante. Además Java dispone de otros operadores que combinan la asignación con otras operaciones (operadores aritméticos combinados).
+No debe confundirse el operador asignación (=) con el operador relacional de igualdad (==) que se verá más adelante. Además, Java dispone de otros operadores que combinan la asignación con otras operaciones (operadores aritméticos combinados).
 
-En el siguiente código se muestran algunos ejemplos de uso del operador asignación con
-datos de distintos tipos:
+En el siguiente código se muestran algunos ejemplos de uso del operador asignación con datos de distintos tipos:
 
 ```java
 /**
  * Ejemplos de uso del operador asignación
-*/
+ */
 public class OperadorAsignacion {
     public static void main(String[] args) {
         // Declaración de variables
@@ -103,7 +98,7 @@ El resultado exacto depende de los tipos de operando involucrados. Es convenient
 ```java
 /**
  * Ejemplos de uso de los operadores aritméticos básicos
-*/
+ */
 public class OperadiresAritmeticos {
     public static void main(String[] args) {
         int i,j;
@@ -167,7 +162,7 @@ Estos operadores suelen sustituir a veces al _operador asignación_ y también s
 ```java
 /**
  * Ejemplo de uso de los operadores incrementales
-*/
+ */
 class OperadoresIncrementales {
     public static void main(String[] args) {
         int i,j; // Variables enteras. Podrian ser reales o char
@@ -230,7 +225,7 @@ Salida por pantalla del ejemplo anterior:
 
 ## Operadores aritméticos combinados
 
-Combinan un operador aritmético con el operador asignación. Como en el caso de los operadores aritméticos pueden tener operandos numéricos enteros o reales y el tipo específico de resultado numérico dependerá del tipo de éstos. En la Tabla 4.4 se resumen los diferentes operadores de esta categoría.
+Combinan un operador aritmético con el operador asignación. Como en el caso de los operadores aritméticos pueden tener operandos numéricos enteros o reales y el tipo específico de resultado numérico dependerá del tipo de éstos. En la siguiente tabla se resumen los diferentes operadores de esta categoría.
 
 | Operador | Descripción        | Ejemplo de expresión | Resultado del ejemplo |
 |----------|--------------------|----------------------|-----------------------|
@@ -284,7 +279,7 @@ Resto combinada   : i %= j // i vale 1
 
 ## Operadores de relación
 
-Realizan comparaciones entre datos compatibles de tipos primitivos (numéricos, carácter y booleanos) teniendo siempre un resultado booleano. Los operandos booleanos sólo pueden emplear los operadores de igualdad y desigualdad. En la Tabla 4.5 se resumen los diferentes operadores de esta categoría
+Realizan comparaciones entre datos compatibles de tipos primitivos (numéricos, carácter y booleanos) teniendo siempre un resultado booleano. Los operandos booleanos sólo pueden emplear los operadores de igualdad y desigualdad. En la siguiente tabla se resumen los diferentes operadores de esta categoría:
 
 | Operador | Descripción       | Ejemplo de expresión | Resultado del ejemplo |
 |----------|-------------------|----------------------|-----------------------|
@@ -295,14 +290,14 @@ Realizan comparaciones entre datos compatibles de tipos primitivos (numéricos, 
 | <=       | menor o igual que | 7.5 <= 7.38          | false                 |
 | >=       | mayor o igual que | 38 >= 7              | true                  |
 
-Todos los valores numéricos que se comparan con _NaN_ dan como resultado _false_ excepto el operador _!=_ que devuelve _true_. Esto ocurre incluso si ambos valores son _NaN_.
+Todos los valores numéricos que se comparan con _NaN_ dan como resultado _false_ excepto el operador '_!=_' que devuelve _true_. Esto ocurre incluso si ambos valores son _NaN_.
 
 Ejemplo de programa que emplea operadores relacionales:
 
 ```bash
 /**
  * Ejemplo de uso de los operadores relacionales
-*/
+ */
 public class OperadoresRelacionales {
     public static void main(String[] args) {
         int i,j;
@@ -334,7 +329,7 @@ Operador menor o igual que: i <= j es false
  
 ## Operadores lógicos o booleanos
 
-Realizan operaciones sobre datos booleanos y tienen como resultado un valor booleano. 
+Realizan operaciones sobre datos booleanos y tienen como resultado un valor _booleano_. 
 
 | Operador | Descripción                           | Ejemplo de expresión | Resultado del ejemplo |
 |----------|---------------------------------------|----------------------|-----------------------|
@@ -351,6 +346,7 @@ Realizan operaciones sobre datos booleanos y tienen como resultado un valor bool
 | &&       | Producto lógico con cortocircuito     | false && true        | false                 |
 |          |                                       | (5==5) && (5<4)      | false                 |
  
+
 * __Suma lógica con corticircuito__: si el primer operando es _true_ entonces el segundo se salta y el resultado es _true_.
 * __Producto lógico con cortocircuito__: si el primer operando es _false_ entonces el segundo se salta y el resultado es _false_.
 
@@ -359,7 +355,7 @@ Para mejorar el rendimiento de ejecución del código es recomendable emplear en
 ```java
 /**
  * Ejemplo de uso de los operadores lógicos
-*/
+ */
 public class OperadoresBooleanos {
     public static void main(String [] args) {
         System.out.println("Demostracion de operadores logicos");
@@ -516,7 +512,7 @@ Si dos operadores se encuentran en la misma expresión, el orden en el que se ev
 |           | >>>=        |                  |                                                                |
 |           | &=, ^=, \|= |                  |                                                                |
 
-## La Clase Math
+## La clase Math
 
 En cuanto a las funciones matemáticas en Java, las funciones disponibles vienen definidas en la clase __Math__. Hay muchas funciones disponibles. Se puede consultar la lista completa en la documentación oficial del API de Java:
 
@@ -565,7 +561,7 @@ public class EjemploClaseMath {
 }
 ```
 
-El resultado del programa anterior es:
+El resultado de ejecutar el programa anterior es:
 
 ```bash
 26.0
@@ -604,7 +600,7 @@ public class Radianes {
  }
 ```
 
-El resultado del programa anterior es:
+El resultado de ejecutar el programa anterior es:
 
 ```bash
 Angulo en radianes : 0.5235987755982988
@@ -654,7 +650,7 @@ public class Redondeo {
 }
 ```
 
-El resultado del programa anterior es el siguiente:
+El resultado de ejecutar el programa anterior es el siguiente:
 
 ```bash
 x = Math.round(2.6); dará como resultado : 3
@@ -697,14 +693,12 @@ Si queremos mostrar el número _12.3698_ de tipo _double_ con dos decimales:
 La salida por pantalla de la sentencia anterior es:
 
     12,37
-   
-    
+
 Otra fórmula más elegante para dar formato a un número es utilizar la clase __DecimalFormat__:
 
     DecimalFormat df = new DecimalFormat();
     df.setMaximumFractionDigits(3);
     System.out.println(df.format(12.3698));
-
 
 * __setMaximunFractionsDigits__: método que indica el número de decimales a mostrar.
 * __format__: formatea un número utilizando el valor definido previamente por _setMaxumunFractionDigits_.
