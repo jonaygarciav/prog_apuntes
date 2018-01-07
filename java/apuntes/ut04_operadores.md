@@ -515,3 +515,201 @@ Si dos operadores se encuentran en la misma expresión, el orden en el que se ev
 |           | <<=, >>=    |                  |                                                                |
 |           | >>>=        |                  |                                                                |
 |           | &=, ^=, \|= |                  |                                                                |
+
+## La Clase Math
+
+En cuanto a las funciones matemáticas en Java, las funciones disponibles vienen definidas en la clase __Math__. Hay muchas funciones disponibles. Se puede consultar la lista completa en la documentación oficial del API de Java:
+
+[http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html](http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
+
+A continuación se muestra un listado de las funciones más importantes:
+
+| Función matemática | Significado              | Ejemplo de uso                 | Resultado             |
+|--------------------|--------------------------|--------------------------------|-----------------------|
+| abs                | Valor absoluto           | int x = Math.abs(2.3);         | x = 2;                |
+| atan               | Arcotangente             | double x= Math.atan(1);        | x = 0.78539816339744; |
+| sin                | Seno                     | double x = Math.sin(0.5);      | x = 0.4794255386042;  |
+| cos                | Coseno                   | double x = Math.cos(0.5);      | x = 0.87758256189037; |
+| tan                | Tangente                 | double x = Math.tan(0.5);      | x = 0.54630248984379; |
+| exp                | Exponenciación neperiana | double x = Math.exp(1);        | x = 2.71828182845904; |
+| log                | Logaritmo neperiano      | double x = Math.log(2.7172);   | x = 0.99960193833500; |
+| pow                | Potencia                 | double x = Math.pow(2,3);      | x = 8.0;              |
+| round              | Redondeo                 | double x = Math.round(2.5);    | x = 3;                |
+| random             | Número aleatorio         | double x = Math.ramdom();      | x = 0.20614522323378; |
+| floor              | Redondeo al entero menor | double x = Math.floor(2.5);    | x = 2.0;              |
+| ceil               | Redondeo al entero mayor | double x = Math.ceil(2.5);     | x = 3.0;              |
+| sqrt               | Raíz cuadrada            | double x = Math.sqrt(9);       | x = 3.0;              |
+| max                | Mayor de 2 números       | double x = Math.max(2.5, 9.3); | x = 9.3;              |
+
+
+Destacar que las funciones matemáticas, al pertenecer a la clase Math, se invocan siempre de la siguiente manera: 
+
+    Math.funcion(argumentos)
+
+
+Ejemplo de uso de algunas de _funciones_ de la clase _Math_:
+
+```java
+public class EjemploClaseMath {
+    public static void main(String[] args) {
+         
+        double operador1 = 25.5;
+        double operador2 = 15.21;
+         
+        System.out.println(Math.ceil(operador1));           // Devuelve 26.0 
+        System.out.println(Math.floor(operador2));          // Devuelve 15.0
+        System.out.println(Math.pow(operador1, operador2)); // Devuelve 2.474435537975361E21
+        System.out.println(Math.max(operador1, operador2)); // Devuelve 25.5
+        System.out.println(Math.sqrt(operador1));           // Devuelve 5.049752469181039
+    }
+}
+```
+
+El resultado del programa anterior es:
+
+```bash
+26.0
+15.0
+2.474435537975361E21
+25.5
+5.049752469181039
+```
+
+Si vamos a trabajar con _constantes_ físicas o matemáticas, resulta de interés la instrucción __final__ para la declaración de constantes. La ventaja de declarar una _constante_ en vez de una _variable_, consiste en que la _constante_ no puede variar en el transcurso del programa. Por tanto, se impide que por error pueda tener un valor no válido en un momento dado. Una declaración tipo de constante podría ser la siguiente:
+
+    final double pi = 3.14159265358979;
+
+ 
+Sin embargo, Java tiene una constante propia para definir la constante matemática _PI_: __Math.PI__
+
+A continuación se muestra un listado de _constantes_ de la clase _Math_:
+
+| Constante | Tipo   | Descripción          | Valor                    |
+|-----------|--------|----------------------|--------------------------|
+| PI        | double | Devuelve el valor PI |  3.14159265358979        |
+| E         | double | Devuelve el valor E  |  2.718281828459045       |
+
+
+El siguiente programa, muestra el uso de la función Math.PI en la conversión de un ángulo sexagesimal a radianes:
+
+```java
+public class Radianes {
+    public static void main(String args[]) {
+
+        double sexagesimal = 30;
+        double radianes = Math.PI/180 * sexagesimal;
+
+        System.out.println("Angulo en radianes : "+radianes);
+    }
+ }
+```
+
+El resultado del programa anterior es:
+
+```bash
+Angulo en radianes : 0.5235987755982988
+```
+
+### Diferencia entre round, ceil y floor
+
+Las funciones __round__, __ceil__ y __floor__ se usan para obtener un entero próximo a un número decimal y tienen similitudes, de hecho en algunos casos devuelven el mismo resultado. Sin embargo también tienen diferencias que es interesante conocer. Estas tres funciones se aplican sobre valores numéricos decimales y retornan un valor numérico que en el caso de round es un entero long, mientras que en el caso de floor y ceil retornan un valor de tipo double coincidente o equivalente con un entero.
+
+* __Método round__: redondea siempre al entero más próximo, por ejemplo 2.6 redondea a 3 mientras que -2.6 redondea a -3. Si el decimal está exactamente entre dos valores se redondea al entero superior más próximo (por ejemplo 2.5 redondea a 3 y -2.5 redondea a -2).
+
+* __Método floor__: devuelve el entero menor, por ejemplo 2.9 quedaría en 2.0 y -2.9 quedaría en -3.0. También 2.1 quedaría en 2.0 y -2.1 quedaría en -3.0.
+
+* __Método ceil__: devuelve el entero mayor, por ejemplo 2.9 quedaría en 3.0 y -2.9 quedaría en -2.0. También 2.1 quedaría a 3.0 y -2.1 quedaría en -2.0.
+
+En cada programa deberemos determinar qué método es el adecuado para obtener los resultados deseados. Por ejemplo, si tenemos que redondear cantidades de dinero parece más lógico utilizar __round__. En cambio, si estamos trabajando con edades de una persona en años utilizando decimales, podremos razonar de otra manera. La edad de una persona es un valor positivo (no es posible que tome valores negativos). Una persona decimos que tiene x años mientras no cumpla x+1 años, de modo que en todo el periodo intermedio decimos que tiene x años. 
+
+> Por ejemplo, si cumplo 35 años el 4 de febrero de 2017, desde el 4 de febrero de 2016 hasta el 3 de febrero de 2017 diré que tengo 35 años. Pero en un programa que trabaje con decimales, en el punto intermedio entre estas dos fechas tendría 35.50 años. Si quiero obtener el valor que representa la edad a partir del valor decimal, lo lógico será utilizar el método __floor__ porque nos devolverá 35 para todos los valores decimales entre 35 y 36, tal y como expresamos en el lenguaje natural las edades. En este caso tanto round como ceil no ofrecerían un resultado adecuado a nuestros intereses.
+
+
+```java
+public class Redondeo {
+    double x=0;
+    public static void main(String[] args) {
+
+        System.out.println("x = Math.round(2.6);  dará como resultado : "+ Math.round(2.6));
+        System.out.println("x = Math.round(-2.6); dará como resultado : "+ Math.round(-2.6));
+        System.out.println("x = Math.round(2.4);  dará como resultado : "+ Math.round(2.4));
+        System.out.println("x = Math.round(-2.4); dará como resultado : "+ Math.round(-2.4));
+        System.out.println("x = Math.round(2.5);  dará como resultado : "+ Math.round(2.5));
+        System.out.println("x = Math.round(-2.5); dará como resultado : "+ Math.round(-2.5)+"\n");
+
+        System.out.println("x = Math.ceil(2.6);   dará como resultado : "+ Math.ceil(2.6));
+        System.out.println("x = Math.ceil(-2.6);  dará como resultado : "+ Math.ceil(-2.6));
+        System.out.println("x = Math.ceil(2.4);   dará como resultado : "+ Math.ceil(2.4));
+        System.out.println("x = Math.ceil(-2.4);  dará como resultado : "+ Math.ceil(-2.4));
+        System.out.println("x = Math.ceil(2.5);   dará como resultado : "+ Math.ceil(2.5));
+        System.out.println("x = Math.ceil(-2.5);  dará como resultado : "+ Math.ceil(-2.5)+"\n");
+
+        System.out.println("x = Math.floor(2.6);  dará como resultado : "+ Math.floor(2.6));
+        System.out.println("x = Math.floor(-2.6); dará como resultado : "+ Math.floor(-2.6));
+        System.out.println("x = Math.floor(2.4);  dará como resultado : "+ Math.floor(2.4));
+        System.out.println("x = Math.floor(-2.4); dará como resultado : "+ Math.floor(-2.4));
+        System.out.println("x = Math.floor(2.5);  dará como resultado : "+ Math.floor(2.5));
+        System.out.println("x = Math.floor(-2.5); dará como resultado : "+ Math.floor(-2.5));
+    }
+}
+```
+
+El resultado del programa anterior es el siguiente:
+
+```bash
+x = Math.round(2.6); dará como resultado : 3
+x = Math.round(-2.6); dará como resultado : -3
+x = Math.round(2.4); dará como resultado : 2
+x = Math.round(-2.4); dará como resultado : -2
+x = Math.round(2.5); dará como resultado : 3
+x = Math.round(-2.5); dará como resultado : -2
+
+x = Math.ceil(2.6); dará como resultado : 3.0
+x = Math.ceil(-2.6); dará como resultado : -2.0
+x = Math.ceil(2.4); dará como resultado : 3.0
+x = Math.ceil(-2.4); dará como resultado : -2.0
+x = Math.ceil(2.5); dará como resultado : 3.0
+x = Math.ceil(-2.5); dará como resultado : -2.0
+
+x = Math.floor(2.6); dará como resultado : 2.0
+x = Math.floor(-2.6); dará como resultado : -3.0
+x = Math.floor(2.4); dará como resultado : 2.0
+x = Math.floor(-2.4); dará como resultado : -3.0
+x = Math.floor(2.5); dará como resultado : 2.0
+x = Math.floor(-2.5); dará como resultado : -3.0
+```
+
+## Formatear los datos de salida
+
+El método __System.out.printf__ se usa para dar formato a los datos que se imprimen por pantalla en Java. Este problema se nos plantea por ejemplo cuando queremos mostrar un número de tipo _float_ o _double_ con un número determinado de decimales y no con los que por defecto muestra Java.
+
+A partir de la versión Java 5 se incorporan los métodos format y printf que permiten aplicar un formato a la salida de datos por pantalla. Ambos realizan la misma función, tienen exactamente el mismo formato y emulan la impresión con formato _printf()_ de C.
+
+Si queremos mostrar el número _12.3698_ de tipo _double_ con dos decimales:
+
+    System.out.printf("%.2f %n", 12.3698);
+
+* __%__: indica que en esa posición se va a escribir un valor. El valor a escribir se encuentra a continuación de las comillas. 
+* __.2__: indica el número de decimales. 
+* __f__: indica que el número es de tipo float o double.
+* __%n__: indica un salto de línea. Equivale a __\n__. Con _printf_ podemos usar ambos para hacer un salto de línea.
+
+La salida por pantalla de la sentencia anterior es:
+
+    12,37
+   
+    
+Otra fórmula más elegante para dar formato a un número es utilizar la clase __DecimalFormat__:
+
+    DecimalFormat df = new DecimalFormat();
+    df.setMaximumFractionDigits(3);
+    System.out.println(df.format(12.3698));
+
+
+* __setMaximunFractionsDigits__: método que indica el número de decimales a mostrar.
+* __format__: formatea un número utilizando el valor definido previamente por _setMaxumunFractionDigits_.
+
+La salida por pantalla de las sentencias anteriores es:
+
+    12,37
+
