@@ -63,7 +63,7 @@ Dado 1: 3
 Dado 2: 4
 La tirada más alta es 11.
 El ganador es el jugador 1.
-La media de los 4 dados es 4,5
+La media de los 4 dados es 5
 ```
 
 ```bash
@@ -75,7 +75,7 @@ Dado 1: 4
 Dado 2: 6
 La tirada más alta es 10.
 El ganador es el jugador 2.
-La media de los 4 dados es 3,2
+La media de los 4 dados es 3
 ```
 
 Añadir el fichero _.gitignore_ en la raíz del proyecto y configurar Git en el proyecto:
