@@ -278,7 +278,7 @@ while (expresionLogica) {
 }
 ```
 
-Figura 6.2. Flujograma de la sentencia while
+Flujo de la sentencia while:
 
 ![img_03][img_03]
 
@@ -319,48 +319,51 @@ El numer positivo es 5
 
 ### Sentencia do-while
 
-Es un bucle o sentencia repetitiva con una condicion al final. Se ejecuta una sentencia mientras sea cierta una condición. En este caso, la sentencia se ejecuta al menos una vez.
+Es un bucle o sentencia repetitiva con una condicion al final. Se ejecuta una sentencia mientras sea cierta una condición. La diferencia con respecto al bucle while es que __la sentencia se ejecuta al menos una vez__. La sintaxis es la siguiente:
 
-
-Figura 6.3. Flujograma de la sentencia do/while
-Sintaxis:
+```java
 do {
-sentencias;
-[iteracion;]
+    sentencias;
+    [iteracion;]
 } while (expresionLogica);
+```
+
+Flujo de la sentencia do-while:
+
+![img_04][img_04]
+
+
 Ejemplo de programa:
+
+```java
 /**
-* Ejemplo de sentencia do-while
-* Calcula cuantos años deben pasar para duplicar una cantidad
-* invertida a un determinado interes anual constante
-* A. Garcia-Beltran - marzo, 2004
+* Ejemplo de sentencia while
+* Jonay Garcia
 */
-public class Duplica2 {
-public static void main (String [] args) {
-double cantidadInicial=1;
-double cantidad=cantidadInicial;
-double interes=5;
-int anhos=0;
-do
-{
-anhos++;
-cantidad += cantidad*interes/100;
-} while (cantidad < 2*cantidadInicial);
-System.out.println("La cantidad inicial es = " + cantidadInicial);
-System.out.println("El interes es = " + interes);
-System.out.println("La cantidad final es = " + cantidad);
-System.out.println("El numero de años es = " + anhos);
-}
-}
-Ejemplo de ejecución y salida correspondiente por pantalla:
- Programación orientada a objetos con Java 77
-$>java Duplica2
-La cantidad inicial es = 1.0
-El interes es = 5.0
-La cantidad final es = 2.0789281794113683
-El numero de años es = 15.0
+public class LeerNumero {
+    public static void main (String [] args) {
+
+        Scanner sc = new Scanner(System.in);
+        int numero = -1;
+
+        do {
+            System.out.println("Introduce un numero positivo: ");
+            numero = sc.nextInt();
+        } while (numero <= 0);
+
+        System.out.println("El numero positivo es " + numero);
+
+        sc.close();
+   
+   }
+
+}   
+```
 
 [img_01]: ../img/ut05/01.png "Sentencia if-else"
 [img_02]: ../img/ut05/02.png "Sentencia for"
 [img_03]: ../img/ut05/03.png "Sentencia while"
+[img_04]: ../img/ut05/04.png "Sentencia do-while"
+
+
 
