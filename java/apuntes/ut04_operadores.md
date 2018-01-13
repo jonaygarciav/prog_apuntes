@@ -518,6 +518,8 @@ En cuanto a las funciones matemáticas en Java, las funciones disponibles vienen
 
 [http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html](http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html)
 
+La función _Math_ se encuentra dentro del paquete __java.lang__.
+
 A continuación se muestra un listado de las funciones más importantes:
 
 | Función matemática | Significado              | Ejemplo de uso                 | Resultado             |
