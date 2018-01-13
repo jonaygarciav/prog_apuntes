@@ -522,20 +522,15 @@ A continuación se muestra un listado de las funciones más importantes:
 
 | Función matemática | Significado              | Ejemplo de uso                 | Resultado             |
 |--------------------|--------------------------|--------------------------------|-----------------------|
-| abs                | Valor absoluto           | int x = Math.abs(2.3);         | x = 2;                |
-| atan               | Arcotangente             | double x= Math.atan(1);        | x = 0.78539816339744; |
-| sin                | Seno                     | double x = Math.sin(0.5);      | x = 0.4794255386042;  |
-| cos                | Coseno                   | double x = Math.cos(0.5);      | x = 0.87758256189037; |
-| tan                | Tangente                 | double x = Math.tan(0.5);      | x = 0.54630248984379; |
-| exp                | Exponenciación neperiana | double x = Math.exp(1);        | x = 2.71828182845904; |
-| log                | Logaritmo neperiano      | double x = Math.log(2.7172);   | x = 0.99960193833500; |
+| abs                | Valor absoluto           | double x = Math.abs(-2.3);     | x = 2.3;                |
+| sqrt               | Raíz cuadrada            | double x = Math.sqrt(9);       | x = 3.0;              |
 | pow                | Potencia                 | double x = Math.pow(2,3);      | x = 8.0;              |
 | round              | Redondeo                 | double x = Math.round(2.5);    | x = 3;                |
-| random             | Número aleatorio         | double x = Math.ramdom();      | x = 0.20614522323378; |
 | floor              | Redondeo al entero menor | double x = Math.floor(2.5);    | x = 2.0;              |
 | ceil               | Redondeo al entero mayor | double x = Math.ceil(2.5);     | x = 3.0;              |
-| sqrt               | Raíz cuadrada            | double x = Math.sqrt(9);       | x = 3.0;              |
+| random             | Número aleatorio         | double x = Math.random();      | x = 0.20614522323378; |
 | max                | Mayor de 2 números       | double x = Math.max(2.5, 9.3); | x = 9.3;              |
+| min                | Menor de 2 números       | double x = Math.max(2.5, 9.3); | x = 2.5;              |
 
 
 Destacar que las funciones matemáticas, al pertenecer a la clase Math, se invocan siempre de la siguiente manera: 
