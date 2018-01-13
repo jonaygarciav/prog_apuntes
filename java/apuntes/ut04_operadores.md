@@ -75,7 +75,7 @@ El lenguaje de programación Java tiene varios operadores aritméticos para los 
 
 | Operador | Descripción                        | Ejemplo de expresión | Resultado del ejemplo |
 |----------|------------------------------------|----------------------|-----------------------|
-| -        | operador unario de cambio de signo | -4                   | -4                    |
+| -        | Operador unario de cambio de signo | -4                   | -4                    |
 | +        | Suma                               | 2.5 + 7.1            | 9.6                   |
 | -        | Resta                              | 235.6 - 103.5        | 132.1                 |
 | \*       | Producto                           | 1.2 * 1.1            | 1.32                  |
