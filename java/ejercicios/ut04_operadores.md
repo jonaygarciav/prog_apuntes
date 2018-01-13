@@ -2,9 +2,9 @@
 
 __Ejercicio 1__
 
-Crear un programa que, dado el _peso_ en Kilogramos y la _altura_ en metros de una persona, calcule y muestre por pantalla su __Índice de Masa Corporal__ \(IMS\) o __Índice Quetelet__. Este índice pretende determinar el intervalo de peso más saludable que puede tener una persona. El valor de este índice se calcula mediante la siguiente expresión:
+Crear un programa que, dado el _peso_ en Kilogramos y la _altura_ en metros de una persona, calcule y muestre por pantalla su __Índice de Masa Corporal__ \(IMC\). Este índice pretende determinar el intervalo de peso más saludable que puede tener una persona. El valor de este índice se calcula mediante la siguiente expresión:
 
-IMS = peso / altura<sup>2</sup>
+IMC = peso / altura<sup>2</sup>
 
 Se suele establecer un intervalo de 18 a 25 como saludable en personas adultas.
 
@@ -32,7 +32,7 @@ Pedir dos números por pantalla e imprimir el menor de ellos.
 
 __Ejercicio 5__
 
-Generar un númer aleatorio entre 1 y 10.
+Generar un número aleatorio entre 1 y 10.
 
 > Utilizar el método __random()__ de la clase _Math_.
 

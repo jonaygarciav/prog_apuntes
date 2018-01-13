@@ -10,9 +10,9 @@ Crear un programa que permita calcular el __radio__ de una esfera a partir de su
 
 __Ejercicio 2__
 
-Crear un programa que, dado el _peso_ en Kilogramos y la _altura_ en metros de una persona, calcule y muestre por pantalla su __Índice de Masa Corporal__ \(IMS\) o __Índice Quetelet__. Este índice pretende determinar el intervalo de peso más saludable que puede tener una persona. El valor de este índice se calcula mediante la siguiente expresión:
+Crear un programa que, dado el _peso_ en Kilogramos y la _altura_ en metros de una persona, calcule y muestre por pantalla su __Índice de Masa Corporal__ \(IMC\). Este índice pretende determinar el intervalo de peso más saludable que puede tener una persona. El valor de este índice se calcula mediante la siguiente expresión:
 
-IMS = peso / altura<sup>2</sup>
+IMC = peso / altura<sup>2</sup>
 
 Se suele establecer un intervalo de 18 a 25 como saludable en personas adultas.
 
