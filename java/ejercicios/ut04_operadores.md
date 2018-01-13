@@ -37,3 +37,5 @@ Generar un númer aleatorio entre 1 y 10.
 > Utilizar el método __random()__ de la clase _Math_.
 
 __Ejercicio 6__
+
+Pedir dos números por pantalla y realizar la división entre ambos. Formatear la salida con dos decimales.
