@@ -360,10 +360,72 @@ public class LeerNumero {
 }   
 ```
 
+## Arrays Unidimensionales
+
+Un array es una estructura para guardar un conjunto de objetos de la misma clase. Se accede a cada elemento individual del array mediante un número entero denominado índice. 0 es el índice del primer elemento y n-1 es el índice del último elemento, siendo n, la dimensión del array.
+
+![img_05][img_05]
+
+Para declarar un array se usa la siguiente sintaxis:
+
+    tipo_de_dato[] nombre_del_array;
+	
+Por, ejemplo, para declarar un array de enteros escribimos lo siguiente:
+
+    int[] numeros;
+	
+Para crear un array de 4 números enteros escribimos lo siguiente:
+
+    numeros = new int[4];
+	
+La declaración y la creación del array se puede hacer en una misma línea:
+
+    int[] numeros = new int[4];
+ 
+Para inicializar el array de 4 enteros escribimos lo siguiente: 
+
+```java
+int[] numeros = new int[4];
+
+numeros[0] = 2;
+numeros[1] = -4;
+numeros[2] = 15;
+numeros[3] = -25;
+```
+
+Los arrays se pueden declarar, crear e inicializar en una misma línea, de la siguiente manera:
+
+```java
+int[] numeros = {2, -4, 15, -25};
+
+String[] nombres = {"Juan", "José", "Miguel", "Antonio"};
+```
+	
+Los arrays se pueden declarar, crear e inicializar en una misma línea, del siguiente modo
+
+```java
+int[] numeros = {2, -4, 15, -25};
+	
+String[] nombres = {"Juan", "José", "Miguel", "Antonio"};
+```
+
+Para imprimir a los elementos de array nombres  se escribe
+
+```java
+for(int i=0; i < nombres.length; i++){
+    System.out.println(nombres[i]);
+}
+```	
+Un _array_ tiene la propiedad __length__, que retorna su número de elementos. 
+
 [img_01]: ../img/ut05/01.png "Sentencia if-else"
 [img_02]: ../img/ut05/02.png "Sentencia for"
 [img_03]: ../img/ut05/03.png "Sentencia while"
 [img_04]: ../img/ut05/04.png "Sentencia do-while"
+[img_05]: ../img/ut05/05.png "Array"
+
+
+
 
 
 
