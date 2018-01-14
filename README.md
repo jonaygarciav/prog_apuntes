@@ -10,8 +10,9 @@ __BLOQUE I__
 __BLOQUE II__
 
 03. Tipos de datos ([Apuntes](./java/apuntes/ut03_tipos_primitivos_de_datos.md) - [Ejercicios](./java/ejercicios/ut03_tipos_primitivos_de_datos.md) - [Practica a Entregar](./java/practicas_a_entregar/ut03_tipos_primitivos_de_datos.md))
-04. Operadores ([Apuntes](./java/apuntes/ut04_operadores.md) - [Ejercicios](./java/ejercicios/ut04_operadores.md) - [Practica a Entregar](./java/practicas_a_entregar/ut04_operadores.md) )
-05. Sentencias condicionales
+04. Operadores ([Apuntes](./java/apuntes/ut05_sentencias_condicionales_y_bucles.md) - [Ejercicios](./java/ejercicios/ut05_sentencias_condicionales_y_bucles.md) - [Practica a Entregar](./java/practicas_a_entregar/ut05_sentencias_condicionales_y_bucles.md) )
+05. Sentencias condicionales y bucles ([Apuntes](./java/apuntes/ut05_tipos_primitivos_de_datos.md) - [Ejercicios](./java/ejercicios/ut03_tipos_primitivos_de_datos.md) - [Practica a Entregar](./java/practicas_a_entregar/ut03_tipos_primitivos_de_datos.md))
+
 06. Sentencias repetitivas
 07. Otras sentencias
 08. Sentencia return y métodos
