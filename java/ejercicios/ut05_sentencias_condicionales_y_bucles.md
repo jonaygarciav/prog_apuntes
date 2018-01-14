@@ -6,17 +6,17 @@ Pedir un número por pantalla e indicar si es un número par o impar.
 
 __Ejercicio 2__
 
-Pedir dos números por pantalla y decir cuál es mayor o si son iguales.
+Pedir dos números por pantalla e indicar cuál es mayor o si son iguales.
 
 __Ejercicio 3__
 
-Pedir dos números por pantalla y calcular la división. Controlar que el divisor no puede ser 0.
+Pedir dos números por pantalla y calcular la división. Controlar que, si el divisor es cero, imprimir un mensaje que diga: '_no puede dividirse un número entre cero_'.
 
 > En matemáticas el resultado de dividir un número entre 0 es indefinido.
 
 __Ejercicio 4__
 
-Pedir una nota de 0 a 10 y mostrarla de la forma: Insuficiente, Suficiente, Bien, Notabie y Sobresaliente:
+Pedir una nota numérica de 0 a 10 y mostrarla de la siguiente forma: Insuficiente, Suficiente, Bien, Notabie y Sobresaliente:
 
 * __Insuficiente__: de 0 a 5, sin contar el 5.
 * __Suficiente__: de 5 a 6, sin contar el 6.
@@ -42,11 +42,10 @@ Hacer un programa en Java que le dé al usuario la opción de calcular la raíz 
 2. Si el usuario elige la opción 1, el programa deberá pedir un número y calcular la raíz cuadrada.
 3. Si el usuario elige la opción 2, el programa deberá pedir un número y calcular su cuadrado.
 4. Si el usuario introduce un 0, saldremos del programa.
-5. Si el usuario introduce un valor que no esté entre el 0 y el 1, debemos mostrar al usuario un mensaje de que el númer indicado no es el correcto.
+5. Si el usuario introduce un valor que no esté entre el 0 y el 2, debemos mostrar al usuario un mensaje de que el número indicado no es el correcto.
 6. Repetir el proceso hasta que el usuario introduzca un 0.
 
-**
-Salida del programa:
+Ejemplo de salida del programa:
 
 ```java
 Menú
@@ -78,7 +77,6 @@ Menú
 0.- Salir.
 Elija una opción: 0
 Gracias por utilizar este programa.
-
 ```
 
 __Ejercicio 8__
@@ -97,5 +95,5 @@ Pedir un número por pantalla y calcular su factorial.
 
 __Ejercicio 11__
 
-Crear un array con números aleatorios y calcular el valor mayor.
+Crear un array de 10 enteros con los siguientes valores: 1, 524, 423, 825, 1524, 324, 899, 975, 775, 657. Indicar cuál es el valor más alto.
 
