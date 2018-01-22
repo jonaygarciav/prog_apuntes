@@ -13,7 +13,8 @@
 2. Operadores \([Apuntes](./java/apuntes/ut04_operadores.md) - [Ejercicios](./java/ejercicios/ut04_operadores.md) - [Practica a Entregar](./java/practicas_a_entregar/ut04_operadores.md)\)
 3. Sentencias condicionales y bucles \([Apuntes](./java/apuntes/ut05_sentencias_condicionales_y_bucles.md) - [Ejercicios](./java/ejercicios/ut05_sentencias_condicionales_y_bucles.md) - [Practica a Entregar](./java/practicas_a_entregar/ut05_sentencias_condicionales_y_bucles.md)\)
 4. Otras sentencias
-5. Métodos y sentencia return.
+5. Métodos y sentencia return \([Apuntes](./java/apuntes/ut07_metodos_y_sentencia_return.md) - [Ejercicios](./java/ejercicios/ut07_metodos_y_sentencia_return.md) - [Practica a Entregar](./java/practicas_a_entregar/ut07_metodos_y_sentencia_return.md)\)
+
 
 **BLOQUE III**
 
