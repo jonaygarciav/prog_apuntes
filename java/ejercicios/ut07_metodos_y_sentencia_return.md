@@ -52,3 +52,23 @@ Crear un programa que, mediante un menú, le de al usuario la opción de:
 2. Convertir de grados Fahrenheit a grados Centígrados.
 
 Crear un método distinto para cada una de las dos opciones.
+
+
+__Ejercicio 6__
+
+Crear un método llamado _calcularAnyoBisiesto()_ que imprima si un año es bisiesto o no. Para ello el programa deberá pedir un año por teclado y pasárselo por parámetro al método calcularAnyoBisiesto()_.
+
+> Los años bisiestos son aquellos que duran 366 días en vez de los 365 normales. El día de más que tiene el año es el 29 de febrero. Esto sucede para corregir el desfase real de la duración de un año, que es de 365 días y 6 horas.
+
+Para saber si un año es bisiesto se puede aplicar una simple formula, la cual dice que un año es bisiesto si es divisible por cuatro, excepto los principios de año (los divisibles por 100), que para ser bisiestos deben de ser divisibles también por 400.
+
+> Java ofrece una forma más sencilla de resolver si un año es bisiesto. Y es que nos proporciona la clase __GregorianCalendar__ y en concreto el método __.isLeapYear(anyo)__. Este método devolverá true o false, según corresponda:
+
+```java
+GregorianCalendar calendar = new GregorianCalendar();
+ 
+if (calendar.isLeapYear(anyo))
+	System.out.println("El año es bisiesto");
+else
+	System.out.println("El año no es bisiesto");
+```
