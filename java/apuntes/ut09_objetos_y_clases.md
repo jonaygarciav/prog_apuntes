@@ -63,7 +63,7 @@ El siguiente código muestra la declaración de la clase __Precio__. La clase __
  */
 public class Precio {
     // Atributo o variable miembro
-    private double euros;
+    public double euros;
     
     // Metodos
     public double getEuros() {
@@ -104,8 +104,8 @@ public class PruebaPrecio {
                                                  // que devuelve el valor de euros
 
         Precio q = new Precio();  // Crea una referencia y el objeto de la clase Precio
-        q.setEuros(75.6);        // Asigna 75.6 al atributo euros
-        System.out.println("Valor = " + q.getEuros());
+        q.euros = 75.6;           // Asigna 75.6 al atributo euros
+        System.out.println("Valor = " + q.euros);
     }
 }
 ```
@@ -124,7 +124,6 @@ Valor = 75.6
 Para poder trabajar con objetos se tendrá que seguir un proceso de dos pasos. Lo primero
 que debe hacer el programa es crear una referencia o puntero de la clase Precio con el
 identificador p. De forma similar a cómo se declara una variable de un tipo primitivo, la declaración del identificador de la referencia se realiza con la sintaxis
-
 
 ```java
 Precio p;
@@ -162,9 +161,90 @@ programación, como es el caso de Pascal o de C, que utilizan variables dinámic
 
 ## Modificadores de visibilidad
 
-El modificador public indica que la componente del método es accesible fuera del código
-de la clase a la que pertenece la componente a través del operador punto. El modificador private indica que la componente solamente es accesible a través de los métodos de la propia clase. El modificador protected se verá posteriormente. En el siguiente código se declara el atributo euros con el modificador private.
+El modificador __public__ indica que la componente del método es accesible fuera del código
+de la clase a la que pertenece el componente a través del operador punto. El modificador __private__ indica que el componente solamente es accesible a través de los métodos de la propia clase. El modificador __protected__ se verá posteriormente. En el siguiente código se declara el atributo euros con el modificador private:
 
+```java
+/**
+ * Ejemplo de declaracion de la clase Precio
+ * double getEuros() --> devuelve el valor almacenado en euros
+ * void setEuros(double euros) --> almacena valor en euros
+ * Jonay Garcia
+*/
+public class Precio {
+    // Atributo o variable miembro
+    private double euros;
+
+    // Metodos
+    public double getEuros() {
+        return euros;
+    }
+
+    public void setEuros(double euros) {
+        this.euros = euros;
+    }
+}
+```
+
+Si se construye otro código que intente utilizar directamente el atributo euros:
+
+```java
+/**
+ * Ejemplo de uso de la clase PrecioPrivado
+ * double getEuros() --> devuelve el valor almacenado en euros
+ * void setEuros(double euros) --> almacena valor en euros
+ * euros --> Atributo de acceso privado
+ * Jonay Garcia
+ */
+public class PruebaPrecioPrivado {
+    public static void main (String [] args ) {
+        precioPrivado p = new precioPrivado(); // Crea instancia
+        p.pone(56.8); // Asigna 56.8 a euros
+   
+        System.out.println("Valor = " + p.da());
+        p.euros = 75.6;                             // Asigna 75.6 a euros - ERROR
+        System.out.println("Valor = " + p.euros);   // Tambien ERROR
+    }
+}
+```
+
+se producirá un error de compulación:
+
+```java
+$ javac PruebaPrecioPrivado.java
+pruebaPrecioPrivado.java:15: euros has private access in precioPrivado
+p.euros=75.6;
+^
+pruebaPrecioPrivado.java:16: euros has private access in precioPrivado
+System.out.println("Valor = " + p.euros);
+                                 ^
+```
+
+ya que el atributo __euros__ sólo es accesible a través de los métodos de la clase __getEuros()__ y __setEuros()__.
+
+La utilización del modificador __private__ sirve para implementar una de las características de
+la programación orientada a objetos: el _ocultamiento de la información_ o __encapsulación__.
+
+La declaración como público de un atributo de una clase no respeta este principio de ocultación de información. Declarándolos como privados, no se tiene acceso directo a los atributos del objeto fuera del código de la clase correspondiente y sólo puede accederse a ellos de forma indirecta a través de los métodos proporcionados por la propia clase. Una de las ventajas prácticas de obligar al empleo de un método para modificar el valor de un atributo es asegurar la consistencia de la operación. 
+
+> __Nota__: Por ejemplo, un método que asigne valor al tributo __euros__ de un objeto de la clase __Precio__ puede garantizar que no se le asignará un valor negativo.
+
+
+## this
+
+El __this__ sirve para hacer referencia a un metodo o propiedad del objeto actual.
+
+El __this__, en el caso anterior, se utiliza dentro del método __setEuros()__ para diferenciar la variable __euros__  pasada por parámetro del atributo __euros__ de la clase __Precio__, de esta manera tenemos 2 variables que se llaman igual pero con dos alcances diferentes, la pasada por parámetro solo tiene vida útil dentro del método mientras que __this.euros__ hasta que el objeto se destruya.
+
+### ¿Donde se puede usar el this?
+
+Puede referirse a cualquier miembro del objeto actual desde dentro de un método de instancia o un constructor. Si se intenta utilizar dentro de un _método estático_ dará el siguiente error:
+
+```java
+"Cannot use This in a static context"
+```
+
+> __Nota__: No se puede usar en un método que es estático ya que un método estático se puede acceder sin la instancia del objeto,  por lo que no podemos hacer referencia a propiedades o metodos que todavía no existen.
 
 [img_01]: ../img/ut09/01.png "Clase Precio"
 
