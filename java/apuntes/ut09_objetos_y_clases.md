@@ -76,5 +76,97 @@ public class Precio {
 }
 ```
 
-jhj
+Gráficamente una clase puede representarse como un rectángulo según se muestra en la siguiente figura:
+
+![img_01][img_01]
+
+* __+/-__: indica el ámbito, '-' representa __privated__ y '+' representa 'public'.
+
+El anterior código puede compilarse:
+
+```bash
+$ javac Precio.java
+```
+
+generando el archivo de bytecodes __Precio.class__. Este archivo no es directamente ejecutable por el intérprete, ya que el código fuente no incluye ningún método principal (main). Para poder probar el código anterior, puede construirse otro archivo con el código fuente que se muestra a continuación:
+
+```java
+/**
+* Ejemplo de uso de la clase Precio
+* Jonay Garcia
+*/
+public class PruebaPrecio {
+    public static void main (String [] args ) {
+        Precio p;         // Crea una referencia de la clase Precio
+        p = new Precio(); // Crea el objeto de la clase Precio
+        p.setEuros(56.8); // Llamada al metodo setEuros quee asigna 56.8 al atributo euros
+        System.out.println("Valor = " + p.da()); // Llamada al metodo get Euros
+                                                 // que devuelve el valor de euros
+
+        Precio q = new Precio();  // Crea una referencia y el objeto de la clase Precio
+        q.setEuros(75.6);        // Asigna 75.6 al atributo euros
+        System.out.println("Valor = " + q.getEuros());
+    }
+}
+```
+
+El código anterior puede compilarse y ejecutarse monstrando la siguiente salida por pantalla:
+
+```bash
+$ javac PruebaPrecio.java
+$ java PruebaPrecio
+Valor = 56.8
+Valor = 75.6
+```
+
+### Explicación del código anterior
+
+Para poder trabajar con objetos se tendrá que seguir un proceso de dos pasos. Lo primero
+que debe hacer el programa es crear una referencia o puntero de la clase Precio con el
+identificador p. De forma similar a cómo se declara una variable de un tipo primitivo, la declaración del identificador de la referencia se realiza con la sintaxis
+
+
+```java
+Precio p;
+```
+La referencia o puntero, p, tiene como misión almacenar la dirección de memoria de (apuntar
+a) los componentes de la instancia que todavía no ha sido creada ni referenciada. En este momento se dice que la referencia p, recien creada, almacena una dirección de memoria nula (que no corresponde a objeto alguno) o null. El segundo paso del proceso para trabajar con objetos lleva a la creación de una nueva instancia referenciada por p, que se realiza con la sentencia:
+
+```java
+p = new Precio();
+```
+
+A esta operación se le denomina también instanciación. Aunque las dos operaciones anteriores (creación de la referencia y creación de la instancia referenciada) pueden realizarse  conjuntamente en la misma línea de código:
+
+```java
+Precio q = new Precio();
+```
+
+El resultado de la ejecución del código anterior son dos nuevas instancias de la clase Precio referenciados respectivamente por p y q. El atributo euros de cada una de las nuevas instancias de la clase Precio es accesible a través del identificador de la referencia y del operador punto (p.euros y q.euros). Los métodos da y pone pertenecientes a la clase Precio son accesibles a través del identificador de la referencia y del operador punto:
+
+p.getEuros() y p.setEuros(56.8) y q.getEuros() y q.setEuros(75.6) respectivamenteamente.
+
+En el caso de los métodos, la instancia mediante la cual se realiza la llamada correspondiente actúa como un parámetro o argumento implícito del método.
+
+Si se asigna una referencia a otra mediante una sentencia de asignación, no se copian los
+valores de los atributos, sino que se tiene como resultado una única instancia apuntada por dos
+referencias distintas. Por ejemplo:
+
+```java
+q = p;
+```
+
+En este caso ¿qué ocurre con la instancia referenciada previamente por q? Dicha instancia se
+queda sin referencia (inaccesible). Esto puede ser un problema en algunos lenguajes de
+programación, como es el caso de Pascal o de C, que utilizan variables dinámicas y que necesitan liberar explícitamente el espacio en memoria reservado para las variables que van a dejar de ser referenciadas. La gestión dinámica de la memoria suele ser una tarea engorrosa para el programador y muy dada a la proliferación de errores de ejecución. Para evitar tales inconvenientes, Java permite crear tantas instancias como se desee (con la única limitación de la memoria que sea capaz de gestionar el sistema), sin que el programador tenga que preocuparse de destruirlas o liberarlas cuando ya no se necesiten. El entorno de ejecución de Java elimina automáticamente las instancias cuando detecta que no se van a usar más (cuando dejan de estar referenciadas). A este proceso se le denomina recogida o recolección de basura (garbage collection).
+
+## Modificadores de visibilidad
+
+El modificador public indica que la componente del método es accesible fuera del código
+de la clase a la que pertenece la componente a través del operador punto. El modificador private indica que la componente solamente es accesible a través de los métodos de la propia clase. El modificador protected se verá posteriormente. En el siguiente código se declara el atributo euros con el modificador private.
+
+
+[img_01]: ../img/ut09/01.png "Clase Precio"
+
+
 
