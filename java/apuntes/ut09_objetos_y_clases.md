@@ -186,6 +186,11 @@ public class Precio {
 }
 ```
 
+Gráficamente una clase puede representarse como un rectángulo según se muestra en la siguiente figura:
+
+![img_02][img_02]
+
+
 Si se construye otro código que intente utilizar directamente el atributo euros:
 
 ```java
@@ -247,6 +252,4 @@ Puede referirse a cualquier miembro del objeto actual desde dentro de un método
 > __Nota__: No se puede usar en un método que es estático ya que un método estático se puede acceder sin la instancia del objeto,  por lo que no podemos hacer referencia a propiedades o metodos que todavía no existen.
 
 [img_01]: ../img/ut09/01.png "Clase Precio"
-
-
-
+[img_01]: ../img/ut09/02.png "Clase Precio"
