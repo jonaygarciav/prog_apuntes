@@ -411,6 +411,7 @@ public class PruebaFecha {
         System.out.println("Segunda fecha: " + actual.toString());
     }
 }
+```
 
 Resultado de la ejecución de los respectivos constructores para las nuevas instancias referenciadas por origen y actual:
 
