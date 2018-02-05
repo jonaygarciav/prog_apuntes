@@ -129,18 +129,15 @@ Valor = 75.6
 
 ### Explicación del código anterior
 
-Para poder trabajar con objetos se tendrá que seguir un proceso de dos pasos. Lo primero
-que debe hacer el programa es crear una referencia o puntero de la clase Precio con el
-identificador p. De forma similar a cómo se declara una variable de un tipo primitivo, la declaración del identificador de la referencia se realiza con la sintaxis:
+Para poder trabajar con objetos se tendrá que seguir un proceso de dos pasos. Lo primero que debe hacer el programa es crear una referencia o puntero de la clase _Precio_ con el identificador _p_. De forma similar a cómo se declara una variable de un tipo primitivo, la declaración del identificador de la referencia se realiza con la sintaxis:
 
 ```java
 Precio p;
 ```
 
-Representación gráfica de la creación de la referencia p:
+Creación de la referencia _p_:
 
 ![img_03][img_03]
-
 
 La referencia o puntero, p, tiene como misión almacenar la dirección de memoria de (apuntar
 a) los componentes de la instancia que todavía no ha sido creada ni referenciada. En este momento se dice que la referencia p, recien creada, almacena una dirección de memoria nula (que no corresponde a objeto alguno) o null. El segundo paso del proceso para trabajar con objetos lleva a la creación de una nueva instancia referenciada por p, que se realiza con la sentencia:
@@ -149,7 +146,7 @@ a) los componentes de la instancia que todavía no ha sido creada ni referenciad
 p = new Precio();
 ```
 
-Representación gráfica de la creación de la nueva instancia de la clase _Precio_ referenciado por _p_:
+Creación de la nueva instancia de la clase _Precio_ referenciado por _p_:
 
 ![img_04][img_04]
 
@@ -163,15 +160,13 @@ Creación de la referencia _q_ y de la nueva instancia de la clase _Precio_ refe
 
 ![img_05][img_05]
 
-El resultado de la ejecución del código anterior son dos nuevas instancias de la clase Precio referenciados respectivamente por p y q. El atributo euros de cada una de las nuevas instancias de la clase Precio es accesible a través del identificador de la referencia y del operador punto (p.euros y q.euros). Los métodos da y pone pertenecientes a la clase Precio son accesibles a través del identificador de la referencia y del operador punto:
+El resultado de la ejecución del código anterior son dos nuevas instancias de la clase _Precio_ referenciados respectivamente por _p_ y _q_. El atributo euros de cada una de las nuevas instancias de la clase Precio es accesible a través del identificador de la referencia y del operador punto (_p.euros_ y _q.euros_). Los métodos da y pone pertenecientes a la clase _Precio_ son accesibles a través del identificador de la referencia y del operador punto:
 
-p.getEuros() y p.setEuros(56.8) y q.getEuros() y q.setEuros(75.6) respectivamenteamente.
+_p.getEuros()_ y _p.setEuros(56.8)_ y _q.getEuros()_ y _q.setEuros(75.6)_ respectivamenteamente.
 
 En el caso de los métodos, la instancia mediante la cual se realiza la llamada correspondiente actúa como un parámetro o argumento implícito del método.
 
-Si se asigna una referencia a otra mediante una sentencia de asignación, no se copian los
-valores de los atributos, sino que se tiene como resultado una única instancia apuntada por dos
-referencias distintas. Por ejemplo:
+Si se asigna una referencia a otra mediante una sentencia de asignación, no se copian los valores de los atributos, sino que se tiene como resultado una única instancia apuntada por dos referencias distintas. Por ejemplo:
 
 ```java
 q = p;
@@ -181,9 +176,7 @@ Resultado de la asignación de valores entre referencias:
 
 ![img_06][img_06]
 
-En este caso ¿qué ocurre con la instancia referenciada previamente por q? Dicha instancia se
-queda sin referencia (inaccesible). Esto puede ser un problema en algunos lenguajes de
-programación, como es el caso de Pascal o de C, que utilizan variables dinámicas y que necesitan liberar explícitamente el espacio en memoria reservado para las variables que van a dejar de ser referenciadas. La gestión dinámica de la memoria suele ser una tarea engorrosa para el programador y muy dada a la proliferación de errores de ejecución. Para evitar tales inconvenientes, Java permite crear tantas instancias como se desee (con la única limitación de la memoria que sea capaz de gestionar el sistema), sin que el programador tenga que preocuparse de destruirlas o liberarlas cuando ya no se necesiten. El entorno de ejecución de Java elimina automáticamente las instancias cuando detecta que no se van a usar más (cuando dejan de estar referenciadas). A este proceso se le denomina recogida o recolección de basura (garbage collection).
+En este caso ¿qué ocurre con la instancia referenciada previamente por q? Dicha instancia se queda sin referencia (inaccesible). Esto puede ser un problema en algunos lenguajes de programación, como es el caso de Pascal o de C, que utilizan variables dinámicas y que necesitan liberar explícitamente el espacio en memoria reservado para las variables que van a dejar de ser referenciadas. La gestión dinámica de la memoria suele ser una tarea engorrosa para el programador y muy dada a la proliferación de errores de ejecución. Para evitar tales inconvenientes, Java permite crear tantas instancias como se desee (con la única limitación de la memoria que sea capaz de gestionar el sistema), sin que el programador tenga que preocuparse de destruirlas o liberarlas cuando ya no se necesiten. El entorno de ejecución de Java elimina automáticamente las instancias cuando detecta que no se van a usar más (cuando dejan de estar referenciadas). A este proceso se le denomina recogida o recolección de basura (garbage collection).
 
 ## Modificadores de visibilidad
 
@@ -341,17 +334,11 @@ El empleado se llama Álvaro Pérez con 19 años y un salario de 800.0
 
 ## Constructores
 
-Aunque en un principio pueda parecer lo contrario, un constructor no es en realidad un
-método estrictamente hablando. Un constructor es un elemento de una clase cuyo identificador
-coincide con el de la clase correspondiente y que tiene por objetivo obligar a y controlar cómo se inicializa una instancia de una determinada clase, ya que el lenguaje Java no permite que las variables miembro de una nueva instancia queden sin inicializar. Además, a diferencia de los métodos, los constructores sólo se emplean cuando se quiere crear una nueva instancia.
+Aunque en un principio pueda parecer lo contrario, un constructor no es en realidad un método estrictamente hablando. Un constructor es un elemento de una clase cuyo identificador coincide con el de la clase correspondiente y que tiene por objetivo obligar a y controlar cómo se inicializa una instancia de una determinada clase, ya que el lenguaje Java no permite que las variables miembro de una nueva instancia queden sin inicializar. Además, a diferencia de los métodos, los constructores sólo se emplean cuando se quiere crear una nueva instancia.
 
+Por defecto toda clase tiene un constructor sin parámetros cuyo identificador coincide con el de la clase y que, al ejecutarse, inicializa el valor de cada atributo de la nueva instancia: los atributos de tipo primitivo se inicializan a 0 o false, mientras que los atributos de tipo objeto (referencia) se inicializan a null.
 
-Por defecto toda clase tiene un constructor sin parámetros cuyo identificador coincide con el
-de la clase y que, al ejecutarse, inicializa el valor de cada atributo de la nueva instancia: los atributos de tipo primitivo se inicializan a 0 o false, mientras que los atributos de tipo objeto (referencia) se inicializan a null.
-
-En el ejemplo de la clase PruebaPrecio, que utiliza una instancia de la clase Precio, la
-llamada al constructor se produce en la sentencia p = new Precio();. Mientras que la
-ejecución de new genera una nueva instancia y devuelve su dirección de memoria, la ejecución del constructor Precio() inicializa los valores de los atributos.
+En el ejemplo de la clase _PruebaPrecio_, que utiliza una instancia de la clase _Precio_, la llamada al constructor se produce en la sentencia __p = new Precio();__. Mientras que la ejecución de new genera una nueva instancia y devuelve su dirección de memoria, la ejecución del constructor Precio() inicializa los valores de los atributos.
 
 
 ```java
@@ -368,8 +355,7 @@ public class PruebaPrecio {
 
 ### Declaración de un constructor
 
-La declaración de un constructor diferente del constructor por defecto, obliga a que se le
-asigne el mismo identificador que la clase y que no se indique de forma explícita un tipo de valor de retorno. La existencia o no de parámetros es opcional. Por otro lado, la sobrecarga permite que puedan declararse varios constructores (con el mismo identificador que el de la clase), siempre y cuando tengan un tipo y/o número de parámetros distinto. Por ejemplo, para la clase Fecha se declaran dos constructores, el primero sin parámetros (por lo tanto se redefine el constructor por defecto) y el segundo con tres parámetros:
+La declaración de un constructor diferente del constructor por defecto, obliga a que se le asigne el mismo identificador que la clase y que no se indique de forma explícita un tipo de valor de retorno. La existencia o no de parámetros es opcional. Por otro lado, la sobrecarga permite que puedan declararse varios constructores (con el mismo identificador que el de la clase), siempre y cuando tengan un tipo y/o número de parámetros distinto. Por ejemplo, para la clase Fecha se declaran dos constructores, el primero sin parámetros (por lo tanto se redefine el constructor por defecto) y el segundo con tres parámetros:
 
 ```java
 /**
@@ -412,6 +398,7 @@ public class Fecha {
 ```
 
 La sobrecarga permite que puedan declararse varios constructores (con el mismo identificador que el de la clase), siempre y cuando tengan un tipo y/o número de parámetros distinto.
+
 Para probar el código anterior, se construye el siguiente programa:
 
 ```java
@@ -485,7 +472,7 @@ public class CuentaBancaria {
 }
 ```
 
-La sentencia this(0.0); en el primer constructor realiza la llamada el segundo constructor. Ejemplo de programa que emplea la clase CuentaBancaria:
+La sentencia __this(0.0);__ en el primer constructor realiza la llamada el segundo constructor. Ejemplo de programa que emplea la clase _CuentaBancaria_:
 
 ```java
 /**
