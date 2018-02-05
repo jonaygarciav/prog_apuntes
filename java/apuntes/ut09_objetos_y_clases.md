@@ -113,6 +113,11 @@ public class PruebaPrecio {
 }
 ```
 
+Representación gráfica del espacio de la memoria utilizado por las referencias e instancias de la clase _Precio_ durante la ejecución del método _main()_ de la clase _PruebaPrecio_:
+
+![img_02][img_02]
+
+
 El código anterior puede compilarse y ejecutarse monstrando la siguiente salida por pantalla:
 
 ```bash
@@ -126,11 +131,17 @@ Valor = 75.6
 
 Para poder trabajar con objetos se tendrá que seguir un proceso de dos pasos. Lo primero
 que debe hacer el programa es crear una referencia o puntero de la clase Precio con el
-identificador p. De forma similar a cómo se declara una variable de un tipo primitivo, la declaración del identificador de la referencia se realiza con la sintaxis
+identificador p. De forma similar a cómo se declara una variable de un tipo primitivo, la declaración del identificador de la referencia se realiza con la sintaxis:
 
 ```java
 Precio p;
 ```
+
+Representación gráfica de la creación de la referencia p:
+
+![img_03][img_03]
+
+
 La referencia o puntero, p, tiene como misión almacenar la dirección de memoria de (apuntar
 a) los componentes de la instancia que todavía no ha sido creada ni referenciada. En este momento se dice que la referencia p, recien creada, almacena una dirección de memoria nula (que no corresponde a objeto alguno) o null. El segundo paso del proceso para trabajar con objetos lleva a la creación de una nueva instancia referenciada por p, que se realiza con la sentencia:
 
@@ -138,11 +149,19 @@ a) los componentes de la instancia que todavía no ha sido creada ni referenciad
 p = new Precio();
 ```
 
+Representación gráfica de la creación de la nueva instancia de la clase _Precio_ referenciado por _p_:
+
+![img_04][img_04]
+
 A esta operación se le denomina también instanciación. Aunque las dos operaciones anteriores (creación de la referencia y creación de la instancia referenciada) pueden realizarse  conjuntamente en la misma línea de código:
 
 ```java
 Precio q = new Precio();
 ```
+
+Creación de la referencia _q_ y de la nueva instancia de la clase _Precio_ referenciado por q:
+
+![img_05][img_05]
 
 El resultado de la ejecución del código anterior son dos nuevas instancias de la clase Precio referenciados respectivamente por p y q. El atributo euros de cada una de las nuevas instancias de la clase Precio es accesible a través del identificador de la referencia y del operador punto (p.euros y q.euros). Los métodos da y pone pertenecientes a la clase Precio son accesibles a través del identificador de la referencia y del operador punto:
 
@@ -157,6 +176,10 @@ referencias distintas. Por ejemplo:
 ```java
 q = p;
 ```
+
+Resultado de la asignación de valores entre referencias:
+
+![img_06][img_06]
 
 En este caso ¿qué ocurre con la instancia referenciada previamente por q? Dicha instancia se
 queda sin referencia (inaccesible). Esto puede ser un problema en algunos lenguajes de
@@ -191,7 +214,7 @@ public class Precio {
 
 Gráficamente una clase puede representarse como un rectángulo según se muestra en la siguiente figura:
 
-![img_02][img_02]
+![img_07][img_07]
 
 
 Si se construye otro código que intente utilizar directamente el atributo euros:
@@ -497,4 +520,9 @@ Total cuentas: 2
 ```
 
 [img_01]: ../img/ut09/01.png "Clase Precio"
-[img_01]: ../img/ut09/02.png "Clase Precio"
+[img_02]: ../img/ut09/02.png "Referencia a objetos"
+[img_03]: ../img/ut09/03.png "Referencia a objetos"
+[img_04]: ../img/ut09/04.png "Referencia a objetos"
+[img_05]: ../img/ut09/05.png "Referencia a objetos"
+[img_06]: ../img/ut09/06.png "Referencia a objetos"
+[img_07]: ../img/ut09/07.png "Clase Precio"
