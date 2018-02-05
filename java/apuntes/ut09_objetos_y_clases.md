@@ -5,6 +5,9 @@
 * Presentar el concepto de objeto, clase, atributo, método e instancia.
 * Interpretar el código fuente de una aplicación Java donde aparecen implementados los conceptos anteriores.
 * Construir una aplicación Java sencilla, convenientemente especificada, que emplee los conceptos anteriores.
+* Introducir el concepto de constructor de una clase en Java.
+* Interpretar el código fuente de una aplicación Java donde aparecen declaraciones y llamadas a constructores.
+* Construir una aplicación Java sencilla, convenientemente especificada, que emplee clases en los que se declaren explícitamente constructores.
 
 ## Introducción
 
@@ -250,6 +253,248 @@ Puede referirse a cualquier miembro del objeto actual desde dentro de un método
 ```
 
 > __Nota__: No se puede usar en un método que es estático ya que un método estático se puede acceder sin la instancia del objeto,  por lo que no podemos hacer referencia a propiedades o metodos que todavía no existen.
+
+
+## Método toString()
+
+El método __toString()__ nos permite mostrar la información completa de un objeto, es decir, el valor de sus atributos.
+
+Este método también se hereda de __java.lang.Object__, por lo que deberemos sobrescribir este método. 
+
+A continuación se muestra un ejemplo de uso del método toString():
+
+```java
+Public class Empleado() {
+
+    // Atributos
+    private String nombre;
+    private String apellido;
+    private int edad;
+    
+    // Métodos
+    public Empleado(String nombre, String apellido, int edad) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.edad = edad;
+    }
+
+    public String toString (){
+        String mensaje = "El empleado se llama " + nombre + " " + apellido + " con " +
+                         edad + " años " + "y un salario de " + salario;
+        return mensaje;
+    }
+```
+
+El mensaje lo configuramos nosotros como queramos.
+
+Ejemplo práctico:
+
+```java
+public class EmpleadoApp {
+ 
+    public static void main(String[] args) {
+ 
+        //Creamos dos objetos distintos
+        Empleado empleado1=new Empleado("Fernando", "Ureña", 23, 600);
+        Empleado empleado2=new Empleado("Antonio", "Lopez", 28, 900);
+        Empleado empleado3=new Empleado("Alvaro", "Perez", 19, 800);
+ 
+        //Mostramos la informacion del objeto
+        System.out.println(empleado1.toString());
+        System.out.println(empleado2.toString());
+        System.out.println(empleado3.toString());
+    }
+ 
+}
+```
+
+La salida del programa anterior es la siguiente:
+
+```bash
+El empleado se llama Fernando Ureña con 23 años y un salario de 600.0
+El empleado se llama Antonio López con 28 años y un salario de 900.0
+El empleado se llama Álvaro Pérez con 19 años y un salario de 800.0
+``` 
+
+## Constructores
+
+Aunque en un principio pueda parecer lo contrario, un constructor no es en realidad un
+método estrictamente hablando. Un constructor es un elemento de una clase cuyo identificador
+coincide con el de la clase correspondiente y que tiene por objetivo obligar a y controlar cómo se inicializa una instancia de una determinada clase, ya que el lenguaje Java no permite que las variables miembro de una nueva instancia queden sin inicializar. Además, a diferencia de los métodos, los constructores sólo se emplean cuando se quiere crear una nueva instancia.
+
+
+Por defecto toda clase tiene un constructor sin parámetros cuyo identificador coincide con el
+de la clase y que, al ejecutarse, inicializa el valor de cada atributo de la nueva instancia: los atributos de tipo primitivo se inicializan a 0 o false, mientras que los atributos de tipo objeto (referencia) se inicializan a null.
+
+En el ejemplo de la clase PruebaPrecio, que utiliza una instancia de la clase Precio, la
+llamada al constructor se produce en la sentencia p = new Precio();. Mientras que la
+ejecución de new genera una nueva instancia y devuelve su dirección de memoria, la ejecución del constructor Precio() inicializa los valores de los atributos.
+
+
+```java
+public class PruebaPrecio {
+    public static void main (String [] args ) {
+        Precio p; // Crea una referencia de la clase Precio
+        p = new Precio(); // Crea el objeto de la clase Precio y realiza
+                          // una llamada al metodo constructor
+                          
+        // Resto del codigo ...
+    }
+}
+```
+
+### Declaración de un constructor
+
+La declaración de un constructor diferente del constructor por defecto, obliga a que se le
+asigne el mismo identificador que la clase y que no se indique de forma explícita un tipo de valor de retorno. La existencia o no de parámetros es opcional. Por otro lado, la sobrecarga permite que puedan declararse varios constructores (con el mismo identificador que el de la clase), siempre y cuando tengan un tipo y/o número de parámetros distinto. Por ejemplo, para la clase Fecha se declaran dos constructores, el primero sin parámetros (por lo tanto se redefine el constructor por defecto) y el segundo con tres parámetros:
+
+```java
+/**
+ * Declaracion de la clase Fecha
+ * @author Jonay Garcia
+ */
+public class Fecha {
+    // Atributos o variables miembro
+    private int dia;
+    private int mes;
+    private int anho;
+    
+    /**
+     * Constructor 1
+     * Asigna los valores 1, 1 y 2000 a los atributos
+     * dia, mes y anho respectivamente
+     */
+    public Fecha() {
+        dia = 1;
+        mes = 1;
+        anho = 2000;
+    }
+
+    /**
+     * Constructor 2
+     * @param ndia el dia del mes a almacenar
+     * @param nmes el mes del anho a almacenar
+     * @param nanho el anho a almacenar
+     */
+    public Fecha(int ndia, int nmes, int nanho) {
+        dia = ndia;
+        mes = nmes;
+        anho = nanho;
+    }
+    
+    public String toString() {
+        return dia + "/" + mes + "/" + anho;
+    }
+}
+```
+
+La sobrecarga permite que puedan declararse varios constructores (con el mismo identificador que el de la clase), siempre y cuando tengan un tipo y/o número de parámetros distinto.
+Para probar el código anterior, se construye el siguiente programa:
+
+```java
+/**
+* Ejemplo de uso de la clase Fecha
+* Jonay Garcia
+*/
+public class PruebaFecha {
+    
+    public static void main (String [] args) {
+        Fecha origen = new Fecha();
+        Fecha actual = new Fecha(16,2,2009);
+        System.out.println("Primera fecha: " + origen.toString());
+        System.out.println("Segunda fecha: " + actual.toString());
+    }
+}
+
+Resultado de la ejecución de los respectivos constructores para las nuevas instancias referenciadas por origen y actual:
+
+El código anterior puede compilarse y ejecutarse, mostrando la siguiente salida por pantalla:
+
+```java
+$ javac PruebaFecha.java
+Primera fecha: 1/1/2000
+Segunda fecha: 16/2/2009
+```
+
+> __Nota__: una vez construido un constructor ya no se puede emplear el constructor por defecto sin parámetros. Si se desea trabajar con él, es necesario declararlo explícitamente.
+
+### Más sobre la declaración y uso de varios constructores
+
+Un constructor sólo puede ser llamado por otros constructores o por métodos de clase (static). En el siguiente código se muestra un ejemplo de cómo se declaran dos constructores CuentaBancaria: el primero no tiene parámetros y hace una llamada al segundo constructor,
+que tiene un parámetro numérico real.
+
+```java
+/**
+ * Declaracion de la clase CuentaBancaria
+ * Ejemplo de declaracion de variables
+ * metodos estaticos y uso de this
+ * @author Jonay Garcia
+ */
+
+public class CuentaBancaria {
+
+    // Atributos o variables miembro
+    private double saldo;
+    public static int totalCuentas=0;
+    
+    // Métodos
+    public CuentaBancaria( ) {
+        this(0.0); // Llamada al constructor que tiene un parametro
+    }
+
+    public CuentaBancaria( double ingreso ) {
+        saldo = ingreso;
+        incCuentas();
+    }
+
+    public double saldo() {
+        return saldo;
+    }
+
+    public static void incCuentas () {
+        totalCuentas++;
+    }
+
+    public void transferencia( CuentaBancaria origen ) {
+        saldo += origen.saldo;
+        origen.saldo=0;
+    }
+}
+```
+
+La sentencia this(0.0); en el primer constructor realiza la llamada el segundo constructor. Ejemplo de programa que emplea la clase CuentaBancaria:
+
+```java
+/**
+ * Ejemplo de uso de la clase CuentaBancaria
+ * Jonay Garcia
+ */
+public class PruebaCuentaBancaria {
+
+    public static void main (String [] args) {
+        System.out.println("Total cuentas: " + CuentaBancaria.totalCuentas);
+        CuentaBancaria c1;
+        c1 = new CuentaBancaria();
+        System.out.println("Nueva cuenta con: " + c1.saldo() + " euros");
+        System.out.println("Total cuentas: " + CuentaBancaria.totalCuentas);
+        CuentaBancaria c2;
+        c2 = new CuentaBancaria(20.0);
+        System.out.println("Nueva cuenta con: " + c2.saldo() + " euros");
+       System.out.println("Total cuentas: " + CuentaBancaria.totalCuentas);
+    }
+}
+```
+
+La ejecución del código anterior origina la siguiente salida por pantalla:
+
+```bash
+$ java PruebaCuentaBancaria
+Total cuentas: 0
+Nueva cuenta con: 0.0 euros
+Total cuentas: 1
+Nueva cuenta con: 20.0 euros
+Total cuentas: 2
+```
 
 [img_01]: ../img/ut09/01.png "Clase Precio"
 [img_01]: ../img/ut09/02.png "Clase Precio"
