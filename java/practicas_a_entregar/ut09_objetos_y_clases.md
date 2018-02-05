@@ -14,13 +14,17 @@ Escribe un programa para probar el funcionamiento de la clase Libro.
 
 Crear un programa principal que cree los siguientes libros:
 
-* Autor: Miguel de Cervantes.
-* Nombre: El Quijote de La Mancha.
-* Ejemplares: 2.
+Libro 1:
 
-* Autor: Arturo Pérez Reverte.
-* Nombre: El Capitán Alatriste.
-* Ejemplares: 1.
+* __Autor__: Miguel de Cervantes.
+* __Nombre__: El Quijote de La Mancha.
+* __Ejemplares__: 2.
+
+Libro 2:
+
+* __Autor__: Arturo Pérez Reverte.
+* __Nombre__: El Capitán Alatriste.
+* __Ejemplares__: 1.
 
 Se pueden crear otros libros si se quiere.
 
