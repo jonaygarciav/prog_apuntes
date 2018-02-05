@@ -18,7 +18,7 @@
 
 **BLOQUE III**
 
-1. Objetos y clases
+1. Objetos y clases \([Apuntes](./java/apuntes/ut09_objetos_y_clases.md) - [Ejercicios](./java/ejercicios/ut09_objetos_y_clases.md) - [Practica a Entregar](./java/practicas_a_entregar/ut09_objetos_y_clases.md)\)
 2. Algunas clases estándar \(I\)
 3. Algunas clases estándar \(II\)
 4. Tipos de atributos
