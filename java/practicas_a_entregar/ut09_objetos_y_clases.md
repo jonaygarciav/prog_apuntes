@@ -26,7 +26,7 @@ Libro 2:
 * __Nombre__: El Capitán Alatriste.
 * __Ejemplares__: 1.
 
-Se pueden crear otros libros si se quiere.
+> __Nota__: Se pueden crear otros libros si se quiere.
 
-Emular un sistema de préstamo y devolución para los libros antes mencionados. No tiene por qué crearse un menú.
+Emular un sistema de préstamo y devolución para los libros antes mencionados. No tiene por qué crearse un menú interactivo.
 
