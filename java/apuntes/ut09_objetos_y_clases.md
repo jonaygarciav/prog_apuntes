@@ -209,7 +209,6 @@ Gráficamente una clase puede representarse como un rectángulo según se muestr
 
 ![img_07][img_07]
 
-
 Si se construye otro código que intente utilizar directamente el atributo euros:
 
 ```java
@@ -232,7 +231,7 @@ public class PruebaPrecioPrivado {
 }
 ```
 
-se producirá un error de compulación:
+se producirá un error de compilación:
 
 ```java
 $ javac PruebaPrecioPrivado.java
@@ -253,7 +252,6 @@ La declaración como público de un atributo de una clase no respeta este princi
 
 > __Nota__: Por ejemplo, un método que asigne valor al tributo __euros__ de un objeto de la clase __Precio__ puede garantizar que no se le asignará un valor negativo.
 
-
 ## this
 
 El __this__ sirve para hacer referencia a un metodo o propiedad del objeto actual.
@@ -269,7 +267,6 @@ Puede referirse a cualquier miembro del objeto actual desde dentro de un método
 ```
 
 > __Nota__: No se puede usar en un método que es estático ya que un método estático se puede acceder sin la instancia del objeto,  por lo que no podemos hacer referencia a propiedades o metodos que todavía no existen.
-
 
 ## Método toString()
 
@@ -339,7 +336,6 @@ Aunque en un principio pueda parecer lo contrario, un constructor no es en reali
 Por defecto toda clase tiene un constructor sin parámetros cuyo identificador coincide con el de la clase y que, al ejecutarse, inicializa el valor de cada atributo de la nueva instancia: los atributos de tipo primitivo se inicializan a 0 o false, mientras que los atributos de tipo objeto (referencia) se inicializan a null.
 
 En el ejemplo de la clase _PruebaPrecio_, que utiliza una instancia de la clase _Precio_, la llamada al constructor se produce en la sentencia __p = new Precio();__. Mientras que la ejecución de new genera una nueva instancia y devuelve su dirección de memoria, la ejecución del constructor Precio() inicializa los valores de los atributos.
-
 
 ```java
 public class PruebaPrecio {
@@ -418,6 +414,8 @@ public class PruebaFecha {
 
 Resultado de la ejecución de los respectivos constructores para las nuevas instancias referenciadas por origen y actual:
 
+![img_08][img_08]
+
 El código anterior puede compilarse y ejecutarse, mostrando la siguiente salida por pantalla:
 
 ```java
@@ -430,8 +428,7 @@ Segunda fecha: 16/2/2009
 
 ### Más sobre la declaración y uso de varios constructores
 
-Un constructor sólo puede ser llamado por otros constructores o por métodos de clase (static). En el siguiente código se muestra un ejemplo de cómo se declaran dos constructores CuentaBancaria: el primero no tiene parámetros y hace una llamada al segundo constructor,
-que tiene un parámetro numérico real.
+Un constructor sólo puede ser llamado por otros constructores o por métodos de clase (static). En el siguiente código se muestra un ejemplo de cómo se declaran dos constructores CuentaBancaria: el primero no tiene parámetros y hace una llamada al segundo constructor, que tiene un parámetro numérico real.
 
 ```java
 /**
@@ -513,3 +510,5 @@ Total cuentas: 2
 [img_05]: ../img/ut09/05.png "Referencia a objetos"
 [img_06]: ../img/ut09/06.png "Referencia a objetos"
 [img_07]: ../img/ut09/07.png "Clase Precio"
+[img_08]: ../img/ut09/08.png "Referencia a objetos"
+
