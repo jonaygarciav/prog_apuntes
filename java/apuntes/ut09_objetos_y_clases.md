@@ -224,7 +224,7 @@ public class PruebaPrecioPrivado {
         precioPrivado p = new precioPrivado(); // Crea instancia
         p.pone(56.8); // Asigna 56.8 a euros
    
-        System.out.println("Valor = " + p.da());
+        System.out.println("Valor = " + p.getEuros());
         p.euros = 75.6;                             // Asigna 75.6 a euros - ERROR
         System.out.println("Valor = " + p.euros);   // Tambien ERROR
     }
