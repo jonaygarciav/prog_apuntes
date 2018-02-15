@@ -106,28 +106,31 @@ public class PruebaClaseProducto {
 
 Durante la ejecución del código anterior, se generan las instancias referenciadas por _p_ y _q_, cada una de las cuales está compuesta por dos atributos: __euros__, variable de instancia heredada de la clase _Precio_ y __codigo__, variable de instancia específica de la clase __Producto__:
 
-
 A continuación se muestra representación gráfica de las instancias de la clase _Producto_:
 
+![img_01][img_01]
 
+Por otro lado, la ejecución de _PruebaClaseProducto_ produce la siguiente salida por pantalla:
 
+```bash
+$ javac PruebaClaseProducto.java
 
+$ java PruebaClaseProducto
 
-Figura 16.1. Representación grafica de las instancias de la clase Producto.
-Por otro lado, la ejecución de PruebaClaseProducto produce la siguiente salida por
-pantalla:
-170  A. García-Beltrán y J.M. Arranz
-$>javac PruebaClaseProducto.java
-$>java PruebaClaseProducto
 Codigo: 200201 ; precio: 15.8 euros
 Codigo: 200202 ; precio: 34.3 euros
-16.2. Jerarquía de clases
-Java permite múltiples niveles de herencia pero no la herencia multiple, es decir una clase
-sólo puede heredar directamente de una clase ascendiente. Por otro lado, una clase puede ser
-ascendiente de tantas clases descendiente como se desee (un unico padre, multitud de hijos). En la
-Figura 16.2 se muestra gráficamente un ejemplo de jerarquía entre diferentes clases relacionadas
-mediante la herencia.
-Figura 16.2. Representación de una jerarquía de clases relacionadas mediante la herencia
+```
+
+## Jerarquía de clases
+
+Java permite múltiples niveles de herencia, pero no la herencia _multiple_, es decir, __una clase sólo puede heredar directamente de una clase ascendiente__. Por otro lado, una clase puede ser ascendiente de tantas clases descendiente como se desee (un unico padre, multitud de hijos). En la Figura 16.2 se muestra gráficamente un ejemplo de jerarquía entre diferentes clases relacionadas mediante la herencia.
+
+A continuación se muestra una representación de una jerarquía de clases relacionadas mediante la herencia:
+
+
+
+
+
 16.3. Redefinición de elementos heredados
 Como se ha comentado anteriormente la clase descendiente puede añadir sus propios
 atributos y métodos pero también puede sustituir u ocultar los heredados. En concreto:
