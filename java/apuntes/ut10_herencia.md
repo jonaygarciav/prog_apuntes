@@ -32,9 +32,9 @@ Por ejemplo, a partir de la clase _Precio_:
 
 ```java
 /**
-* Ejemplo de declaracion de la clase Precio
-* Jonay Garcia
-*/
+ * Ejemplo de declaracion de la clase Precio
+ * Jonay Garcia
+ */
 public class Precio {
     // Variable de instancia
     public double euros;
@@ -54,10 +54,10 @@ Se construye la clase _Producto_ como descendiente de la clase _Precio_ de la si
 
 ```java
 /**
-* Ejemplo de declaracion de la clase Producto
-* clase producto desciende de Precio
-* Jonay Garcia
-*/
+ * Ejemplo de declaracion de la clase Producto
+ * clase producto desciende de Precio
+ * Jonay Garcia
+ */
 public class Producto extends Precio {
 
     // Variable de instancia
@@ -87,9 +87,9 @@ La clase PruebaClaseProducto trabaja con dos instancias de la clase Producto:
 
 ```java
 /**
-* Demostracion de la clase Producto
-* Jonay Garcia
-*/
+ * Demostracion de la clase Producto
+ * Jonay Garcia
+ */
 public class PruebaClaseProducto {
     public static void main (String [] args){
         Producto p = new Producto();
@@ -230,9 +230,9 @@ Ejemplo de código con la declaración de clase abstracta:
 
 ```java
 /**
-* Declaracion de la clase abstracta FiguraGeometrica
-* Jonay Garcia
-*/
+ * Declaracion de la clase abstracta FiguraGeometrica
+ * Jonay Garcia
+ */
 public abstract class FiguraGeometrica {
 
     // Declaracion de atributos
@@ -259,10 +259,10 @@ Como ejemplo de utilización de una clase abstracta en el siguiente código la c
 
 ```java
 /**
-* Ejemplo de uso de la declaracion de una clase abstracta
-* Declaracion de la clase Rectangulo
-* Jonay García
-*/
+ * Ejemplo de uso de la declaracion de una clase abstracta
+ * Declaracion de la clase Rectangulo
+ * Jonay García
+ */
 public class Rectangulo extends FiguraGeometrica {
 
     // Definición de atributos
@@ -347,10 +347,10 @@ Ejemplo de uso de la clase MathBis:
 
 ```java
 /**
-* Ejemplo de uso de una clase final
-* Declaracion de la clase pruebaMathBis
-* Jonay Garcia
-*/
+ * Ejemplo de uso de una clase final
+ * Declaracion de la clase pruebaMathBis
+ * Jonay Garcia
+ */
 public class PruebaMathBis {
 
     public static void main (String [] args) {
@@ -384,6 +384,7 @@ Para x = 1.4: asinh(x) = 1.1379820462933672, acosh(x) = 0.867014726490565
 Para x = 1.6: asinh(x) = 1.2489833279048763, acosh(x) = 1.0469679150031885
 Para x = 1.8: asinh(x) = 1.3504407402749723, acosh(x) = 1.1929107309930491
 ```
+
 Por otro lado, un método declarado como _final_ no puede ser redefinido por una clase descendiente. Los métodos que son llamados desde los constructores deberían declararse como _final_, ya que si un  constructor llama a un método que no lo sea, la subclase podría haberla redefinido con resultados indeseables.
 
 [img_01]: ../img/ut10/01.png "Referencia a objetos"
