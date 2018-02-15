@@ -189,117 +189,137 @@ constructores de las clases ascendientes llega hasta el origen de la jerarquía 
 2. Se asignan valores a los atributos
 3. Se ejecuta el resto del constructor
 
-## 
+## Casting o moldes entre objetos con relación de herencia
 
-16.6. Casting o moldes entre objetos con relación de herencia
-El casting o moldeo permite el uso de un objeto de una clase en lugar de otro de otras clase
-con el que haya una relación de herencia. Por ejemplo:
-Object a = new Producto();
- Programación orientada a objetos con Java 173
-Entonces a es momentáneamente tanto una instancia de la clase Object como Producto
-(hasta que más adelante se le asigne un objeto que no sea un Producto). A esto se le llama moldeo
-implícito.
+El _casting_ o moldeo permite el uso de un objeto de una clase en lugar de otro de otras clase con el que haya una relación de herencia. Por ejemplo:
+
+    Object a = new Producto();
+
+Entonces el objeto _a_ es momentáneamente tanto una instancia de la clase _Object_ como _Producto (hasta que más adelante se le asigne un objeto que no sea un Producto). A esto se le llama __moldeo implícito__.
+
 Por otro lado, si se escribe:
-Producto b = a;
-se obtendrá un error de compilación porque el objeto referenciado por a no es considerado por el
-compilador como un Producto. Sin embargo se le puede indicar al compilador que a la referencia
-a se le va a asignar obligatoriamente un Producto.
+
+    Producto b = a;
+
+se obtendrá un error de compilación porque el objeto referenciado por _a_ no es considerado por el compilador como un _Producto_. Sin embargo se le puede indicar al compilador que a la referencia _a_ se le va a asignar obligatoriamente un _Producto_.
+
 Producto b = (Producto)a;
-Este moldeo explícito introduce la verificación durante la ejecución de que a la referencia a se
-le ha asignado un Producto así que el compilador no genera un error. En el caso que durante la
-ejecución la referencia a no fuera a un Producto, se generaría una excepción. Para asegurar esta
-situación y evitar el error de ejecución se podría emplear el operador instanceof:
-if (a instanceof Producto) {
-Producto b = (Producto)a;
-}
-16.7. Clases y métodos abstractos
-Una clase abstracta es una clase de la que no se pueden crear instancias. Su utilidad consiste
-en permitir que otras clases deriven de ella. De esta forma, proporciona un modelo de referencia a
-seguir a la vez que una serie de métodos de utilidad general. Las clases abstractas se declaran
-empleando la palabra reservada abstract como se muestra a continuación:
-public abstract class IdClase . . .
-Una clase abstracta puede componerse de varios atributos y métodos pero debe tener, al
-menos, un método abstracto (declarado también con la palabra reservada abstract en la
-cabecera). Los métodos abstractos no se implementan en el código de la clase abstracta pero las
-clases descendientes de ésta han de implementarlos o volver a declararlos como abstractos (en cuyo
-caso la subclase también debe declararse como abstracta). En cualquier caso, ha de indicarse el tipo
-de dato que devuelve y el número y tipo de parámetros. La sintaxis de declaración de un método
-abstracto es:
-abstract modificador tipo_retorno idClase(lista_parametros);
-Si una clase tiene métodos abstractos, entonces también la clase debe declararse como
-abstracta. Como los métodos de clase (static) no pueden ser redefinidos, un método abstracto no
-puede ser estático. Tampoco tiene sentido que declarar constructores abstractos ya que un
-constructor se emplea siempre al crear una instancia (y con las clases abstractas no se crean
-instancias).
+
+Este moldeo __explícito__ introduce la verificación durante la ejecución de que a la referencia _a_ se le ha asignado un _Producto_ así que el compilador no genera un error. En el caso que durante la ejecución la referencia _a_ no fuera a un _Producto_, se generaría una excepción. Para asegurar esta
+situación y evitar el error de ejecución se podría emplear el operador _instanceof_:
+
+```java
+    if (a instanceof Producto) {
+        Producto b = (Producto)a;
+    }
+```
+
+## Clases y métodos abstractos
+
+Una clase _abstracta_ es una clase de la que no se pueden crear instancias. Su utilidad consiste en permitir que otras clases deriven de ella. De esta forma, proporciona un modelo de referencia a seguir a la vez que una serie de métodos de utilidad general. Las clases abstractas se declaran empleando la palabra reservada _abstract_ como se muestra a continuación:
+
+    public abstract class IdClase . . .
+
+Una clase abstracta puede componerse de varios atributos y métodos pero debe tener, al menos, un método _abstracto_ (declarado también con la palabra reservada _abstract_ en la cabecera). Los métodos abstractos no se implementan en el código de la clase abstracta pero las clases descendientes de ésta han de implementarlos o volver a declararlos como abstractos (en cuyo caso la subclase también debe declararse como abstracta). En cualquier caso, ha de indicarse el tipo de dato que devuelve y el número y tipo de parámetros. La sintaxis de declaración de un método abstracto es:
+
+    abstract modificador tipo_retorno idClase(lista_parametros);
+
+Si una clase tiene métodos abstractos, entonces también la clase debe declararse como abstracta. Como los métodos de clase (_static_) no pueden ser redefinidos, un método abstracto no puede ser estático. Tampoco tiene sentido que declarar constructores abstractos ya que un constructor se emplea siempre al crear una instancia (y con las clases abstractas no se crean instancias).
+
 Ejemplo de código con la declaración de clase abstracta:
-174  A. García-Beltrán y J.M. Arranz
+
+```java
 /**
 * Declaracion de la clase abstracta FiguraGeometrica
-* A. Garcia-Beltran - noviembre, 2005
+* Jonay Garcia
 */
 public abstract class FiguraGeometrica {
-// Declaracion de atributos
-private String nombre;
-// Declaracion de metodos
-abstract public double area();
-public figuraGeometrica (String nombreFigura ) {
-nombre = nombreFigura;
+
+    // Declaracion de atributos
+    private String nombre;
+    
+    // Declaracion de metodos
+    abstract public double area();
+    
+    public figuraGeometrica (String nombreFigura ) {
+        nombre = nombreFigura;
+    }
+
+    final public boolean mayorQue (FiguraGeometrica otra) {
+        return area()>otra.area();
+    }
+    
+    final public String toString() {
+        return nombre + " con area " + area();
+    }
 }
-final public boolean mayorQue (FiguraGeometrica otra) {
-return area()>otra.area();
-}
-final public String toString() {
-return nombre + " con area " + area();
-}
-}
-Como ejemplo de utilización de una clase abstracta en el siguiente código la clase
-Rectangulo se construye a partir de la clase abstracta FiguraGeometrica:
+```
+
+Como ejemplo de utilización de una clase abstracta en el siguiente código la clase _Rectangulo_ se construye a partir de la clase abstracta _FiguraGeometrica_:
+
+```java
 /**
 * Ejemplo de uso de la declaracion de una clase abstracta
 * Declaracion de la clase Rectangulo
-* A. Garcia-Beltran - noviembre, 2005
+* Jonay García
 */
 public class Rectangulo extends FiguraGeometrica {
-private double base;
-private double altura;
-public Rectangulo (double largo, double ancho) {
-super("Rectangulo");
-base=largo;
-altura=ancho;
+
+    // Definición de atributos
+    private double base;
+    private double altura;
+
+    // Definición de métodos
+    public Rectangulo (double largo, double ancho) {
+        super("Rectangulo");
+        base=largo;
+        altura=ancho;
+    }
+    
+    public double area () {
+        return base * altura;
+    }
 }
-public double area () {
-return base * altura;
-}
-}
+
 Ejemplo de uso de la clase Rectangulo:
+
+```java
 /**
-* Ejemplo de uso de la clase Rectangulo
-* A. Garcia-Beltran - noviembre, 2005
-*/
+ * Ejemplo de uso de la clase Rectangulo
+ * Jonay García
+ */
 public class pruebaRectangulo {
-public static void main (String [] args ) {
-Rectangulo r1;
-r1 = new Rectangulo(12.5, 23.7);
-System.out.println("Area de r1 = " + r1.area());
-Rectangulo r2 = new Rectangulo(8.6, 33.1);
-System.out.println("Area de r2 = " + r2.toString());
-if (r1.mayorQue(r2))
-System.out.println("El rectangulo de mayor area es r1");
-else System.out.println("El rectangulo de mayor area es r2");
+
+    public static void main (String [] args ) {
+        Rectangulo r1;
+        r1 = new Rectangulo(12.5, 23.7);
+        System.out.println("Area de r1 = " + r1.area());
+        
+        Rectangulo r2 = new Rectangulo(8.6, 33.1);
+        System.out.println("Area de r2 = " + r2.toString());
+        if (r1.mayorQue(r2))
+            System.out.println("El rectangulo de mayor area es r1");
+        else 
+            System.out.println("El rectangulo de mayor area es r2");
+    }
 }
-}
+```
+
 Salida por pantalla de la ejecución del código anterior:
- Programación orientada a objetos con Java 175
-$>java PruebaRectangulo
+
+```bash
+$ java PruebaRectangulo
 Area de r1 = 296.25
 Area de r2 = Rectangulo con area 284.66
 El rectangulo de mayor area es r1
-16.8. Clases y métodos finales
-Una clase declarada con la palabra reservada final no puede tener clases descendientes.
-Por ejemplo, la clase predefinida de Java Math está declarada como final.
-A modo de ejemplo, se desarrolla una clase final MathBis (de operatividad similar a la
-clase Math estándar de Java) que incluye la declaración de dos métodos que calculan y devuelven
-respectivamente las siguientes funciones trigonométricas:
+```
+
+## Clases y métodos finales
+
+Una clase declarada con la palabra reservada _final_ no puede tener clases descendientes. Por ejemplo, la clase predefinida de Java _Math_ está declarada como _final_.
+
+A modo de ejemplo, se desarrolla una clase final _MathBis_ (de operatividad similar a la clase _Math_ estándar de Java) que incluye la declaración de dos métodos que calculan y devuelven respectivamente las siguientes funciones trigonométricas:
+
 senh 1 (x)  lnx  x 2 1
 cosh1 (x)  lnx  x 2 1
 El código fuente de la clase es:
