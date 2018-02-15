@@ -280,6 +280,7 @@ public class Rectangulo extends FiguraGeometrica {
         return base * altura;
     }
 }
+```
 
 Ejemplo de uso de la clase Rectangulo:
 
@@ -320,41 +321,53 @@ Una clase declarada con la palabra reservada _final_ no puede tener clases desce
 
 A modo de ejemplo, se desarrolla una clase final _MathBis_ (de operatividad similar a la clase _Math_ estándar de Java) que incluye la declaración de dos métodos que calculan y devuelven respectivamente las siguientes funciones trigonométricas:
 
-senh 1 (x)  lnx  x 2 1
-cosh1 (x)  lnx  x 2 1
+![img_04][img_04]
+
 El código fuente de la clase es:
+
+```java
 /**
-* Ejemplo de declaracion de una clase final
-* Declaracion de la clase MathBis
-* A. Garcia-Beltran - diciembre, 2004
-*/
+ * Ejemplo de declaracion de una clase final
+ * Declaracion de la clase MathBis
+ * Jonay García
+ */
 public final class MathBis {
-public static double asinh(double x) {
-return Math.log(x+Math.sqrt(x*x+1));
+
+    public static double asinh(double x) {
+        return Math.log(x+Math.sqrt(x*x+1));
+    }
+    
+    public static double acosh(double x) {
+        return Math.log(x+Math.sqrt(x*x-1));
+    }
 }
-public static double acosh(double x) {
-return Math.log(x+Math.sqrt(x*x-1));
-}
-}
+```
+
 Ejemplo de uso de la clase MathBis:
+
+```java
 /**
 * Ejemplo de uso de una clase final
 * Declaracion de la clase pruebaMathBis
-* A. Garcia-Beltran - diciembre, 2004
+* Jonay Garcia
 */
 public class PruebaMathBis {
-public static void main (String [] args) {
-for (int i=-5; i<10; i++) {
-double x = i/5.0;
-System.out.print("Para x = " + x);
-System.out.print(": asinh(x) = " +MathBis.asinh(x));
-System.out.println(", acosh(x) = " +MathBis.acosh(x));
+
+    public static void main (String [] args) {
+        for (int i=-5; i<10; i++) {
+            double x = i/5.0;
+            System.out.print("Para x = " + x);
+            System.out.print(": asinh(x) = " + MathBis.asinh(x));
+            System.out.println(", acosh(x) = " + MathBis.acosh(x));
+        }
+    }
 }
-}
-}
+```
+
 Salida por pantalla de la ejecución del código anterior:
-176  A. García-Beltrán y J.M. Arranz
-$>java PruebaMathBis
+
+```bash
+$ java PruebaMathBis
 Para x = -1.0: asinh(x) = -0.8813735870195428, acosh(x) = NaN
 Para x = -0.8: asinh(x) = -0.7326682560454109, acosh(x) = NaN
 Para x = -0.6: asinh(x) = -0.5688248987322477, acosh(x) = NaN
@@ -370,12 +383,12 @@ Para x = 1.2: asinh(x) = 1.015973134179692, acosh(x) = 0.6223625037147785
 Para x = 1.4: asinh(x) = 1.1379820462933672, acosh(x) = 0.867014726490565
 Para x = 1.6: asinh(x) = 1.2489833279048763, acosh(x) = 1.0469679150031885
 Para x = 1.8: asinh(x) = 1.3504407402749723, acosh(x) = 1.1929107309930491
-Por otro lado, un método declarado como final no puede ser redefinido por una clase
-descendiente. Los métodos que son llamados desde los constructores deberían declararse como
-final, ya que si un constructor llama a un método que no lo sea, la subclase podría haberla
-redefinido con resultados indeseables.
+```
+Por otro lado, un método declarado como _final_ no puede ser redefinido por una clase descendiente. Los métodos que son llamados desde los constructores deberían declararse como _final_, ya que si un  constructor llama a un método que no lo sea, la subclase podría haberla redefinido con resultados indeseables.
 
 [img_01]: ../img/ut10/01.png "Referencia a objetos"
 [img_02]: ../img/ut10/02.png "Herencia de clases"
 [img_03]: ../img/ut10/03.png "Jerarquía de clases"
+[img_04]: ../img/ut10/04.png "Funciones matemáticas"
+
 
