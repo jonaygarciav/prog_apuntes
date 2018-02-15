@@ -144,56 +144,53 @@ Independientemente de utilizar la palabra reservada _extends_ en su declaración
 
 A continuación se muestra la jerarquía de clases predefinidas en Java:
 
-
+![img_03][img_03]
 
 
 > __Nota__: El hecho de que todas las clases deriven implícitamente de la clase _Object_ no se considera _herencia múltiple_.
 
-Figura 16.3. Jerarquía de clases predefinidas en Java
-Como consecuencia de ello, todas las clases tienen algunos métodos heredados de la clase
-Object (Tabla 16.1).
-Tabla 16.1. Algunos de los métodos de la clase predefinida Object
-Método Función
-clone() Genera una instancia a partir de otra de la misma clase.
-equals() Devuelve un valor lógico que indica si dos instancias de la misma clase son iguales.
-toString() Devuelve un String que contiene una representación como cadena de caracteres
-de una instancia.
-finalize() Finaliza una instancia durante el proceso de recogida de basura (se verá más
-adelante).
-172  A. García-Beltrán y J.M. Arranz
-hashCode() Devuelve una clave hash (su dirección de memoria) para la instancia
-getClass() Devuelve la clase a la que pertenece una instancia.
-Es bastante frecuente tener que sobreescribir algunos de estos métodos. Por ejemplo, para
-verificar si dos instancias son iguales en el sentido de contener la misma información en sus atributos
-se debería sobreescribir el método equals(). El siguiente código muestra un ejemplo de
-módificación de la clase Producto para incluir una sobreescritura del método equals():
+Como consecuencia de ello, todas las clases tienen algunos métodos heredados de la clase Object. A continuación se muestran algunos métodos de la clase predefinida _Object_:
+
+|Método         | Función                                                                                          |
+|---------------|--------------------------------------------------------------------------------------------------|
+| clone()       | Genera una instancia a partir de otra de la misma clase.                                         |
+| equals()      | Devuelve un valor lógico que indica si dos instancias de la misma clase son iguales.             |
+| toString()    | Devuelve un _String_ que contiene una representación como cadena de caracteres de una instancia. |
+| finalize()    | Finaliza una instancia durante el proceso de recogida de basura.                                 | 
+| hashCode()    | Devuelve una clave _hash_ (su dirección de memoria) para la instancia                            |
+| getClass()    | Devuelve la clase a la que pertenece una instancia.                                              |
+
+Es bastante frecuente tener que sobreescribir algunos de estos métodos. Por ejemplo, para verificar si dos instancias son iguales en el sentido de contener la misma información en sus atributos se debería sobreescribir el método _equals()_. El siguiente código muestra un ejemplo de módificación de la clase Producto para incluir una sobreescritura del método _equals()_:
+
+```java
 public class Producto extends Precio {
-...
-public boolean equals(Object a) {
-if (a instanceof Producto)
-return (codigo==a.daCodigo());
-else
-return false;
+    ...
+    public boolean equals(Object a) {
+        if (a instanceof Producto)
+            return (codigo == a.getCodigo());
+        else
+            return false;
+    }
 }
-}
-También es bastante habitual sobreescribir el método toString().
-16.5. Herencia y constructores
-La subclase necesita normalmente que se ejecute el constructor de la superclase antes que su
-propio constructor para inicializar las variables de instancia heredadas. La solución consiste en
-utilizar la palabra reservada super seguida entre paréntesis de los parámetros correspondiente en el
-cuerpo del constructor de la subclase. Es decir, incluir la siguiente sentencia como primera línea de
-código:
-super(argumentos opcionales);
-De esta forma la implementación de un constructor de la clase descendiente sólo necesita
-inicializar directamente las variables de instancia no heredadas. Si no aparece como primera
-sentencia, el compilador inserta una llamada implícita super(); que inicializa las variables de
-instancia a cero, false, carácter nulo o null dependiendo de su tipo. Esta llamada en cadena a los
-constructores de las clases ascendientes llega hasta el origen de la jerarquía de clases, es decir, hasta
-el constructor de la clase Object. En cualquier caso, la creación de una nueva instancia mediante
-un constructor debe tener tres fases:
+```
+
+También es bastante habitual sobreescribir el método _toString()_.
+
+## Herencia y constructores
+
+La subclase necesita normalmente que se ejecute el constructor de la superclase antes que su propio constructor para inicializar las variables de instancia heredadas. La solución consiste en utilizar la palabra reservada _super_ seguida entre paréntesis de los parámetros correspondiente en el cuerpo del constructor de la subclase. Es decir, incluir la siguiente sentencia como primera línea de código:
+
+    super(argumentos opcionales);
+
+De esta forma la implementación de un constructor de la clase descendiente sólo necesita inicializar directamente las variables de instancia no heredadas. Si no aparece como primera sentencia, el compilador inserta una llamada implícita _super();_ que inicializa las variables de instancia a cero, _false_, carácter nulo o null dependiendo de su tipo. Esta llamada en cadena a los
+constructores de las clases ascendientes llega hasta el origen de la jerarquía de clases, es decir, hasta el constructor de la clase _Object_. En cualquier caso, la creación de una nueva instancia mediante un constructor debe tener tres fases:
+
 1. Llamada al constructor de la clase ascendiente
 2. Se asignan valores a los atributos
 3. Se ejecuta el resto del constructor
+
+## 
+
 16.6. Casting o moldes entre objetos con relación de herencia
 El casting o moldeo permite el uso de un objeto de una clase en lugar de otro de otras clase
 con el que haya una relación de herencia. Por ejemplo:
@@ -360,3 +357,5 @@ redefinido con resultados indeseables.
 
 [img_01]: ../img/ut10/01.png "Referencia a objetos"
 [img_02]: ../img/ut10/02.png "Herencia de clases"
+[img_03]: ../img/ut10/03.png "Jerarquía de clases"
+
