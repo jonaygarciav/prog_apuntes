@@ -362,3 +362,5 @@ Por otro lado, un método declarado como final no puede ser redefinido por una c
 descendiente. Los métodos que son llamados desde los constructores deberían declararse como
 final, ya que si un constructor llama a un método que no lo sea, la subclase podría haberla
 redefinido con resultados indeseables.
+
+[img_01]: ../img/ut10/01.png "Referencia a objetos"
