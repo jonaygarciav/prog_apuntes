@@ -123,7 +123,11 @@ Codigo: 200202 ; precio: 34.3 euros
 
 ## Jerarquía de clases
 
-Java permite múltiples niveles de herencia, pero no la herencia _multiple_, es decir, __una clase sólo puede heredar directamente de una clase ascendiente__. Por otro lado, una clase puede ser ascendiente de tantas clases descendiente como se desee (un unico padre, multitud de hijos). En la Figura 16.2 se muestra gráficamente un ejemplo de jerarquía entre diferentes clases relacionadas mediante la herencia.
+Java permite múltiples niveles de herencia, pero no la herencia _multiple_, es decir, __una clase sólo puede heredar directamente de una clase ascendiente__. Por otro lado, una clase puede ser ascendiente de tantas clases descendiente como se desee (un unico padre, multitud de hijos). En la siguiente figura se muestra gráficamente un ejemplo de jerarquía entre diferentes clases relacionadas mediante la herencia:
+
+
+
+
 
 A continuación se muestra una representación de una jerarquía de clases relacionadas mediante la herencia:
 
