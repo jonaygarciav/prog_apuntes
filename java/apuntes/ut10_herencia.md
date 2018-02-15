@@ -125,42 +125,30 @@ Codigo: 200202 ; precio: 34.3 euros
 
 Java permite múltiples niveles de herencia, pero no la herencia _multiple_, es decir, __una clase sólo puede heredar directamente de una clase ascendiente__. Por otro lado, una clase puede ser ascendiente de tantas clases descendiente como se desee (un unico padre, multitud de hijos). En la siguiente figura se muestra gráficamente un ejemplo de jerarquía entre diferentes clases relacionadas mediante la herencia:
 
+![img_02][img_02]
+
+## Redefinición de elementos heredados
+
+Como se ha comentado anteriormente la clase descendiente puede añadir sus propios atributos y métodos pero también puede sustituir u ocultar los heredados. En concreto:
+
+1. Se puede declarar un nuevo __atributo__ con el mismo identificador que uno heredado, quedando este atributo __oculto__. Esta técnica no es recomendable.
+2. Se puede declarar un nuevo __método de instancia__ con la misma cabecera que el de la clase ascendiente, lo que supone su __sobreescritura__. Por lo tanto, la sobreescritura o redefinición consiste en que métodos adicionales declarados en la clase descendiente con el mismo nombre, tipo de dato devuelto y número y tipo de parámetros sustituyen a los heredados.
+3. Se puede declarar un nuevo __método de clase__ con la misma cabecera que el de la clase ascendiente, lo que hace que éste quede __oculto__. Por lo tanto, los métodos de clase o estáticos (declarados como _static_) no pueden ser redefinidos.
+4. Un método declarado con el modificador _final_ tampoco puede ser redefinido por una clase derivada.
+5. Se puede declarar un __constructor__ de la subclase que llame al de la superclase de forma implícita o mediante la palabra reservada _super_.
+6. En general puede accederse a los métodos de la clase ascendiente que han sido redefinidos empleando la palabra reservada _super_ delante del identificador del método. Este mecanismo sólo permite acceder al metodo perteneciente a la clase en el nivel inmediatamente superior de la jerarquía de clases.
+
+## La clase Object
+
+Independientemente de utilizar la palabra reservada _extends_ en su declaración, todas las clases derivan de una superclase llamada __Object__: ésta es la clase raíz de toda la jerarquía de clases de Java.
+
+A continuación se muestra la jerarquía de clases predefinidas en Java:
 
 
 
 
-A continuación se muestra una representación de una jerarquía de clases relacionadas mediante la herencia:
+> __Nota__: El hecho de que todas las clases deriven implícitamente de la clase _Object_ no se considera _herencia múltiple_.
 
-
-
-
-
-16.3. Redefinición de elementos heredados
-Como se ha comentado anteriormente la clase descendiente puede añadir sus propios
-atributos y métodos pero también puede sustituir u ocultar los heredados. En concreto:
-1. Se puede declarar un nuevo atributo con el mismo identificador que uno heredado,
-quedando este atributo oculto. Esta técnica no es recomendable.
-2. Se puede declarar un nuevo método de instancia con la misma cabecera que el de la clase
-ascendiente, lo que supone su sobreescritura. Por lo tanto, la sobreescritura o redefinición
-consiste en que métodos adicionales declarados en la clase descendiente con el mismo
-nombre, tipo de dato devuelto y número y tipo de parámetros sustituyen a los heredados.
- Programación orientada a objetos con Java 171
-3. Se puede declarar un nuevo método de clase con la misma cabecera que el de la clase
-ascendiente, lo que hace que éste quede oculto. Por lo tanto, los métodos de clase o estáticos
-(declarados como static) no pueden ser redefinidos.
-4. Un método declarado con el modificador final tampoco puede ser redefinido por una clase
-derivada.
-5. Se puede declarar un constructor de la subclase que llame al de la superclase de forma
-implícita o de mediante la palabra reservada super.
-6. En general puede accederse a los métodos de la clase ascendiente que han sido redefinidos
-empleando la palabra reservada super delante del identificador del método. Este mecanismo
-sólo permite acceder al metodo perteneciente a la clase en el nivel inmediatamente superior
-de la jerarquía de clases.
-16.4. La clase Object
-Independientemente de utilizar la palabra reservada extends en su declaración, todas las
-clases derivan de una superclase llamada Object. Ésta es la clase raíz de toda la jerarquía de clases
-de Java (Figura 16.3). El hecho de que todas las clases deriven implícitamente de la clase Object
-no se considera herencia múltiple.
 Figura 16.3. Jerarquía de clases predefinidas en Java
 Como consecuencia de ello, todas las clases tienen algunos métodos heredados de la clase
 Object (Tabla 16.1).
@@ -371,3 +359,4 @@ final, ya que si un constructor llama a un método que no lo sea, la subclase po
 redefinido con resultados indeseables.
 
 [img_01]: ../img/ut10/01.png "Referencia a objetos"
+[img_02]: ../img/ut10/02.png "Herencia de clases"
