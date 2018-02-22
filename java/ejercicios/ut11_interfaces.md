@@ -1,4 +1,4 @@
-# UT11. Polimorfismo
+# UT11. Interfaces
 
 ## Ejercicios
 
