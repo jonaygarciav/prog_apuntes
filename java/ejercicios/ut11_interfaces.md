@@ -2,6 +2,50 @@
 
 ## Ejercicios
 
+__Ejercicio 1__
+
+Definir la interfaz MiInterfaz, que contenga la definición de los métodos: metodo1() y metodo2().
+
+```java
+interface MiInterfaz
+{
+   public void method1();
+   public void method2();
+}
+```
+
+Definir la clase Demo a partir de la interfaz MiInterfaz: 
+
+```
+class Demo implements MyInterface
+{
+
+    public void method1()
+    {
+        System.out.println("Implementación del método1");
+    }
+
+    public void method2()
+    {
+        System.out.println("Implementación del método 2");
+    }
+}
+
+Crear la clase principal DemoMain que haga uso de la clase Demo:
+
+```java
+public class DemoMain {
+
+    public static void main(String arg[])
+    {
+        MiInterfaz mi = new Demo();
+	mi.metodo1();
+	mi.metodo2();
+    }
+    
+}
+```
+
 __Ejercicio 2__
 
 Ejercicio de Polimorfismo de clases y herencias.
