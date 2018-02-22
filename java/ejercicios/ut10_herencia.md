@@ -10,10 +10,6 @@ __Ejercicio 2__
 
 Construir una clase _final Math2_ que amplíe las declaraciones de métodos estáticos de la clase Math y que incluya funciones que devuelvan, respectivamente, el _máximo_, el _mínimo_, el _sumatorio_, la _media aritmética_ y la _media geométrica_ de un array de números reales dado como parámetro.
 
-__Ejercicio 3__
-
-Escribir un programa que genere un array que pueda almacenar objetos de las clases Integer, Float, Double y Byte. Pista: Number[]x = new Number[];
-
 ## Resolución de los ejercicios
 
 __Ejercicio 1__
@@ -38,7 +34,7 @@ public class Precio {
         euros = x;
     }
 }
-
+```
 
 Definición de la clase _Factura_:
 

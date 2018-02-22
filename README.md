@@ -15,23 +15,17 @@
 4. Otras sentencias
 5. Métodos y sentencia return \([Apuntes](./java/apuntes/ut07_metodos_y_sentencia_return.md) - [Ejercicios](./java/ejercicios/ut07_metodos_y_sentencia_return.md) - [Practica a Entregar](./java/practicas_a_entregar/ut07_metodos_y_sentencia_return.md)\)
 
-
 **BLOQUE III**
 
 1. Objetos y clases \([Apuntes](./java/apuntes/ut09_objetos_y_clases.md) - [Ejercicios](./java/ejercicios/ut09_objetos_y_clases.md) - [Practica a Entregar](./java/practicas_a_entregar/ut09_objetos_y_clases.md)\)
-2. Algunas clases estándar \(I\)
-3. Algunas clases estándar \(II\)
-4. Tipos de atributos
-5. Constructores
-6. Tipos de métodos
-7. Parámetros y argumentos
+2. Herencia \([Apuntes](./java/apuntes/ut10_herencia.md) - [Ejercicios](./java/ejercicios/ut10_herencia.md)\)
+
 
 **BLOQUE IV**
 
-1. Herencia
-2. Otras relaciones entre objetos
-3. Interfaces
-4. Paquetes
+1. Otras relaciones entre objetos
+2. Interfaces
+3. Paquetes
 
 **BLOQUE V**
 
