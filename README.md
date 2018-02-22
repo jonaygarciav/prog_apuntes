@@ -19,7 +19,7 @@
 
 1. Objetos y clases \([Apuntes](./java/apuntes/ut09_objetos_y_clases.md) - [Ejercicios](./java/ejercicios/ut09_objetos_y_clases.md) - [Practica a Entregar](./java/practicas_a_entregar/ut09_objetos_y_clases.md)\)
 2. Herencia \([Apuntes](./java/apuntes/ut10_herencia.md) - [Ejercicios](./java/ejercicios/ut10_herencia.md)\)
-1. Polimorfismo \([Apuntes](./java/apuntes/ut11_interfaces.md) - [Ejercicios](./java/ejercicios/ut11_interfaces.md) - [Practica a Entregar](./java/practicas_a_entregar/ut11_interfaces.md)\)
+1. Interfaces y Polimorfismo \([Apuntes](./java/apuntes/ut11_interfaces.md) - [Ejercicios](./java/ejercicios/ut11_interfaces.md) - [Practica a Entregar](./java/practicas_a_entregar/ut11_interfaces.md)\)
 
 
 
