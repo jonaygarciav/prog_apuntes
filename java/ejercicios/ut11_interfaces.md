@@ -2,7 +2,7 @@
 
 ## Ejercicios
 
-__Ejercicio 1__
+__Ejercicio 2__
 
 Ejercicio de Polimorfismo de clases y herencias.
 
@@ -106,6 +106,146 @@ Rocinante dice ¡Iiiiih!
 Montesa dice ¡Muuuu!
 Dolly dice ¡Beeee!
 ```
+
+__Ejercicio 3__
+
+Ejercicio de Herencia Múltiple usando Interfaces.
+
+
+En este ejercicio definiremos cuatro interfaces: IAdd, ISub, IMul e IDiv. Cada implementación contiene la definición de un método:
+
+* IAdd: define el método add().
+* ISub: define el método sub().
+* IMul: define el método mul().
+* IDiv: define el método div().
+
+```java
+interface IAdd
+{
+	public int add(int a,int b);
+}
+
+interface ISub
+{
+	public int sub(int a,int b);
+}
+
+interface IMul
+{
+	public int mul(int a,int b);
+}
+
+interface IDiv
+{
+	public int div(int a,int b);
+}
+```
+
+Posteriormente definiremos 4 clases que serán las implementaciones de las interfaces:
+
+* Al implementar la clase Add a partir de la interfaz IAdd, debe definir obligatoriamente el método add(), en este caso este método realiza la suma de dos números pasados como parámetros.
+* Al implementar la clase Sub a partir de la interfaz ISub, debe definir obligatoriamente el método sub(), en este caso este método realiza la resta de dos números pasados como parámetros.
+* Al implementar la clase Mul a partir de la interfaz IMul, debe definir obligatoriamente el método mul(), en este caso este método realiza la multiplicación de dos números pasados como parámetros.
+* Al implementar la clase Div a partir de la interfaz IDiv, debe definir obligatoriamente el método div(), en este caso este método realiza la división de dos números pasados como parámetros:
+
+```java
+class Add implements IAdd {
+
+    public int add(int a,int b) {
+	int result  =  a+b;
+	return result;
+    }
+    
+}
+
+class Sub implements ISub {
+
+    public int sub(int a,int b) {
+	int result  =  a-b;
+	return result;
+    }
+
+}
+
+class Mul implements IMul {
+
+    public int mul(int a,int b)
+    {
+	int result  =  a*b;
+	return result;
+    }
+    
+}
+
+class Div implements IDiv {
+
+    public int div(int a,int b)
+    {
+	int result  =  a/b;
+	return result;
+    }
+    
+}
+```
+
+A continuación generamos la clase Calculadora, que se define a partir de las interfaces IAdd, ISub, IMul, e IDiv. Esta clase tiene los siguiente métodos:
+
+* add(): crea un objeto A de la clase Add y llama al método A.add() para calcular la suma.
+* sub(): crea un objeto S de la clase Sub y llama al método S.sub() para calcular la resta.
+* mul(): crea un objeto M de la clase Mul y llama al método M.mul() para calcular la multiplicación.
+* div(): crea un objeto D de la clase Div y llama al método D.div() para calcular la división.
+
+```java
+public class Calculadora implements IAdd,ISub,IMul,IDiv {
+
+	public int add(int a,int b)
+	{
+		Add A  =  new Add();
+		return A.add(a, b);
+	}
+	
+	public int sub(int a,int b)
+	{
+		Sub S  =  new Sub();
+		return S.sub(a, b);
+	}
+
+	public int mul(int a,int b)
+	{
+		Mul M  =  new Mul();
+		return M.mul(a, b);
+	}
+
+	public int div(int a,int b)
+	{
+		Div D  =  new Div();
+		return D.div(a, b);
+	}
+}
+```
+
+La clase Calculadora también se crea a partir de las interfaces IAdd, ISub, IMul, e IDiv.
+
+A continuación la clase Principal que llama a las clases anteriores:
+
+```java
+public class CalculadoraMain {
+
+    public static void main(String[] args) {
+		
+	Calculadora c  =  new Calculadora();
+	System.out.println(c.add(10, 20));
+	System.out.println(c.sub(10, 20));
+	System.out.println(c.mul(10, 20));
+	System.out.println(c.div(10, 20));
+	
+    }
+
+}
+```
+
+
+
 
 
 
