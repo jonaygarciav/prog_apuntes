@@ -16,7 +16,7 @@ interface MiInterfaz
 
 Definir la clase Demo a partir de la interfaz MiInterfaz: 
 
-```
+```java
 class Demo implements MyInterface
 {
 
@@ -30,6 +30,7 @@ class Demo implements MyInterface
         System.out.println("Implementación del método 2");
     }
 }
+```
 
 Crear la clase principal DemoMain que haga uso de la clase Demo:
 
@@ -39,8 +40,8 @@ public class DemoMain {
     public static void main(String arg[])
     {
         MiInterfaz mi = new Demo();
-	mi.metodo1();
-	mi.metodo2();
+        mi.metodo1();
+        mi.metodo2();
     }
     
 }
