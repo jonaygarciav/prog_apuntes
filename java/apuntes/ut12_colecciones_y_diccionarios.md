@@ -246,12 +246,14 @@ import java.util.ArrayList;
 public class EjemploArrayList04 {
     public static void main(String[] args) {
         ArrayList<String> a = new ArrayList<String>();
+        
         a.add("rojo");
         a.add("verde");
         a.add("azul");
         a.add("blanco");
         a.add("amarillo");
         a.add("blanco");
+        
         System.out.println("Contenido de la lista: ");
         for(String color: a) {
             System.out.println(color);
@@ -280,6 +282,33 @@ public class EjemploArrayList04 {
 }
 ```
 
+El resultado de ejecutar el código anterior es el siguiente:
+
+```bash
+Contenido de la lista: 
+rojo
+verde
+azul
+blanco
+amarillo
+blanco
+
+El blanco está en la lista de colores
+
+Contenido de la lista después de quitar la primera ocurrencia del color blanco: 
+rojo
+verde
+azul
+amarillo
+blanco
+
+Contenido de la lista después de quitar el elemento de la posición 2: 
+rojo
+verde
+amarillo
+blanco
+```
+
 A continuación se muestra un ejemplo en el que se "machaca" una posición del _ArrayList_. Al hacer _a.set(2, "turquesa")_, se borra lo que hubiera en la posición 2 y se coloca el valor "turquesa". Sería equivalente a hacer a[2] = "turquesa" en caso de que a fuese un array tradicional en lugar de un ArrayList.
 
 ```java
@@ -289,7 +318,7 @@ A continuación se muestra un ejemplo en el que se "machaca" una posición del _
 * @author Jonay Garcia
 */
 import java.util.ArrayList;
-public class EjemploArrayList06 {
+public class EjemploArrayList05 {
     public static void main(String[] args) {
         ArrayList<String> a = new ArrayList<String>();
         
@@ -311,6 +340,24 @@ public class EjemploArrayList06 {
         }
     }
 }
+```
+
+El resultado de ejecutar el código anterior es:
+
+```bash
+Contenido del vector: 
+rojo
+verde
+azul
+blanco
+amarillo
+
+Contenido del vector después de machacar la posición 2: 
+rojo
+verde
+turquesa
+blanco
+amarillo
 ```
 
 El método add permite añadir elementos a un ArrayList como ya hemos visto. Por ejemplo, a.add("amarillo") añade el elemento "amarillo" al final de a. Este método se puede utilizar también con un índice de la forma a.add(1, "turquesa"). En este caso, lo que se hace es insertar en la posción indicada. Lo mejor de todo es que el ArrayList se reestructura de forma automática desplazando el resto de elementos:
