@@ -740,7 +740,7 @@ Los elementos de m son:
 {921=Cindy Nero, 537=Alan Brito, 219=Víctor Tilla, 924=Amalia Núñez, 700=César Vázquez, 605=Esteban Quito }
 ```
 
-Para extraer valores se utiliza el método __get()__. Se proporciona una clave y el  diccionario nos devuelve el valor, igual que un diccionario de verdad. Si no existe ninguna entrada con la clave que se indica, se devuelve null.
+Para extraer valores se utiliza el método __get()__. Se proporciona una clave y el  diccionario nos devuelve el valor, igual que un diccionario de verdad. Si no existe ninguna entrada con la clave que se indica, se devuelve _null_.
 
 ```java
 /**
@@ -749,7 +749,7 @@ Para extraer valores se utiliza el método __get()__. Se proporciona una clave y
  * @author Jonay Garcia
  */
 import java.util.HashMap;
-public class EjemploHashMap02 {
+public class EjemploHashMap011 {
     public static void main(String[] args) {
         HashMap<Integer, String> m = new HashMap<Integer, String>();
         
@@ -767,6 +767,14 @@ public class EjemploHashMap02 {
 }
 ```
 
+El resultado de ejecutar el programa anterior es el siguiente:
+
+```bash
+Cindy Nero
+Esteban Quito 
+null
+```
+
 ¿Y si queremos extraer todas las entradas? Tenemos varias opciones. Podemos usar el método __print()__ directamente sobre el diccionario de la forma _System.out.print(diccionario)_ como vimos en un ejemplo anterior; de esta manera se muestran por pantalla todas las entradas encerradas entre llaves. También podemos convertir el diccionario en un entrySet (conjunto de entradas) y mostrarlo con print; de esta forma se obtiene una salida por pantalla muy parecida a la primera (en lugar de llaves se muestran corchetes). Otra opción es utilizar un for para recorrer una a una todas las entradas.
 
 En este último caso hay que convertir el diccionario en un entrySet ya que no se pueden sacar las entradas directamente del diccionario. Estas dos últimas opciones se ilustran en el siguiente ejemplo.
@@ -779,7 +787,7 @@ En este último caso hay que convertir el diccionario en un entrySet ya que no s
  */
 import java.util.HashMap;
 import java.util.Map;
-public class EjemploHashMap03 {
+public class EjemploHashMap02 {
     public static void main(String[] args) {
         HashMap<Integer, String> m = new HashMap<Integer, String>();
 
@@ -792,13 +800,28 @@ public class EjemploHashMap03 {
 
         System.out.println("Todas las entradas del diccionario extraídas con entrySet:");
         System.out.println(m.entrySet());
+        
         System.out.println("\nEntradas del diccionario extraídas una a una:");
-
         for (Map.Entry pareja: m.entrySet()) {
             System.out.println(pareja);
         }
     }
 }
+```
+
+El resultado de ejecutar el programa anterior es el siguiente:
+
+```bash
+Todas las entradas del diccionario extraídas con entrySet:
+[921=Cindy Nero, 537=Alan Brito, 219=Víctor Tilla, 924=Amalia Núñez, 700=César Vázquez, 605=Esteban Quito ]
+
+Entradas del diccionario extraídas una a una:
+921=Cindy Nero
+537=Alan Brito
+219=Víctor Tilla
+924=Amalia Núñez
+700=César Vázquez
+605=Esteban Quito 
 ```
 
 A continuación se muestra el uso de los métodos _getKey()_ y _getValue()_ que extraen la  clave y el valor de una entrada respectivamente.
@@ -810,7 +833,7 @@ A continuación se muestra el uso de los métodos _getKey()_ y _getValue()_ que 
  * @author Jonay Garcia
  */
 import java.util.*;
-public class EjemploHashMap04 {
+public class EjemploHashMap03 {
     public static void main(String[] args) {
         HashMap<Integer, String> m = new HashMap<Integer, String>();
 
@@ -830,6 +853,19 @@ public class EjemploHashMap04 {
 }
 ```
 
+El resultado de ejecutar el programa anterior es el siguiente:
+
+```bash
+Código	Nombre
+------	-------------
+921	Cindy Nero
+537	Alan Brito
+219	Víctor Tilla
+924	Amalia Núñez
+700	César Vázquez
+605	Esteban Quito 
+```
+
 En el último programa de ejemplo hacemos uso del método _containsKey()_ que nos servirá para saber si existe o no una determinada clave en un diccionario y del método _get()_ que, como ya hemos visto, sirve para extraer un valor a partir de su clave.
 
 ```java
@@ -839,8 +875,9 @@ En el último programa de ejemplo hacemos uso del método _containsKey()_ que no
  * @author Jonay Garcia
  */
 import java.util.*;
-public class EjemploHashMap05 {
+public class EjemploHashMap04 {
     public static void main(String[] args) {
+	Scanner sc = new Scanner(System.in);
         HashMap<Integer, String> m = new HashMap<Integer, String>();
         
         m.put(924, "Amalia Núñez");
@@ -852,7 +889,7 @@ public class EjemploHashMap05 {
         
         System.out.print("Por favor, introduzca un código: ");
         
-        int codigoIntroducido = Integer.parseInt(System.console().readLine());
+        int codigoIntroducido = sc.nextInt();
         if (m.containsKey(codigoIntroducido)) {
             System.out.print("El código " + codigoIntroducido + " corresponde a ");
             System.out.println(m.get(codigoIntroducido));
@@ -860,6 +897,8 @@ public class EjemploHashMap05 {
         else {
             System.out.print("El código introducido no existe.");
         }
+        
+        sc.close();
     }
 }
 ```
