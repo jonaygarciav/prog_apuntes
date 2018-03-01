@@ -490,71 +490,73 @@ public class Gato implements Comparable<Gato> {
 
 Imagina un diccionario inglés-español. Queremos saber qué significa la palabra "stiff". Sabemos que en el diccionario hay muchas entradas y en cada entrada tenemos una palabra en inglés y su correspondiente traducción al español. Buscando por la "s" encontramos que  "stiff" significa "agujetas". 
 
-Un diccionario en Java funciona exactamente igual. Contiene una serie de elementos que son las entradas que a su vez están formadas por un par (clave, valor). La clave (key) permite acceder al valor. No puede haber claves duplicadas. En el ejemplo anterior, la clave sería “stiff ” y el valor “agujetas”.
+Un _diccionario_ en Java funciona exactamente igual. Contiene una serie de elementos que son las entradas que a su vez están formadas por un par _clave - valor_. La _clave_ (key) permite acceder al _valor_. No puede haber claves duplicadas. En el ejemplo anterior, la clave sería "stiff" y el valor "agujetas".
 
-Java dispone de varios tipos de diccionarios: HashMap, EnumMap, Hashtable, IdentityHashMap,
-LinkedHashMap, etc. Nosotros estudiaremos el diccionario HashMap.
-10.2.1 Principales métodos de HashMap
+Java dispone de varios tipos de diccionarios: _HashMap_, _EnumMap_, _Hashtable_, _IdentityHashMap_, _LinkedHashMap_, etc. Nosotros estudiaremos el diccionario __HashMap__.
+
+### Principales métodos de HashMap
+
 Algunos de los métodos más importantes de la clase HasMap son:
-get(clave)
-Obtiene el valor correspondiente a una clave. Devuelve null si no existe esa clave
-en el diccionario.
-put(clave, valor)
-Añade un par (clave, valor) al diccionario. Si ya había un valor para esa clave, se
-machaca.
-keySet()
-Devuelve un conjunto (set) con todas las claves.
-Colecciones y diccionarios 147
-values()
-Devuelve una colección con todos los valores (los valores pueden estar duplicados
-a diferencia de las claves).
-entrySet()
-Devuelve una colección con todos los pares (clave, valor).
-containsKey(clave)
-Devuelve true si el diccionario contiene la clave indicada y false en caso contrario.
-getKey()
-Devuelve la clave de la entrada. Se aplica a una sola entrada del diccionario (no
-al diccionario completo), es decir a una pareja (clave, valor).
+
+| Método | Descripción |
+|--------|-------------|
+| get(clave) | Obtiene el valor correspondiente a una clave. Devuelve null si no existe esa clave en el diccionario. |
+| put(clave, valor) | Añade un par (clave, valor) al diccionario. Si ya había un valor para esa clave, se machaca.|
+| keySet() | Devuelve un conjunto (set) con todas las claves. |
+| values() | Devuelve una colección con todos los valores (los valores pueden estar duplicados a diferencia de las claves). |
+| entrySet() | Devuelve una colección con todos los pares (clave, valor).
+| containsKey(clave) | Devuelve true si el diccionario contiene la clave indicada y false en caso contrario. |
+| getKey() | Devuelve la clave de la entrada. Se aplica a una sola entrada del diccionario (no al diccionario completo), es decir a una pareja (clave, valor). |
+| getValue() | Devuelve el contenido de la entrada. Se aplica a una entrada del diccionario (no al diccionario completo), es decir a una pareja (clave, valor). |
+
 Por ejemplo:
+
+```java
 for (Map.Entry pareja: m.entrySet()) {
-System.out.println(pareja.getKey());
+    System.out.println(pareja.getKey());
 }
-getValue()
-Devuelve el contenido de la entrada. Se aplica a una entrada del diccionario (no
-al diccionario completo), es decir a una pareja (clave, valor).
-Por ejemplo:
+
 for (Map.Entry pareja: m.entrySet()) {
-System.out.println(pareja.getValue());
+    System.out.println(pareja.getValue());
 }
-10.2.2 Definición de un HasMap e inserción, borrado y modificación de entradas
-Al declarar un diccionario hay que indicar los tipos tanto de la clave como del valor.
-En el siguiente ejemplo definimos el diccionario m que tendrá como clave un número
-entero y una cadena de caracteres como valor. Este diccionario se declara de esta
-forma:
+```
+
+### Definición de un HasMap e inserción, borrado y modificación de entradas
+
+Al declarar un diccionario hay que indicar los tipos tanto de la clave como del valor. En el siguiente ejemplo definimos el diccionario m que tendrá como clave un número entero y una cadena de caracteres como valor. Este diccionario se declara de esta forma:
+
+```java
 HashMap<Integer, String> m = new HashMap<Integer, String>();
+```
 No hay que olvidar importar la clase al principio del programa:
+
+```java
 import java.util.HashMap;
-Para insertar una entrada en el diccionario se utiliza el método put indicando siempre
-la clave y el valor. Veamos un ejemplo completo.
-Colecciones y diccionarios 148
+```
+
+Para insertar una entrada en el diccionario se utiliza el método put indicando siempre la clave y el valor. Veamos un ejemplo completo.
+
+```java
 /**
-* Ejemplo de uso de la clase HasMap
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase HasMap
+ *
+ * @author Jonay Garcia
+ */
 import java.util.HashMap;
 public class EjemploHashMap01 {
-public static void main(String[] args) {
-HashMap<Integer, String> m = new HashMap<Integer, String>();
-m.put(924, "Amalia Núñez");
-m.put(921, "Cindy Nero");
-m.put(700, "César Vázquez");
-m.put(219, "Víctor Tilla");
-m.put(537, "Alan Brito");
-m.put(605, "Esteban Quito ");
-System.out.println("Los elementos de m son: \n" + m);
+    public static void main(String[] args) {
+        HashMap<Integer, String> m = new HashMap<Integer, String>();
+        m.put(924, "Amalia Núñez");
+        m.put(921, "Cindy Nero");
+        m.put(700, "César Vázquez");
+        m.put(219, "Víctor Tilla");
+        m.put(537, "Alan Brito");
+        m.put(605, "Esteban Quito ");
+        System.out.println("Los elementos de m son: \n" + m);
+    }
 }
-}
+```
+
 Para extraer valores se utiliza el método get. Se proporciona una clave y el diccionario
 nos devuelve el valor, igual que un diccionario de verdad. Si no existe ninguna entrada
 con la clave que se indica, se devuelve null.
