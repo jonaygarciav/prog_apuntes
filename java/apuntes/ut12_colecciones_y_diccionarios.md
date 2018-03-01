@@ -427,21 +427,24 @@ por esta otra:
 public class Gato implements Comparable<Gato>
 ```
 
-Lo siguiente y no menos importante es definir el método __compareTo()__. Este método debe devolver un 0 si los elementos que se comparan son iguales, un número negativo si el primer  elemento que se compara es menor que el segundo y un número positivo en caso contrario. Afortunadamente, las clases String, Integer, Double, etc. ya tienen implementado su propio método compareTo así que tenemos hecho lo más difícil. Lo
-único que deberemos escribir en nuestro código es un compareTo con los atributos que
-queremos comparar.
-En el caso que nos ocupa, si queremos ordenar los gatos por nombre, tendremos que
-implementar el compareTo de la clase Gato de tal forma que nos devuelva el resultado
-del compareTo de los nombres de los gatos que estamos comparando, de la siguiente
-manera:
+Lo siguiente y no menos importante es definir el método __compareTo()__. Este método debe devolver un 0 si los elementos que se comparan son iguales, un número negativo si el primer  elemento que se compara es menor que el segundo y un número positivo en caso contrario. Afortunadamente, las clases String, Integer, Double, etc. ya tienen implementado su propio método compareTo así que tenemos hecho lo más difícil. Lo único que deberemos escribir en nuestro código es un __compareTo()__ con los atributos que queremos comparar.
+
+En el caso que nos ocupa, si queremos ordenar los gatos por nombre, tendremos que implementar el compareTo de la clase Gato de tal forma que nos devuelva el resultado del compareTo de los nombres de los gatos que estamos comparando, de la siguiente manera:
+
+```java
 public int compareTo(Gato g) {
-return (this.nombre).compareTo(g.getNombre());
+    return (this.nombre).compareTo(g.getNombre());
 }
-Si en lugar de ordenar por nombre, quisiéramos ordenar por raza, el método compareTo
-de la clase Gato sería el siguiente:
+```
+
+Si en lugar de ordenar por nombre, quisiéramos ordenar por raza, el método __compareTo()__ de la clase Gato sería el siguiente:
+
+```java
 public int compareTo(Gato g) {
-return (this.raza).compareTo(g.getRaza());
+    return (this.raza).compareTo(g.getRaza());
 }
+```
+
 A continuación se muestra la definición completa de la clase Gato.
 /**
 * Definición de la clase Gato
