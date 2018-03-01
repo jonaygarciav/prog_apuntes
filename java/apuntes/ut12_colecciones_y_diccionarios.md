@@ -172,6 +172,17 @@ public class EjemploArrayList03 {
 }
 ```
 
+El resultado de ejecutar el código anterior es el siguiente:
+
+```bash
+Contenido de la lista: 
+rojo
+verde
+azul
+blanco
+amarillo
+```
+
 Si estás acostumbrado al for clásico, habrás visto que es muy sencillo recorrer todos los elementos del _ArrayList_. No obstante, al trabajar con colecciones es recomendable usar el for al estilo _foreach_ como se muestra en el siguiente ejemplo. Como puedes  ver, la sintaxis es más corta y no se necesita crear un índice para recorrer la estructura.
 
 ```java
@@ -200,6 +211,17 @@ public class EjemploArrayList031 {
 }
 ```
 
+El resultado de ejecutar el código anterior es:
+
+```bash
+Contenido de la lista: 
+rojo
+verde
+azul
+blanco
+amarillo
+```
+
 Fíjate en estas líneas:
 
 ```java
@@ -221,7 +243,7 @@ Es importante destacar que el ArrayList se reestructura de forma automática des
 * @author Jonay Garcia
 */
 import java.util.ArrayList;
-public class EjemploArrayList05 {
+public class EjemploArrayList04 {
     public static void main(String[] args) {
         ArrayList<String> a = new ArrayList<String>();
         a.add("rojo");
