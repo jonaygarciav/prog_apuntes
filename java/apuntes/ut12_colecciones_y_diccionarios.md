@@ -187,10 +187,10 @@ Si estás acostumbrado al for clásico, habrás visto que es muy sencillo recorr
 
 ```java
 /**
-* Ejemplo de uso de la clase ArrayList
-*
-* @author Jonay Garcia
-*/
+ * Ejemplo de uso de la clase ArrayList
+ *
+ * @author Jonay Garcia
+ */
 import java.util.ArrayList;
 public class EjemploArrayList031 {
     public static void main(String[] args) {
@@ -313,10 +313,10 @@ A continuación se muestra un ejemplo en el que se "machaca" una posición del _
 
 ```java
 /**
-* Ejemplo de uso de la clase ArrayList
-*
-* @author Jonay Garcia
-*/
+ * Ejemplo de uso de la clase ArrayList
+ *
+ * @author Jonay Garcia
+ */
 import java.util.ArrayList;
 public class EjemploArrayList05 {
     public static void main(String[] args) {
