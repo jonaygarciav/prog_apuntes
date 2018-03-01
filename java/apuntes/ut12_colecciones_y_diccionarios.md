@@ -360,7 +360,7 @@ blanco
 amarillo
 ```
 
-El método add permite añadir elementos a un ArrayList como ya hemos visto. Por ejemplo, a.add("amarillo") añade el elemento "amarillo" al final de a. Este método se puede utilizar también con un índice de la forma a.add(1, "turquesa"). En este caso, lo que se hace es insertar en la posción indicada. Lo mejor de todo es que el ArrayList se reestructura de forma automática desplazando el resto de elementos:
+El método __add()__ permite añadir elementos a un ArrayList como ya hemos visto. Por ejemplo, a.add("amarillo") añade el elemento "amarillo" al final de a. Este método se puede utilizar también con un índice de la forma a.add(1, "turquesa"). En este caso, lo que se hace es insertar en la posción indicada. Lo mejor de todo es que el ArrayList se reestructura de forma automática desplazando el resto de elementos:
 
 ```java
 /**
@@ -369,7 +369,7 @@ El método add permite añadir elementos a un ArrayList como ya hemos visto. Por
  * @author Jonay Garcia
  */
 import java.util.ArrayList;
-public class EjemploArrayList07 {
+public class EjemploArrayList06 {
     public static void main(String[] args) {
         ArrayList<String> a = new ArrayList<String>();
 
@@ -393,6 +393,25 @@ public class EjemploArrayList07 {
         }
     }
 }
+```
+
+El resultado de ejecutar el código anterior es:
+
+```bash
+Contenido de la lista: 
+rojo
+verde
+azul
+blanco
+amarillo
+
+Contenido del vector después de insertar en la posición 1: 
+rojo
+turquesa
+verde
+azul
+blanco
+amarillo
 ```
 
 ### ArrayList de objetos
