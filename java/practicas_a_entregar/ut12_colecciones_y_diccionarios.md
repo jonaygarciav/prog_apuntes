@@ -41,7 +41,7 @@ Crear un menú interactivo que permita realizar las siguientes operaciones:
 * eliminar(): eliminar una persona de la lista.
 * contar(): muestra el número de personas de la lista.
 
-Cada opción del menú debe llamar a un método de la clase _Lista_ que implemente dicha funcionalidad.
+> __Nota__: Cada opción del menú debe llamar a un método de la clase _Lista_ que implemente dicha funcionalidad.
 
 __Opcional__: Añadir las siguientes opciones al menú:
 
