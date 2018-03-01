@@ -55,7 +55,7 @@ A continuación se muestra un ejemplo en el que se puede ver cómo se declara un
  */
 import java.util.ArrayList;
 
-public class EjemploArrayListString {
+public class EjemploArrayList01 {
     public static void main(String[] args) {
     
         // Declaración e inicialización de un objeto de tipo ArrayList
@@ -104,7 +104,7 @@ En el siguiente ejemplo se muestra un ArrayList de números enteros:
  * @author Jonay Garcia
  */
 import java.util.ArrayList;
-public class EjemploArrayListEnteros {
+public class EjemploArrayList02 {
     public static void main(String[] args) {
         ArrayList<Integer> a = new ArrayList<Integer>();
         a.add(18);
@@ -133,7 +133,7 @@ En el siguiente ejemplo podemos ver cómo extraer todos los elementos de una lis
  * @author Jonay Garcia
  */
 import java.util.ArrayList;
-public class EjemploArrayList02 {
+public class EjemploArrayList03 {
     public static void main(String[] args) {
     
         ArrayList<String> colores = new ArrayList<String>();
@@ -162,7 +162,7 @@ Si estás acostumbrado al for clásico, habrás visto que es muy sencillo recorr
 * @author Jonay Garcia
 */
 import java.util.ArrayList;
-public class EjemploArrayList03 {
+public class EjemploArrayList04 {
     public static void main(String[] args) {
         ArrayList<String> colores = new ArrayList<String>();
         
@@ -202,7 +202,7 @@ Es importante destacar que el ArrayList se reestructura de forma automática des
 * @author Jonay Garcia
 */
 import java.util.ArrayList;
-public class EjemploArrayList04 {
+public class EjemploArrayList05 {
     public static void main(String[] args) {
         ArrayList<String> a = new ArrayList<String>();
         a.add("rojo");
@@ -248,7 +248,7 @@ A continuación se muestra un ejemplo en el que se “machaca” una posición d
 * @author Jonay Garcia
 */
 import java.util.ArrayList;
-public class EjemploArrayList05 {
+public class EjemploArrayList06 {
     public static void main(String[] args) {
         ArrayList<String> a = new ArrayList<String>();
         
@@ -285,7 +285,7 @@ reestructura de forma automática desplazando el resto de elementos:
 * @author Jonay Garcia
 */
 import java.util.ArrayList;
-public class EjemploArrayList06 {
+public class EjemploArrayList07 {
     public static void main(String[] args) {
         ArrayList<String> a = new ArrayList<String>();
 
