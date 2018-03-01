@@ -317,60 +317,75 @@ Una colección _ArrayList_ puede contener objetos que son instancias de clases d
 
 En el siguiente ejemplo, definimos una lista de gatos. En cada celda de la lista se almacenará un objeto de la clase Gato.
 
+```java
 /**
-* Uso de un ArrayList de objetos
-*
-* @author Luis José Sánchez
-*/
+ * Uso de un ArrayList de objetos
+ *
+ * @author Jonay Garcia
+ */
 import java.util.ArrayList;
-public class EjemploArrayList07 {
-public static void main(String[] args) {
-ArrayList<Gato> g = new ArrayList<Gato>();
-g.add(new Gato("Garfield", "naranja", "mestizo"));
-g.add(new Gato("Pepe", "gris", "angora"));
-g.add(new Gato("Mauri", "blanco", "manx"));
-g.add(new Gato("Ulises", "marrón", "persa"));
-System.out.println("\nDatos de los gatos:\n");
-for (Gato gatoAux: g) {
-System.out.println(gatoAux+"\n");
+public class EjemploArrayList08 {
+    public static void main(String[] args) {
+        ArrayList<Gato> g = new ArrayList<Gato>();
+        g.add(new Gato("Garfield", "naranja", "mestizo"));
+        g.add(new Gato("Pepe", "gris", "angora"));
+        g.add(new Gato("Mauri", "blanco", "manx"));
+        g.add(new Gato("Ulises", "marrón", "persa"));
+        System.out.println("\nDatos de los gatos:\n");
+        for (Gato gatoAux: g) {
+            System.out.println(gatoAux+"\n");
+        }
+    }
 }
-}
-}
+```
+
 En el siguiente apartado se muestra la definición de la clase Gato.
-10.1.4 Ordenación de un ArrayList
-Los elementos de una lista se pueden ordenar con el método sort. El formato es el
-siguiente:
+
+### Ordenación de un ArrayList
+
+Los elementos de una lista se pueden ordenar con el método sort. El formato es el siguiente:
+
+```java
 Collections.sort(lista);
-Observa que sort es un método de clase que está definido en Collections. Para poder
-utilizar este método es necesario incluir la línea
+```
+
+Observa que sort es un método de clase que está definido en Collections. Para poder utilizar este método es necesario incluir la siguiente línea al principio del programa:
+
+```java
 import java.util.Collections;
-al principio del programa. A continuación se muestra un ejemplo del uso de sort.
-Colecciones y diccionarios 143
+```
+
+A continuación, se muestra un ejemplo del uso de sort:
+
+```java
 /**
-* Ordenación de un ArrayList
-*
-* @author Luis José Sánchez
-*/
+ * Ordenación de un ArrayList
+ *
+ * @author Jonay Garcia
+ */
 import java.util.Collections;
 import java.util.ArrayList;
 public class EjemploArrayList071 {
-public static void main(String[] args) {
-ArrayList<Integer> a = new ArrayList<Integer>();
-a.add(67);
-a.add(78);
-a.add(10);
-a.add(4);
-System.out.println("\nNúmeros en el orden original:");
-for (int numero: a) {
-System.out.println(numero);
+    public static void main(String[] args) {
+        ArrayList<Integer> a = new ArrayList<Integer>();
+        a.add(67);
+        a.add(78);
+        a.add(10);
+        a.add(4);
+        System.out.println("\nNúmeros en el orden original:");
+        for (int numero: a) {
+            System.out.println(numero);
+        }
+
+        Collections.sort(a);
+        System.out.println("\nNúmeros ordenados:");
+        for (int numero: a) {
+            System.out.println(numero);
+        }
+    }
 }
-Collections.sort(a);
-System.out.println("\nNúmeros ordenados:");
-for (int numero: a) {
-System.out.println(numero);
-}
-}
-}
+```
+
 También es posible ordenar una lista de objetos. En este caso es necesario indicar el
 criterio de ordenación en la definición de la clase. En el programa principal, se utiliza
 el método sort igual que si se tratase de una lista de números o de palabras como se
