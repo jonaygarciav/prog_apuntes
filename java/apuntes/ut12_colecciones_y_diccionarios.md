@@ -85,6 +85,16 @@ public class EjemploArrayList01 {
 }
 ```
 
+El resultado de ejecutar el programa anterior es el siguiente:
+
+```bash
+Nº de elementos: 0
+Nº de elementos: 3
+Nº de elementos: 4
+El elemento que hay en la posición 0 es rojo
+El elemento que hay en la posición 3 es blanco
+```
+
 Observa que al crear un objeto de la clase _ArrayList_ hay que indicar el tipo de dato que se almacenará en las celdas de esa lista. Para ello se utilizan los caracteres _<_ y _>_. No hay que olvidar los paréntesis del final:
 
 ```java
@@ -118,6 +128,13 @@ public class EjemploArrayList02 {
 }
 ```
 
+El resultado de ejecutar el programa anterior es el siguiente:
+
+```bash
+Nº de elementos: 3
+El elemento que hay en la posición 1 es 22
+```
+
 Se define la estructura de la siguiente manera:
 
 ```java
@@ -126,7 +143,7 @@ ArrayList<Integer> a = new ArrayList<Integer>();
 
 Fíjate que no se utiliza el tipo simple _int_ sino el __wrapper__ _Integer_. Recuerda que los  __wrapper__ son clases que engloban a los tipos primitivos de Java y les añaden nuevas funcionalidades (p. ej. permiten tratar a las variables numéricas como objetos). El wrapper de _int_ es _Integer_, el de _float_ es _Float_, el de _double_ es _Double_, el de _long_ es _Long_, el de _boolean_ es _Boolean_ y el de _char_ es _Character_.
 
-En el siguiente ejemplo podemos ver cómo extraer todos los elementos de una lista a la manera tradicional, con un bulce for:
+En el siguiente ejemplo podemos ver cómo extraer todos los elementos de una lista a la manera tradicional, con un bucle for:
 
 ```java
 /**
@@ -164,7 +181,7 @@ Si estás acostumbrado al for clásico, habrás visto que es muy sencillo recorr
 * @author Jonay Garcia
 */
 import java.util.ArrayList;
-public class EjemploArrayList04 {
+public class EjemploArrayList031 {
     public static void main(String[] args) {
         ArrayList<String> a = new ArrayList<String>();
         
