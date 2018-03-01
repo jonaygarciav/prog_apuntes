@@ -1,99 +1,100 @@
-10. Colecciones y diccionarios
-10.1 Colecciones: la clase ArrayList
-Una colección en Java es una estructura de datos que permite almacenar muchos
-valores del mismo tipo; por tanto, conceptualmente es prácticamente igual que un
-array. Según el uso y según si se permiten o no repeticiones, Java dispone de un amplio
-catálogo de colecciones: ArrayList (lista), ArrayBlockingQueue (cola), HashSet (conjunto),
-Stack (pila), etc. En este manual estudiaremos la colección ArrayList.
-Un ArrayList es una estructura en forma de lista que permite almacenar elementos del
-mismo tipo (pueden ser incluso objetos); su tamaño va cambiando a medida que se
-añaden o se eliminan esos elementos.
-Nos podemos imaginar un ArrayList como un conjunto de celdas o cajoncitos donde se
-guardan los valores, exactamente igual que un array convencional. En la práctica será
-más fácil trabajar con un ArrayList.
-En capítulos anteriores hemos podido comprobar la utilidad del array; es un recurso
-imprescindible que cualquier programador debe manejar con soltura. No obstante, el
-array presenta algunos inconvenientes. Uno de ellos es la necesidad de conocer el
-tamaño exacto en el momento de su creación. Una colección, sin embargo, se crea sin
-que se tenga que especificar el tamaño; posteriormente se van añadiendo y quitando
-elementos a medida que se necesitan.
-Trabajando con arrays es frecuente cometer errores al utilizar los índices; por ejemplo
-al intentar guardar un elemento en una posición que no existe (índice fuera de rango).
-Aunque las colecciones permiten el uso de índices, no es necesario indicarlos siempre.
-Por ejemplo, en una colección del tipo ArrayList, cuando hay que añadir el elemento
-"Amapola", se puede hacer simplemente flores.add("Amapola"). Al no especificar índice, el
-elemento "Amapola" se añadiría justo al final de flores independientemente del tamaño
-y del número de elementos que se hayan introducido ya.
-La clase ArrayList es muy similar a la clase Vector. Ésta última está obsoleta y, por tanto,
-no se recomienda su uso.
-10.1.1 Principales métodos de ArrayList
-Las operaciones más comunes que se pueden realizar con un objeto de la clase
-ArrayList son las siguientes:
-add(elemento)
-Añade un elemento al final de la lista.
-133
-Colecciones y diccionarios 134
-add(indice, elemento)
-Inserta un elemento en una posición determinada, desplazando el resto de
-elementos hacia la derecha.
-clear()
-Elimina todos los elementos pero no borra la lista.
-contains(elemento)
-Devuelve true si la lista contiene el elemento que se especifica y false en caso
-contrario.
-get(indice)
-Devuelve el elemento de la posición que se indica entre paréntesis.
-indexOf(elemento)
-Devuelve la posición de la primera ocurrencia del elemento que se indica entre
-paréntesis.
-isEmpty()
-Devuelve true si la lista está vacía y false en caso de tener algún elemento.
-remove(indice)
-Elimina el elemento que se encuentra en una posición determinada.
-remove(elemento)
-Elimina la primera ocurrencia de un elemento.
-set(indice, elemento)
-Machaca el elemento que se encuentra en una determinada posición con el
-elemento que se pasa como parámetro.
-size()
-Devuelve el tamaño (número de elementos) de la lista.
-toArray()
-Devuelve un array con todos y cada uno de los elementos que contiene la lista.
-Puedes consultar todos los métodos disponibles en la documentación oficial de la clase
-ArrayList1.
-1http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
-Colecciones y diccionarios 135
-10.1.2 Definición de un ArrayList e inserción, borrado y modificación de sus
-elementos
-A continuación se muestra un ejemplo en el que se puede ver cómo se declara un
-ArrayList y cómo se insertan y se extraen elementos.
+# Colecciones y diccionarios
+
+## Colecciones: la clase ArrayList
+
+Una __colección__ en Java es una estructura de datos que permite almacenar muchos valores del mismo tipo; por tanto, conceptualmente es prácticamente igual que un array. Según el uso y según si se permiten o no repeticiones, Java dispone de un amplio catálogo de colecciones: __ArrayList__ (lista), __ArrayBlockingQueue__ (cola), __HashSet__ (conjunto),
+__Stack__ (pila), etc. En este manual estudiaremos la colección ArrayList.
+
+Un __ArrayList__ es una estructura en forma de lista que permite almacenar elementos del mismo tipo (pueden ser incluso objetos); su tamaño va cambiando a medida que se añaden o se eliminan esos elementos.
+
+Nos podemos imaginar un _ArrayList_ como un conjunto de celdas o cajoncitos donde se guardan los valores, exactamente igual que un array convencional. En la práctica será más fácil trabajar con un _ArrayList_.
+
+En capítulos anteriores hemos podido comprobar la utilidad del _array_; es un recurso imprescindible que cualquier programador debe manejar con soltura. No obstante, el array presenta algunos inconvenientes. Uno de ellos es la necesidad de conocer el tamaño exacto en el momento de su creación. Una colección, sin embargo, se crea sin que se tenga que especificar el tamaño; posteriormente se van añadiendo y quitando elementos a medida que se necesitan.
+
+Trabajando con _arrays_ es frecuente cometer errores al utilizar los índices; por ejemplo al intentar guardar un elemento en una posición que no existe (índice fuera de rango). Aunque las colecciones permiten el uso de índices, no es necesario indicarlos siempre. Por ejemplo, en una colección del tipo _ArrayList_ que almacena modelos de coches, cuando hay que añadir un nuevo elemento, se se hace de la siguiente manera:
+
+```java
+coches.add("Opel Corsa");
+```
+
+Al no especificar índice, el elemento "Opel Corsa" se añadiría justo al final de _coches_ independientemente del tamaño y del número de elementos que se hayan introducido ya.
+
+> __Nota__: La clase _ArrayList_ es muy similar a la clase _Vector_. Ésta última está obsoleta y, por tanto, no se recomienda su uso.
+
+### Principales métodos de ArrayList
+
+Las operaciones más comunes que se pueden realizar con un objeto de la clase ArrayList son las siguientes:
+
+| Metodo                | Descripción                             |
+|-----------------------|-----------------------------------------|
+| add(elemento)         | Añade un elemento al final de la lista. |
+| add(indice, elemento) | Inserta un elemento en una posición determinada, desplazando el resto de elementos hacia la derecha. |
+| clear()               | Elimina todos los elementos pero no borra la lista. |
+| contains(elemento)    | Devuelve true si la lista contiene el elemento que se especifica y false en caso contrario. |
+| get(indice)           | Devuelve el elemento de la posición que se indica entre paréntesis. |
+| indexOf(elemento)     | Devuelve la posición de la primera ocurrencia del elemento que se indica entre paréntesis. |
+| isEmpty() | Devuelve true si la lista está vacía y false en caso de tener algún elemento. |
+| remove(indice) | Elimina el elemento que se encuentra en una posición determinada. | 
+| remove(elemento) | Elimina la primera ocurrencia de un elemento. |
+| set(indice, elemento) | Machaca el elemento que se encuentra en una determinada posición con el elemento que se pasa como parámetro. |
+| size() | Devuelve el tamaño (número de elementos) de la lista. |
+| toArray()| Devuelve un array con todos y cada uno de los elementos que contiene la lista. |
+
+> __Nota__: Se pueden consultar todos los métodos disponibles en la documentación oficial de la clase ArrayList: [http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html
+](http://docs.oracle.com/javase/7/docs/api/java/util/ArrayList.html)
+
+### Definición de un ArrayList e inserción, borrado y modificación de sus elementos
+
+A continuación se muestra un ejemplo en el que se puede ver cómo se declara un _ArrayList_ y cómo se insertan y se extraen elementos:
+
+```java
 /**
-* Ejemplo de uso de la clase ArrayList
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase ArrayList
+ *
+ * @author Jonay García
+ */
 import java.util.ArrayList;
+
 public class EjemploArrayList01 {
-public static void main(String[] args) {
-ArrayList<String> a = new ArrayList<String>();
-System.out.println("Nº de elementos: " + a.size());
-a.add("rojo");
-a.add("verde");
-a.add("azul");
-System.out.println("Nº de elementos: " + a.size());
-a.add("blanco");
-System.out.println("Nº de elementos: " + a.size());
-System.out.println("El elemento que hay en la posición 0 es " + a.get(0));
-System.out.println("El elemento que hay en la posición 3 es " + a.get(3));
+    public static void main(String[] args) {
+    
+        // Declaración e inicialización de un objeto de tipo ArrayList
+        ArrayList<String> colores = new ArrayList<String>();
+        
+        // Imprimimos el número de elementos del array.
+        System.out.println("Nº de elementos: " + colores.size());
+        
+        // Añadimos elementos al ArrayList
+        colores.add("rojo");
+        colores.add("verde");
+        colores.add("azul");
+        
+        // Imprimimos de nuevo el número de elementos del array.
+        System.out.println("Nº de elementos: " + colores.size());
+        
+        // Añadimos más elementos al ArrayList
+        colores.add("blanco");
+        
+        // Imprimimos de nuevo el número de elementos del array.
+        System.out.println("Nº de elementos: " + colores.size());
+        
+        // Imprimimos los elementos que están en una posición determinada.
+        System.out.println("El elemento que hay en la posición 0 es " + colores.get(0));
+        System.out.println("El elemento que hay en la posición 3 es " + colores.get(3));
+    }
 }
-}
-Observa que al crear un objeto de la clase ArrayList hay que indicar el tipo de dato que
-se almacenará en las celdas de esa lista. Para ello se utilizan los caracteres < y >. No
-hay que olvidar los paréntesis del final.
-Es necesario importar la clase ArrayList para poder crear objetos de esta
-clase, para ello debe aparecer al principio del programa la línea import
-java.util.ArrayList;. Algunos IDEs (por ej. Netbeans) insertan esta línea de
-código de forma automática.
+```
+
+Observa que al crear un objeto de la clase _ArrayList_ hay que indicar el tipo de dato que se almacenará en las celdas de esa lista. Para ello se utilizan los caracteres _<_ y _>_. No hay que olvidar los paréntesis del final:
+
+```java
+ArrayList<String> colores = new ArrayList<String>();
+```
+
+En el caso anterior se crea un _ArrayList_ para almacenar objetos de tipo _String_.
+
+> __Nota__: Es necesario importar la clase _ArrayList_ para poder crear objetos de esta clase, para ello debe aparecer al principio del programa la línea __import java.util.ArrayList;__. 
+
 En el siguiente ejemplo se muestra un ArrayList de números enteros.
 Colecciones y diccionarios 136
 /**
