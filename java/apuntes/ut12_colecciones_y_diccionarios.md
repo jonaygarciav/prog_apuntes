@@ -59,28 +59,28 @@ public class EjemploArrayList01 {
     public static void main(String[] args) {
     
         // Declaración e inicialización de un objeto de tipo ArrayList
-        ArrayList<String> colores = new ArrayList<String>();
+        ArrayList<String> a = new ArrayList<String>();
         
         // Imprimimos el número de elementos del array.
-        System.out.println("Nº de elementos: " + colores.size());
+        System.out.println("Nº de elementos: " + a.size());
         
         // Añadimos elementos al ArrayList
-        colores.add("rojo");
-        colores.add("verde");
-        colores.add("azul");
+        a.add("rojo");
+        a.add("verde");
+        a.add("azul");
         
         // Imprimimos de nuevo el número de elementos del array.
-        System.out.println("Nº de elementos: " + colores.size());
+        System.out.println("Nº de elementos: " + a.size());
         
         // Añadimos más elementos al ArrayList
-        colores.add("blanco");
+        a.add("blanco");
         
         // Imprimimos de nuevo el número de elementos del array.
-        System.out.println("Nº de elementos: " + colores.size());
+        System.out.println("Nº de elementos: " + a.size());
         
         // Imprimimos los elementos que están en una posición determinada.
-        System.out.println("El elemento que hay en la posición 0 es " + colores.get(0));
-        System.out.println("El elemento que hay en la posición 3 es " + colores.get(3));
+        System.out.println("El elemento que hay en la posición 0 es " + a.get(0));
+        System.out.println("El elemento que hay en la posición 3 es " + a.get(3));
     }
 }
 ```
@@ -88,7 +88,7 @@ public class EjemploArrayList01 {
 Observa que al crear un objeto de la clase _ArrayList_ hay que indicar el tipo de dato que se almacenará en las celdas de esa lista. Para ello se utilizan los caracteres _<_ y _>_. No hay que olvidar los paréntesis del final:
 
 ```java
-ArrayList<String> colores = new ArrayList<String>();
+ArrayList<String> a = new ArrayList<String>();
 ```
 
 En el caso anterior se crea un _ArrayList_ para almacenar objetos de tipo _String_.
@@ -107,9 +107,11 @@ import java.util.ArrayList;
 public class EjemploArrayList02 {
     public static void main(String[] args) {
         ArrayList<Integer> a = new ArrayList<Integer>();
+
         a.add(18);
         a.add(22);
         a.add(-30);
+        
         System.out.println("Nº de elementos: " + a.size());
         System.out.println("El elemento que hay en la posición 1 es " + a.get(1));
     }
@@ -136,18 +138,18 @@ import java.util.ArrayList;
 public class EjemploArrayList03 {
     public static void main(String[] args) {
     
-        ArrayList<String> colores = new ArrayList<String>();
+        ArrayList<String> a = new ArrayList<String>();
     
-        colores.add("rojo");
-        colores.add("verde");
-        colores.add("azul");
-        colores.add("blanco");
-        colores.add("amarillo");
+        a.add("rojo");
+        a.add("verde");
+        a.add("azul");
+        a.add("blanco");
+        a.add("amarillo");
         
         System.out.println("Contenido de la lista: ");
         
-        for(int i=0; i < colores.size(); i++) {
-            System.out.println(colores.get(i));
+        for(int i=0; i < a.size(); i++) {
+            System.out.println(a.get(i));
         }
     }
 }
@@ -164,17 +166,17 @@ Si estás acostumbrado al for clásico, habrás visto que es muy sencillo recorr
 import java.util.ArrayList;
 public class EjemploArrayList04 {
     public static void main(String[] args) {
-        ArrayList<String> colores = new ArrayList<String>();
+        ArrayList<String> a = new ArrayList<String>();
         
-        colores.add("rojo");
-        colores.add("verde");
-        colores.add("azul");
-        colores.add("blanco");
-        colores.add("amarillo");
+        a.add("rojo");
+        a.add("verde");
+        a.add("azul");
+        a.add("blanco");
+        a.add("amarillo");
         
         System.out.println("Contenido de la lista: ");
         
-        for(String color: colores) {
+        for(String color: a) {
             System.out.println(color);
         }
     }
@@ -189,7 +191,7 @@ for(String color: a) {
 }
 ```
 
-El bucle for, en cada iteración, saca un elemento del ArrayList _colores_ y lo mete en una variable con el nombre _color_, que tendrá el mismo tipo que cada elemento del _ArrayList_ en este caso _String_:
+El bucle for, en cada iteración, saca un elemento del ArrayList _a_ y lo mete en una variable con el nombre _color_, que tendrá el mismo tipo que cada elemento del _ArrayList_ en este caso _String_:
 
 Veamos ahora en otro ejemplo cómo eliminar elementos de un _ArrayList_. Se utiliza el método __remove()__ y se puede pasar como parámetro el índice del elemento que se quiere eliminar, o bien el valor del elemento. Es decir, _a.remove(2)_ elimina el elemento que se encuentra en la posición 2 de _a_ mientras que  colores.remove("blanco")_ elimina el valor  "blanco" del _ArrayList_ _colores_.
 
@@ -239,7 +241,7 @@ public class EjemploArrayList05 {
 }
 ```
 
-A continuación se muestra un ejemplo en el que se “machaca” una posición del ArrayList. Al hacer a.set(2, "turquesa"), se borra lo que hubiera en la posición 2 y se coloca el valor "turquesa". Sería equivalente a hacer a[2] = "turquesa" en caso de que a fuese un array tradicional en lugar de un ArrayList.
+A continuación se muestra un ejemplo en el que se "machaca" una posición del _ArrayList_. Al hacer _a.set(2, "turquesa")_, se borra lo que hubiera en la posición 2 y se coloca el valor "turquesa". Sería equivalente a hacer a[2] = "turquesa" en caso de que a fuese un array tradicional en lugar de un ArrayList.
 
 ```java
 /**
@@ -272,11 +274,7 @@ public class EjemploArrayList06 {
 }
 ```
 
-El método add permite añadir elementos a un ArrayList como ya hemos visto. Por
-ejemplo, a.add("amarillo") añade el elemento "amarillo" al final de a. Este método se
-puede utilizar también con un índice de la forma a.add(1, "turquesa"). En este caso, lo
-que se hace es insertar en la posción indicada. Lo mejor de todo es que el ArrayList se
-reestructura de forma automática desplazando el resto de elementos:
+El método add permite añadir elementos a un ArrayList como ya hemos visto. Por ejemplo, a.add("amarillo") añade el elemento "amarillo" al final de a. Este método se puede utilizar también con un índice de la forma a.add(1, "turquesa"). En este caso, lo que se hace es insertar en la posción indicada. Lo mejor de todo es que el ArrayList se reestructura de forma automática desplazando el resto de elementos:
 
 ```java
 /**
@@ -368,10 +366,12 @@ import java.util.ArrayList;
 public class EjemploArrayList08 {
     public static void main(String[] args) {
         ArrayList<Integer> a = new ArrayList<Integer>();
+        
         a.add(67);
         a.add(78);
         a.add(10);
         a.add(4);
+        
         System.out.println("\nNúmeros en el orden original:");
         for (int numero: a) {
             System.out.println(numero);
@@ -490,13 +490,13 @@ public class Gato implements Comparable<Gato> {
 
 Imagina un diccionario inglés-español. Queremos saber qué significa la palabra "stiff". Sabemos que en el diccionario hay muchas entradas y en cada entrada tenemos una palabra en inglés y su correspondiente traducción al español. Buscando por la "s" encontramos que  "stiff" significa "agujetas". 
 
-Un _diccionario_ en Java funciona exactamente igual. Contiene una serie de elementos que son las entradas que a su vez están formadas por un par _clave - valor_. La _clave_ (key) permite acceder al _valor_. No puede haber claves duplicadas. En el ejemplo anterior, la clave sería "stiff" y el valor "agujetas".
+Un __diccionario__ en Java funciona exactamente igual. Contiene una serie de elementos que son las entradas que a su vez están formadas por un par _clave - valor_. La _clave_ (key) permite acceder al _valor_. No puede haber claves duplicadas. En el ejemplo anterior, la clave sería "stiff" y el valor "agujetas".
 
 Java dispone de varios tipos de diccionarios: _HashMap_, _EnumMap_, _Hashtable_, _IdentityHashMap_, _LinkedHashMap_, etc. Nosotros estudiaremos el diccionario __HashMap__.
 
 ### Principales métodos de HashMap
 
-Algunos de los métodos más importantes de la clase HasMap son:
+Algunos de los métodos más importantes de la clase _HasMap_ son:
 
 | Método | Descripción |
 |--------|-------------|
@@ -546,126 +546,139 @@ import java.util.HashMap;
 public class EjemploHashMap01 {
     public static void main(String[] args) {
         HashMap<Integer, String> m = new HashMap<Integer, String>();
+        
         m.put(924, "Amalia Núñez");
         m.put(921, "Cindy Nero");
         m.put(700, "César Vázquez");
         m.put(219, "Víctor Tilla");
         m.put(537, "Alan Brito");
         m.put(605, "Esteban Quito ");
+        
         System.out.println("Los elementos de m son: \n" + m);
     }
 }
 ```
 
-Para extraer valores se utiliza el método get. Se proporciona una clave y el diccionario
-nos devuelve el valor, igual que un diccionario de verdad. Si no existe ninguna entrada
-con la clave que se indica, se devuelve null.
+Para extraer valores se utiliza el método __get()__. Se proporciona una clave y el  diccionario nos devuelve el valor, igual que un diccionario de verdad. Si no existe ninguna entrada con la clave que se indica, se devuelve null.
+
+```java
 /**
-* Ejemplo de uso de la clase HasMap
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase HasMap
+ *
+ * @author Luis José Sánchez
+ */
 import java.util.HashMap;
-public class EjemploHashMap011 {
-public static void main(String[] args) {
-HashMap<Integer, String> m = new HashMap<Integer, String>();
-m.put(924, "Amalia Núñez");
-m.put(921, "Cindy Nero");
-m.put(700, "César Vázquez");
-m.put(219, "Víctor Tilla");
-Colecciones y diccionarios 149
-m.put(537, "Alan Brito");
-m.put(605, "Esteban Quito ");
-System.out.println(m.get(921));
-System.out.println(m.get(605));
-System.out.println(m.get(888));
+public class EjemploHashMap02 {
+    public static void main(String[] args) {
+        HashMap<Integer, String> m = new HashMap<Integer, String>();
+        
+        m.put(924, "Amalia Núñez");
+        m.put(921, "Cindy Nero");
+        m.put(700, "César Vázquez");
+        m.put(219, "Víctor Tilla");
+        m.put(537, "Alan Brito");
+        m.put(605, "Esteban Quito ");
+        
+        System.out.println(m.get(921));
+        System.out.println(m.get(605));
+        System.out.println(m.get(888));
+    }
 }
-}
-¿Y si queremos extraer todas las entradas? Tenemos varias opciones. Podemos usar el
-método print directamente sobre el diccionario de la forma System.out.print(diccionario)
-como vimos en un ejemplo anterior; de esta manera se muestran por pantalla todas
-las entradas encerradas entre llaves. También podemos convertir el diccionario en
-un entrySet (conjunto de entradas) y mostrarlo con print; de esta forma se obtiene
-una salida por pantalla muy parecida a la primera (en lugar de llaves se muestran
-corchetes). Otra opción es utilizar un for para recorrer una a una todas las entradas.
-En este último caso hay que convertir el diccionario en un entrySet ya que no se pueden
-sacar las entradas directamente del diccionario. Estas dos últimas opciones se ilustran
-en el siguiente ejemplo.
+```
+
+¿Y si queremos extraer todas las entradas? Tenemos varias opciones. Podemos usar el método __print()__ directamente sobre el diccionario de la forma _System.out.print(diccionario)_ como vimos en un ejemplo anterior; de esta manera se muestran por pantalla todas las entradas encerradas entre llaves. También podemos convertir el diccionario en un entrySet (conjunto de entradas) y mostrarlo con print; de esta forma se obtiene una salida por pantalla muy parecida a la primera (en lugar de llaves se muestran corchetes). Otra opción es utilizar un for para recorrer una a una todas las entradas.
+
+En este último caso hay que convertir el diccionario en un entrySet ya que no se pueden sacar las entradas directamente del diccionario. Estas dos últimas opciones se ilustran en el siguiente ejemplo.
+
+```java
 /**
-* Ejemplo de uso de la clase HashMap
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase HashMap
+ *
+ * @author Jonay Garcia
+ */
 import java.util.HashMap;
 import java.util.Map;
-public class EjemploHashMap02 {
-public static void main(String[] args) {
-HashMap<Integer, String> m = new HashMap<Integer, String>();
-m.put(924, "Amalia Núñez");
-m.put(921, "Cindy Nero");
-m.put(700, "César Vázquez");
-m.put(219, "Víctor Tilla");
-m.put(537, "Alan Brito");
-m.put(605, "Esteban Quito ");
-System.out.println("Todas las entradas del diccionario extraídas con entrySet:");
-System.out.println(m.entrySet());
-System.out.println("\nEntradas del diccionario extraídas una a una:");
-Colecciones y diccionarios 150
-for (Map.Entry pareja: m.entrySet()) {
-System.out.println(pareja);
-}
-}
-}
-A continuación se muestra el uso de los métodos getKey y getValue que extraen la clave
-y el valor de una entrada respectivamente.
-/**
-* Ejemplo de uso de la clase HashMap
-*
-* @author Luis José Sánchez
-*/
-import java.util.*;
 public class EjemploHashMap03 {
-public static void main(String[] args) {
-HashMap<Integer, String> m = new HashMap<Integer, String>();
-m.put(924, "Amalia Núñez");
-m.put(921, "Cindy Nero");
-m.put(700, "César Vázquez");
-m.put(219, "Víctor Tilla");
-m.put(537, "Alan Brito");
-m.put(605, "Esteban Quito ");
-System.out.println("Código\tNombre\n------\t-------------");
-for (Map.Entry pareja: m.entrySet()) {
-System.out.print(pareja.getKey() + "\t");
-System.out.println(pareja.getValue());
+    public static void main(String[] args) {
+        HashMap<Integer, String> m = new HashMap<Integer, String>();
+
+        m.put(924, "Amalia Núñez");
+        m.put(921, "Cindy Nero");
+        m.put(700, "César Vázquez");
+        m.put(219, "Víctor Tilla");
+        m.put(537, "Alan Brito");
+        m.put(605, "Esteban Quito ");
+
+        System.out.println("Todas las entradas del diccionario extraídas con entrySet:");
+        System.out.println(m.entrySet());
+        System.out.println("\nEntradas del diccionario extraídas una a una:");
+
+        for (Map.Entry pareja: m.entrySet()) {
+            System.out.println(pareja);
+        }
+    }
 }
-}
-}
-En el último programa de ejemplo hacemos uso del método containsKey que nos servirá
-para saber si existe o no una determinada clave en un diccionario y del método get
-que, como ya hemos visto, sirve para extraer un valor a partir de su clave.
-Colecciones y diccionarios 151
+```
+
+A continuación se muestra el uso de los métodos _getKey()_ y _getValue()_ que extraen la  clave y el valor de una entrada respectivamente.
+
+```java
 /**
-* Ejemplo de uso de la clase HashMap
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase HashMap
+ *
+ * @author Jonay Garcia
+ */
 import java.util.*;
 public class EjemploHashMap04 {
-public static void main(String[] args) {
-HashMap<Integer, String> m = new HashMap<Integer, String>();
-m.put(924, "Amalia Núñez");
-m.put(921, "Cindy Nero");
-m.put(700, "César Vázquez");
-m.put(219, "Víctor Tilla");
-m.put(537, "Alan Brito");
-m.put(605, "Esteban Quito ");
-System.out.print("Por favor, introduzca un código: ");
-int codigoIntroducido = Integer.parseInt(System.console().readLine());
-if (m.containsKey(codigoIntroducido)) {
-System.out.print("El código " + codigoIntroducido + " corresponde a ");
-System.out.println(m.get(codigoIntroducido));
-} else {
-System.out.print("El código introducido no existe.");
+    public static void main(String[] args) {
+        HashMap<Integer, String> m = new HashMap<Integer, String>();
+
+        m.put(924, "Amalia Núñez");
+        m.put(921, "Cindy Nero");
+        m.put(700, "César Vázquez");
+        m.put(219, "Víctor Tilla");
+        m.put(537, "Alan Brito");
+        m.put(605, "Esteban Quito ");
+        
+        System.out.println("Código\tNombre\n------\t-------------");
+        for (Map.Entry pareja: m.entrySet()) {
+            System.out.print(pareja.getKey() + "\t");
+            System.out.println(pareja.getValue());
+        }
+    }
 }
+```
+
+En el último programa de ejemplo hacemos uso del método _containsKey()_ que nos servirá para saber si existe o no una determinada clave en un diccionario y del método _get()_ que, como ya hemos visto, sirve para extraer un valor a partir de su clave.
+
+```java
+/**
+ * Ejemplo de uso de la clase HashMap
+ *
+ * @author Jonay Garcia
+ */
+import java.util.*;
+public class EjemploHashMap05 {
+    public static void main(String[] args) {
+        HashMap<Integer, String> m = new HashMap<Integer, String>();
+        
+        m.put(924, "Amalia Núñez");
+        m.put(921, "Cindy Nero");
+        m.put(700, "César Vázquez");
+        m.put(219, "Víctor Tilla");
+        m.put(537, "Alan Brito");
+        m.put(605, "Esteban Quito ");
+        
+        System.out.print("Por favor, introduzca un código: ");
+        
+        int codigoIntroducido = Integer.parseInt(System.console().readLine());
+        if (m.containsKey(codigoIntroducido)) {
+            System.out.print("El código " + codigoIntroducido + " corresponde a ");
+            System.out.println(m.get(codigoIntroducido));
+        } 
+        else {
+            System.out.print("El código introducido no existe.");
+        }
+    }
 }
-}
+```
