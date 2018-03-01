@@ -99,10 +99,10 @@ En el siguiente ejemplo se muestra un ArrayList de números enteros:
 
 ```java
 /**
-* Ejemplo de uso de la clase ArrayList
-*
-* @author Jonay Garcia
-*/
+ * Ejemplo de uso de la clase ArrayList
+ *
+ * @author Jonay Garcia
+ */
 import java.util.ArrayList;
 public class EjemploArrayListEnteros {
     public static void main(String[] args) {
@@ -122,138 +122,156 @@ Se define la estructura de la siguiente manera:
 ArrayList<Integer> a = new ArrayList<Integer>();
 ```
 
-Fíjate que no se utiliza el tipo simple int sino el wrapper Integer. Recuerda que los wrapper son clases que engloban a los tipos simples y les añaden nuevas funcionalidades (p. ej. permiten tratar a las variables numéricas como objetos). El wrapper de int es Integer, el de float es Float, el de double es Double, el de long es Long, el de boolean es Boolean y el de char es Character.
+Fíjate que no se utiliza el tipo simple _int_ sino el __wrapper__ _Integer_. Recuerda que los  __wrapper__ son clases que engloban a los tipos primitivos de Java y les añaden nuevas funcionalidades (p. ej. permiten tratar a las variables numéricas como objetos). El wrapper de _int_ es _Integer_, el de _float_ es _Float_, el de _double_ es _Double_, el de _long_ es _Long_, el de _boolean_ es _Boolean_ y el de _char_ es _Character_.
 
-En el siguiente ejemplo podemos ver cómo extraer todos los elementos de una lista a
-la manera tradicional, con un bulce for.
+En el siguiente ejemplo podemos ver cómo extraer todos los elementos de una lista a la manera tradicional, con un bulce for:
+
+```java
 /**
-* Ejemplo de uso de la clase ArrayList
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase ArrayList
+ *
+ * @author Jonay Garcia
+ */
 import java.util.ArrayList;
 public class EjemploArrayList02 {
-Colecciones y diccionarios 137
-public static void main(String[] args) {
-ArrayList<String> a = new ArrayList<String>();
-a.add("rojo");
-a.add("verde");
-a.add("azul");
-a.add("blanco");
-a.add("amarillo");
-System.out.println("Contenido de la lista: ");
-for(int i=0; i < a.size(); i++) {
-System.out.println(a.get(i));
+    public static void main(String[] args) {
+    
+        ArrayList<String> colores = new ArrayList<String>();
+    
+        colores.add("rojo");
+        colores.add("verde");
+        colores.add("azul");
+        colores.add("blanco");
+        colores.add("amarillo");
+        
+        System.out.println("Contenido de la lista: ");
+        
+        for(int i=0; i < colores.size(); i++) {
+            System.out.println(colores.get(i));
+        }
+    }
 }
-}
-}
-Si estás acostumbrado al for clásico, habrás visto que es muy sencillo recorrer todos
-los elementos del ArrayList. No obstante, al trabajar con colecciones es recomendable
-usar el for al estilo foreach como se muestra en el siguiente ejemplo. Como puedes ver,
-la sintaxis es más corta y no se necesita crear un índice para recorrer la estructura.
+```
+
+Si estás acostumbrado al for clásico, habrás visto que es muy sencillo recorrer todos los elementos del _ArrayList_. No obstante, al trabajar con colecciones es recomendable usar el for al estilo _foreach_ como se muestra en el siguiente ejemplo. Como puedes  ver, la sintaxis es más corta y no se necesita crear un índice para recorrer la estructura.
+
+```java
 /**
 * Ejemplo de uso de la clase ArrayList
 *
-* @author Luis José Sánchez
+* @author Jonay Garcia
 */
 import java.util.ArrayList;
 public class EjemploArrayList03 {
-public static void main(String[] args) {
-ArrayList<String> a = new ArrayList<String>();
-a.add("rojo");
-a.add("verde");
-a.add("azul");
-a.add("blanco");
-a.add("amarillo");
-System.out.println("Contenido de la lista: ");
-for(String color: a) {
-Colecciones y diccionarios 138
-System.out.println(color);
+    public static void main(String[] args) {
+        ArrayList<String> colores = new ArrayList<String>();
+        
+        colores.add("rojo");
+        colores.add("verde");
+        colores.add("azul");
+        colores.add("blanco");
+        colores.add("amarillo");
+        
+        System.out.println("Contenido de la lista: ");
+        
+        for(String color: colores) {
+            System.out.println(color);
+        }
+    }
 }
-}
-}
+```
+
 Fíjate en estas líneas:
+
+```java
 for(String color: a) {
-System.out.println(color);
+    System.out.println(color);
 }
-El significado de este código sería el siguiente:
-for(String color: a)
-→ Saca uno a uno todos los elementos de a y ve metiéndolos en una variable de nombre
-color.
-System.out.println(color);
-→ Muestra por pantalla el contenido de la variable color.
-Veamos ahora en otro ejemplo cómo eliminar elementos de un ArrayList. Se utiliza el
-método remove() y se puede pasar como parámetro el índice del elemento que se quiere
-eliminar, o bien el valor del elemento. O sea, a.remove(2) elimina el elemento que se
-encuentra en la posición 2 de a mientras que a.remove("blanco") elimina el valor "blanco".
-Es importante destacar que el ArrayList se reestructura de forma automática después
-del borrado de cualquiera de sus elementos.
+```
+
+El bucle for, en cada iteración, saca un elemento del ArrayList _colores_ y lo mete en una variable con el nombre _color_, que tendrá el mismo tipo que cada elemento del _ArrayList_ en este caso _String_:
+
+Veamos ahora en otro ejemplo cómo eliminar elementos de un _ArrayList_. Se utiliza el método __remove()__ y se puede pasar como parámetro el índice del elemento que se quiere eliminar, o bien el valor del elemento. Es decir, _a.remove(2)_ elimina el elemento que se encuentra en la posición 2 de _a_ mientras que  colores.remove("blanco")_ elimina el valor  "blanco" del _ArrayList_ _colores_.
+
+Es importante destacar que el ArrayList se reestructura de forma automática después del borrado de cualquiera de sus elementos.
+
+```java
 /**
 * Ejemplo de uso de la clase ArrayList
 *
-* @author Luis José Sánchez
+* @author Jonay Garcia
 */
 import java.util.ArrayList;
 public class EjemploArrayList04 {
-public static void main(String[] args) {
-ArrayList<String> a = new ArrayList<String>();
-a.add("rojo");
-Colecciones y diccionarios 139
-a.add("verde");
-a.add("azul");
-a.add("blanco");
-a.add("amarillo");
-a.add("blanco");
-System.out.println("Contenido de la lista: ");
-for(String color: a) {
-System.out.println(color);
+    public static void main(String[] args) {
+        ArrayList<String> a = new ArrayList<String>();
+        a.add("rojo");
+        a.add("verde");
+        a.add("azul");
+        a.add("blanco");
+        a.add("amarillo");
+        a.add("blanco");
+        System.out.println("Contenido de la lista: ");
+        for(String color: a) {
+            System.out.println(color);
+        }
+
+        if (a.contains("blanco")) {
+            System.out.println("El blanco está en la lista de colores");
+        }
+
+        a.remove("blanco");
+            System.out.println("Contenido de la lista después de quitar la " +
+                               "primera ocurrencia del color blanco: ");
+
+        for(String color: a) {
+            System.out.println(color);
+        }
+
+        a.remove(2);
+        System.out.println("Contenido de la lista después de quitar el " +
+                           "elemento de la posición 2: ");
+
+        for(String color: a) {
+            System.out.println(color);
+        }
+    }
 }
-if (a.contains("blanco")) {
-System.out.println("El blanco está en la lista de colores");
-}
-a.remove("blanco");
-System.out.println("Contenido de la lista después de quitar la " +
-"primera ocurrencia del color blanco: ");
-for(String color: a) {
-System.out.println(color);
-}
-a.remove(2);
-System.out.println("Contenido de la lista después de quitar el " +
-"elemento de la posición 2: ");
-for(String color: a) {
-System.out.println(color);
-}
-}
-}
-A continuación se muestra un ejemplo en el que se “machaca” una posición del
-ArrayList. Al hacer a.set(2, "turquesa"), se borra lo que hubiera en la posición 2 y se
-coloca el valor "turquesa". Sería equivalente a hacer a[2] = "turquesa" en caso de que a
-fuese un array tradicional en lugar de un ArrayList.
-Colecciones y diccionarios 140
+```
+
+A continuación se muestra un ejemplo en el que se “machaca” una posición del ArrayList. Al hacer a.set(2, "turquesa"), se borra lo que hubiera en la posición 2 y se coloca el valor "turquesa". Sería equivalente a hacer a[2] = "turquesa" en caso de que a fuese un array tradicional en lugar de un ArrayList.
+
+```java
 /**
 * Ejemplo de uso de la clase ArrayList
 *
-* @author Luis José Sánchez
+* @author Jonay Garcia
 */
 import java.util.ArrayList;
 public class EjemploArrayList05 {
-public static void main(String[] args) {
-ArrayList<String> a = new ArrayList<String>();
-a.add("rojo");
-a.add("verde");
-a.add("azul");
-a.add("blanco");
-a.add("amarillo");
-System.out.println("Contenido del vector: ");
-for(String color: a)
-System.out.println(color);
-a.set(2, "turquesa");
-System.out.println("Contenido del vector después de machacar la posición 2: ");
-for(String color: a) {
-System.out.println(color);
+    public static void main(String[] args) {
+        ArrayList<String> a = new ArrayList<String>();
+        
+        a.add("rojo");
+        a.add("verde");
+        a.add("azul");
+        a.add("blanco");
+        a.add("amarillo");
+
+        System.out.println("Contenido del vector: ");
+        
+        for(String color: a)
+            System.out.println(color);
+
+        a.set(2, "turquesa");
+        System.out.println("Contenido del vector después de machacar la posición 2: ");
+        for(String color: a) {
+            System.out.println(color);
+        }
+    }
 }
-}
-}
+```
+
 El método add permite añadir elementos a un ArrayList como ya hemos visto. Por
 ejemplo, a.add("amarillo") añade el elemento "amarillo" al final de a. Este método se
 puede utilizar también con un índice de la forma a.add(1, "turquesa"). En este caso, lo
