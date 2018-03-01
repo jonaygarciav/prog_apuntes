@@ -55,7 +55,7 @@ A continuación se muestra un ejemplo en el que se puede ver cómo se declara un
  */
 import java.util.ArrayList;
 
-public class EjemploArrayList01 {
+public class EjemploArrayListString {
     public static void main(String[] args) {
     
         // Declaración e inicialización de un objeto de tipo ArrayList
@@ -95,31 +95,35 @@ En el caso anterior se crea un _ArrayList_ para almacenar objetos de tipo _Strin
 
 > __Nota__: Es necesario importar la clase _ArrayList_ para poder crear objetos de esta clase, para ello debe aparecer al principio del programa la línea __import java.util.ArrayList;__. 
 
-En el siguiente ejemplo se muestra un ArrayList de números enteros.
-Colecciones y diccionarios 136
+En el siguiente ejemplo se muestra un ArrayList de números enteros:
+
+```java
 /**
 * Ejemplo de uso de la clase ArrayList
 *
-* @author Luis José Sánchez
+* @author Jonay Garcia
 */
 import java.util.ArrayList;
-public class EjemploArrayList011 {
-public static void main(String[] args) {
-ArrayList<Integer> a = new ArrayList<Integer>();
-a.add(18);
-a.add(22);
-a.add(-30);
-System.out.println("Nº de elementos: " + a.size());
-System.out.println("El elemento que hay en la posición 1 es " + a.get(1));
+public class EjemploArrayListEnteros {
+    public static void main(String[] args) {
+        ArrayList<Integer> a = new ArrayList<Integer>();
+        a.add(18);
+        a.add(22);
+        a.add(-30);
+        System.out.println("Nº de elementos: " + a.size());
+        System.out.println("El elemento que hay en la posición 1 es " + a.get(1));
+    }
 }
-}
+```
+
 Se define la estructura de la siguiente manera:
+
+```java
 ArrayList<Integer> a = new ArrayList<Integer>();
-Fíjate que no se utiliza el tipo simple int sino el wrapper Integer. Recuerda que
-los wrapper son clases que engloban a los tipos simples y les añaden nuevas
-funcionalidades (p. ej. permiten tratar a las variables numéricas como objetos). El
-wrapper de int es Integer, el de float es Float, el de double es Double, el de long es Long,
-el de boolean es Boolean y el de char es Character.
+```
+
+Fíjate que no se utiliza el tipo simple int sino el wrapper Integer. Recuerda que los wrapper son clases que engloban a los tipos simples y les añaden nuevas funcionalidades (p. ej. permiten tratar a las variables numéricas como objetos). El wrapper de int es Integer, el de float es Float, el de double es Double, el de long es Long, el de boolean es Boolean y el de char es Character.
+
 En el siguiente ejemplo podemos ver cómo extraer todos los elementos de una lista a
 la manera tradicional, con un bulce for.
 /**
