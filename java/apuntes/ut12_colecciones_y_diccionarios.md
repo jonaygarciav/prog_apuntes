@@ -276,34 +276,43 @@ El método add permite añadir elementos a un ArrayList como ya hemos visto. Por
 ejemplo, a.add("amarillo") añade el elemento "amarillo" al final de a. Este método se
 puede utilizar también con un índice de la forma a.add(1, "turquesa"). En este caso, lo
 que se hace es insertar en la posción indicada. Lo mejor de todo es que el ArrayList se
-reestructura de forma automática desplazando el resto de elementos.
-Colecciones y diccionarios 141
+reestructura de forma automática desplazando el resto de elementos:
+
+
 /**
 * Ejemplo de uso de la clase ArrayList
 *
-* @author Luis José Sánchez
+* @author Jonay Garcia
 */
 import java.util.ArrayList;
 public class EjemploArrayList06 {
-public static void main(String[] args) {
-ArrayList<String> a = new ArrayList<String>();
-a.add("rojo");
-a.add("verde");
-a.add("azul");
-a.add("blanco");
-a.add("amarillo");
-System.out.println("Contenido de la lista: ");
-for(String color: a) {
-System.out.println(color);
+    public static void main(String[] args) {
+        ArrayList<String> a = new ArrayList<String>();
+
+        a.add("rojo");
+        a.add("verde");
+        a.add("azul");
+        a.add("blanco");
+        a.add("amarillo");
+
+        System.out.println("Contenido de la lista: ");
+        for(String color: a) {
+            System.out.println(color);
+        }
+        
+        a.add(1, "turquesa");
+        
+        System.out.println("Contenido del vector después de insertar en la posición 1: ");
+
+        for(String color: a) {
+            System.out.println(color);
+        }
+    }
 }
-a.add(1, "turquesa");
-System.out.println("Contenido del vector después de insertar en la posición 1: ");
-for(String color: a) {
-System.out.println(color);
-}
-}
-}
-10.1.3 ArrayList de objetos
+```
+
+### ArrayList de objetos
+
 Una colección ArrayList puede contener objetos que son instancias de clases definidas
 por el programador. Esto es muy útil sobre todo en aplicaciones de gestión para
 guardar datos de alumnos, productos, libros, etc.
