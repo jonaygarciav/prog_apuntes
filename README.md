@@ -21,11 +21,10 @@
 2. Herencia \([Apuntes](./java/apuntes/ut10_herencia.md) - [Ejercicios](./java/ejercicios/ut10_herencia.md)\)
 1. Interfaces y Polimorfismo \([Apuntes](./java/apuntes/ut11_interfaces.md) - [Ejercicios](./java/ejercicios/ut11_interfaces.md) - [Practica a Entregar](./java/practicas_a_entregar/ut11_interfaces.md)\)
 
-
-
 **BLOQUE IV**
 
-1. Otras relaciones entre objetos
+1. Colecciones y Diccionarios \([Apuntes](./java/apuntes/ut12_colecciones_y_diccionarios.md) - [Ejercicios](./java/ejercicios/ut12_colecciones_y_diccionarios.md) - [Practica a Entregar](./java/practicas_a_entregar/ut12_colecciones_y_diccionarios.md)\)
+
 2. Interfaces
 3. Paquetes
 
