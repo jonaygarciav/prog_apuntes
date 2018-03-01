@@ -313,12 +313,10 @@ public class EjemploArrayList06 {
 
 ### ArrayList de objetos
 
-Una colección ArrayList puede contener objetos que son instancias de clases definidas
-por el programador. Esto es muy útil sobre todo en aplicaciones de gestión para
-guardar datos de alumnos, productos, libros, etc.
-En el siguiente ejemplo, definimos una lista de gatos. En cada celda de la lista se
-almacenará un objeto de la clase Gato.
-Colecciones y diccionarios 142
+Una colección _ArrayList_ puede contener objetos que son instancias de clases definidas por el programador. Esto es muy útil sobre todo en aplicaciones de gestión para guardar datos de alumnos, productos, libros, etc.
+
+En el siguiente ejemplo, definimos una lista de gatos. En cada celda de la lista se almacenará un objeto de la clase Gato.
+
 /**
 * Uso de un ArrayList de objetos
 *
