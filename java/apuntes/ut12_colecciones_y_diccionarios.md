@@ -733,13 +733,20 @@ public class EjemploHashMap01 {
 }
 ```
 
+El resultado de ejecutar el programa anterior es el siguiente:
+
+```bash
+Los elementos de m son: 
+{921=Cindy Nero, 537=Alan Brito, 219=Víctor Tilla, 924=Amalia Núñez, 700=César Vázquez, 605=Esteban Quito }
+```
+
 Para extraer valores se utiliza el método __get()__. Se proporciona una clave y el  diccionario nos devuelve el valor, igual que un diccionario de verdad. Si no existe ninguna entrada con la clave que se indica, se devuelve null.
 
 ```java
 /**
  * Ejemplo de uso de la clase HasMap
  *
- * @author Luis José Sánchez
+ * @author Jonay Garcia
  */
 import java.util.HashMap;
 public class EjemploHashMap02 {
