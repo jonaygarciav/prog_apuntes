@@ -278,12 +278,12 @@ puede utilizar también con un índice de la forma a.add(1, "turquesa"). En este
 que se hace es insertar en la posción indicada. Lo mejor de todo es que el ArrayList se
 reestructura de forma automática desplazando el resto de elementos:
 
-
+```java
 /**
-* Ejemplo de uso de la clase ArrayList
-*
-* @author Jonay Garcia
-*/
+ * Ejemplo de uso de la clase ArrayList
+ *
+ * @author Jonay Garcia
+ */
 import java.util.ArrayList;
 public class EjemploArrayList07 {
     public static void main(String[] args) {
@@ -365,7 +365,7 @@ A continuación, se muestra un ejemplo del uso de sort:
  */
 import java.util.Collections;
 import java.util.ArrayList;
-public class EjemploArrayList071 {
+public class EjemploArrayList08 {
     public static void main(String[] args) {
         ArrayList<Integer> a = new ArrayList<Integer>();
         a.add(67);
@@ -386,47 +386,48 @@ public class EjemploArrayList071 {
 }
 ```
 
-También es posible ordenar una lista de objetos. En este caso es necesario indicar el
-criterio de ordenación en la definición de la clase. En el programa principal, se utiliza
-el método sort igual que si se tratase de una lista de números o de palabras como se
-muestra a continuación.
-Colecciones y diccionarios 144
+También es posible ordenar una lista de objetos. En este caso es necesario indicar el criterio de ordenación en la definición de la clase. En el programa principal, se utiliza el método sort igual que si se tratase de una lista de números o de palabras como se muestra a continuación.
+
+```java
 /**
-* Ordenación de un ArrayList de objetos
-*
-* @author Luis José Sánchez
-*/
+ * Ordenación de un ArrayList de objetos
+ *
+ * @author Jonay Garcia
+ */
 import java.util.Collections;
 import java.util.ArrayList;
-public class EjemploArrayList08 {
-public static void main(String[] args) {
-ArrayList<Gato> g = new ArrayList<Gato>();
-g.add(new Gato("Garfield", "naranja", "mestizo"));
-g.add(new Gato("Pepe", "gris", "angora"));
-g.add(new Gato("Mauri", "blanco", "manx"));
-g.add(new Gato("Ulises", "marrón", "persa"));
-g.add(new Gato("Adán", "negro", "angora"));
-Collections.sort(g);
-System.out.println("\nDatos de los gatos ordenados por nombre:");
-for (Gato gatoAux: g) {
-System.out.println(gatoAux+"\n");
+public class EjemploArrayList09 {
+    public static void main(String[] args) {
+        ArrayList<Gato> g = new ArrayList<Gato>();
+        g.add(new Gato("Garfield", "naranja", "mestizo"));
+        g.add(new Gato("Pepe", "gris", "angora"));
+        g.add(new Gato("Mauri", "blanco", "manx"));
+        g.add(new Gato("Ulises", "marrón", "persa"));
+        g.add(new Gato("Adán", "negro", "angora"));
+        Collections.sort(g);
+        System.out.println("\nDatos de los gatos ordenados por nombre:");
+        for (Gato gatoAux: g) {
+            System.out.println(gatoAux+"\n");
+        }
+    }
 }
-}
-}
-Ahora bien, en la definición de la clase Gato hay que indicar de alguna manera cómo se
-debe realizar la ordenación, ya que Java no sabe de antemano si los gatos se ordenan
-según el color, el nombre, el peso, etc.
-Lo primero que hay que hacer es indicar que los objetos de la clase Gato se pueden
-comparar unos con otros. Para ello, cambiamos la siguiente línea:
+```
+
+Ahora bien, en la definición de la clase Gato hay que indicar de alguna manera cómo se debe realizar la ordenación, ya que Java no sabe de antemano si los gatos se ordenan según el color, el nombre, el peso, etc. 
+
+Lo primero que hay que hacer es indicar que los objetos de la clase Gato se pueden comparar unos con otros. Para ello, cambiamos la siguiente línea:
+
+```java
 public class Gato
+```
+
 por esta otra:
+
+```java
 public class Gato implements Comparable<Gato>
-Lo siguiente y no menos importante es definir el método compareTo. Este método debe
-devolver un 0 si los elementos que se comparan son iguales, un número negativo si
-Colecciones y diccionarios 145
-el primer elemento que se compara es menor que el segundo y un número positivo
-en caso contrario. Afortunadamente, las clases String, Integer, Double, etc. ya tienen
-implementado su propio método compareTo así que tenemos hecho lo más difícil. Lo
+```
+
+Lo siguiente y no menos importante es definir el método __compareTo()__. Este método debe devolver un 0 si los elementos que se comparan son iguales, un número negativo si el primer elemento que se compara es menor que el segundo y un número positivo en caso contrario. Afortunadamente, las clases String, Integer, Double, etc. ya tienen implementado su propio método compareTo así que tenemos hecho lo más difícil. Lo
 único que deberemos escribir en nuestro código es un compareTo con los atributos que
 queremos comparar.
 En el caso que nos ocupa, si queremos ordenar los gatos por nombre, tendremos que
