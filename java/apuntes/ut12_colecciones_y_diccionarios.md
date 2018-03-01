@@ -427,19 +427,44 @@ En el siguiente ejemplo, definimos una lista de gatos. En cada celda de la lista
  * @author Jonay Garcia
  */
 import java.util.ArrayList;
-public class EjemploArrayList08 {
+public class EjemploArrayList07 {
     public static void main(String[] args) {
         ArrayList<Gato> g = new ArrayList<Gato>();
+        
         g.add(new Gato("Garfield", "naranja", "mestizo"));
         g.add(new Gato("Pepe", "gris", "angora"));
         g.add(new Gato("Mauri", "blanco", "manx"));
         g.add(new Gato("Ulises", "marrón", "persa"));
+        
         System.out.println("\nDatos de los gatos:\n");
+        
         for (Gato gatoAux: g) {
             System.out.println(gatoAux+"\n");
         }
     }
 }
+```
+
+El resultado de ejecutar el programa anterior es el siguiente:
+
+```bash
+Datos de los gatos:
+
+Nombre: Garfield
+Color: naranja
+Raza: mestizo
+
+Nombre: Pepe
+Color: gris
+Raza: angora
+
+Nombre: Mauri
+Color: blanco
+Raza: manx
+
+Nombre: Ulises
+Color: marrón
+Raza: persa
 ```
 
 En el siguiente apartado se muestra la definición de la clase Gato.
@@ -491,6 +516,23 @@ public class EjemploArrayList08 {
 }
 ```
 
+El resultado de ejecutar el código anterior es el siguiente:
+
+```bash
+
+Números en el orden original:
+67
+78
+10
+4
+
+Números ordenados:
+4
+10
+67
+78
+```
+
 También es posible ordenar una lista de objetos. En este caso es necesario indicar el criterio de ordenación en la definición de la clase. En el programa principal, se utiliza el método sort igual que si se tratase de una lista de números o de palabras como se muestra a continuación.
 
 ```java
@@ -501,14 +543,16 @@ También es posible ordenar una lista de objetos. En este caso es necesario indi
  */
 import java.util.Collections;
 import java.util.ArrayList;
-public class EjemploArrayList09 {
+public class EjemploArrayList081 {
     public static void main(String[] args) {
         ArrayList<Gato> g = new ArrayList<Gato>();
+        
         g.add(new Gato("Garfield", "naranja", "mestizo"));
         g.add(new Gato("Pepe", "gris", "angora"));
         g.add(new Gato("Mauri", "blanco", "manx"));
         g.add(new Gato("Ulises", "marrón", "persa"));
         g.add(new Gato("Adán", "negro", "angora"));
+        
         Collections.sort(g);
         System.out.println("\nDatos de los gatos ordenados por nombre:");
         for (Gato gatoAux: g) {
@@ -516,6 +560,31 @@ public class EjemploArrayList09 {
         }
     }
 }
+```
+
+El resultado de ejecutar el código anterior es el siguiente:
+
+```bash
+Datos de los gatos ordenados por nombre:
+Nombre: Adán
+Color: negro
+Raza: angora
+
+Nombre: Garfield
+Color: naranja
+Raza: mestizo
+
+Nombre: Mauri
+Color: blanco
+Raza: manx
+
+Nombre: Pepe
+Color: gris
+Raza: angora
+
+Nombre: Ulises
+Color: marrón
+Raza: persa
 ```
 
 Ahora bien, en la definición de la clase Gato hay que indicar de alguna manera cómo se debe realizar la ordenación, ya que Java no sabe de antemano si los gatos se ordenan según el color, el nombre, el peso, etc. 
@@ -534,7 +603,7 @@ public class Gato implements Comparable<Gato>
 
 Lo siguiente y no menos importante es definir el método __compareTo()__. Este método debe devolver un 0 si los elementos que se comparan son iguales, un número negativo si el primer  elemento que se compara es menor que el segundo y un número positivo en caso contrario. Afortunadamente, las clases String, Integer, Double, etc. ya tienen implementado su propio método compareTo así que tenemos hecho lo más difícil. Lo único que deberemos escribir en nuestro código es un __compareTo()__ con los atributos que queremos comparar.
 
-En el caso que nos ocupa, si queremos ordenar los gatos por nombre, tendremos que implementar el compareTo de la clase Gato de tal forma que nos devuelva el resultado del compareTo de los nombres de los gatos que estamos comparando, de la siguiente manera:
+En el caso que nos ocupa, si queremos ordenar los gatos por nombre, tendremos que implementar el __compareTo()__ de la clase _Gato_ de tal forma que nos devuelva el resultado del __compareTo()__ de los nombres de los gatos que estamos comparando, de la siguiente manera:
 
 ```java
 public int compareTo(Gato g) {
