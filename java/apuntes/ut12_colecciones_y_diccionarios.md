@@ -446,46 +446,52 @@ public int compareTo(Gato g) {
 ```
 
 A continuación se muestra la definición completa de la clase Gato.
+
+```java
 /**
-* Definición de la clase Gato
-*
-* @author
-*/
+ * Definición de la clase Gato
+ *
+ * @author Jonay Garcia
+ */
 public class Gato implements Comparable<Gato> {
-private String nombre;
-private String color;
-private String raza;
-public Gato(String nombre, String color, String raza) {
-this.nombre = nombre;
-this.color = color;
-this.raza = raza;
+    private String nombre;
+    private String color;
+    private String raza;
+    
+    public Gato(String nombre, String color, String raza) {
+        this.nombre = nombre;
+        this.color = color;
+        this.raza = raza;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getRaza() {
+        return raza;
+    }
+    
+    public String toString() {
+        return "Nombre: " + this.nombre + "\nColor: " + this.color + "\nRaza: " + this.raza;
+    }
+
+    public int compareTo(Gato g) {
+        return (this.nombre).compareTo(g.getNombre());
+    }
+
+    public boolean equals(Gato g) {
+        return (this.nombre).equals(g.getNombre());
+    }
 }
-public String getNombre() {
-return nombre;
-}
-Colecciones y diccionarios 146
-public String getRaza() {
-return raza;
-}
-public String toString() {
-return "Nombre: " + this.nombre + "\nColor: " + this.color + "\nRaza: " + this.raza;
-}
-public int compareTo(Gato g) {
-return (this.nombre).compareTo(g.getNombre());
-}
-public boolean equals(Gato g) {
-return (this.nombre).equals(g.getNombre());
-}
-}
-10.2 Diccionarios: la clase HashMap
-Imagina un diccionario inglés-español. Queremos saber qué significa la palabra “stiff ”.
-Sabemos que en el diccionario hay muchas entradas y en cada entrada tenemos una
-palabra en inglés y su correspondiente traducción al español. Buscando por la “s”
-encontramos que “stiff ” significa “agujetas”.
-Un diccionario en Java funciona exactamente igual. Contiene una serie de elementos
-que son las entradas que a su vez están formadas por un par (clave, valor). La clave
-(key) permite acceder al valor. No puede haber claves duplicadas. En el ejemplo
-anterior, la clave sería “stiff ” y el valor “agujetas”.
+```
+
+## Diccionarios: la clase HashMap
+
+Imagina un diccionario inglés-español. Queremos saber qué significa la palabra "stiff". Sabemos que en el diccionario hay muchas entradas y en cada entrada tenemos una palabra en inglés y su correspondiente traducción al español. Buscando por la "s" encontramos que  "stiff" significa "agujetas". 
+
+Un diccionario en Java funciona exactamente igual. Contiene una serie de elementos que son las entradas que a su vez están formadas por un par (clave, valor). La clave (key) permite acceder al valor. No puede haber claves duplicadas. En el ejemplo anterior, la clave sería “stiff ” y el valor “agujetas”.
+
 Java dispone de varios tipos de diccionarios: HashMap, EnumMap, Hashtable, IdentityHashMap,
 LinkedHashMap, etc. Nosotros estudiaremos el diccionario HashMap.
 10.2.1 Principales métodos de HashMap
