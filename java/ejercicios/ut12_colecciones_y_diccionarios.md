@@ -28,7 +28,8 @@ Realiza un programa que cree la siguiente colección de discos:
 | Revólver      | Babilonia          | 2015 | 
 | Coti          | Malditas Canciones | 2009 |
 | 
-de nuevo el ejercicio de la colección de discos pero utilizando esta vez una lista para almacenar la información sobre los discos en lugar de un array convencional. Comprobarás que el código se simplifica notablemente ¿Cuánto ocupa el programa original hecho con un array? ¿Cuánto ocupa este nuevo programa hecho con una lista?
+
+Para ello será necesario crear la clase Disco con los atributos cantante, disco y anyo, almacenarlos en un ArrayList. Ordenar la colección de discos por año y mostrar la lista ordenada.
 
 ## Ejercicios HashMap
 
