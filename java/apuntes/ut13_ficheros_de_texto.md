@@ -75,7 +75,7 @@ class EjemploFichero01 {
 
     public static void main(String[] args) {
         try {
-            BufferedReader bf = new BufferedReader(new FileReader("malaga1.txt"));
+            BufferedReader bf = new BufferedReader(new FileReader("tenerife.txt"));
             String linea = "";
             while (linea != null) {
                 System.out.println(linea);
@@ -106,11 +106,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 
-class EjemploFichero08 {
+class EjemploFichero02 {
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
         System.out.print("Introduzca el nombre del archivo donde se encuentran los números: ");
-        String nombreFichero = System.console().readLine();
+        String nombreFichero = sc.nextLine();
         try {
             BufferedReader bf = new BufferedReader(new FileReader(nombreFichero));
             String linea = "0";
@@ -128,6 +129,7 @@ class EjemploFichero08 {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+        sc.close();
     }
 }
 ```
@@ -155,7 +157,7 @@ import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
 
-class EjemploFichero02 {
+class EjemploFichero03 {
 
     public static void main(String[] args) {
         try {
@@ -190,7 +192,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
-class EjemploFichero03 {
+class EjemploFichero04 {
 
     public static void main(String[] args) {
         try {
@@ -237,7 +239,7 @@ El siguiente ejemplo muestra por pantalla un listado con todos los archivos que 
  */
 import java.io.File;
 
-class EjemploFichero04 {
+class EjemploFichero05 {
     public static void main(String[] args) {
         File fichero = new File("."); // se indica la ruta entre comillas
         // el punto (.) es el directorio actual
@@ -256,15 +258,17 @@ El siguiente programa de ejemplo comprueba si un determinado archivo existe o no
  * Ejemplo de uso de la clase File
  * Comprobación de existencia y borrado de un fichero
  *
- * @author Luis José Sánchez
+ * @author Jonay Garcia
  */
 import java.io.File;
 
-class EjemploFichero05 {
+class EjemploFichero06 {
 
     public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
         System.out.print("Introduzca el nombre del archivo que desea borrar: ");
-        String nombreFichero = System.console().readLine();
+        String nombreFichero = sc.nextLine();
         File fichero = new File(nombreFichero);
         if (fichero.exists()) {
             fichero.delete();
@@ -273,6 +277,8 @@ class EjemploFichero05 {
         else {
             System.out.println("El fichero " + nombreFichero + " no existe.");
         }
+        
+        sc.close();
     }
 }
 ```
