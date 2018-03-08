@@ -134,141 +134,145 @@ class EjemploFichero08 {
 
 ## Escritura sobre un fichero de texto
 
-La escritura en un fichero de texto es, si cabe, más fácil que la lectura. Solo hay que
-cambiar System.out.print("texto") por manejador.write("texto"). Se pueden incluir saltos
-de línea, tabuladores y espacios igual que al mostrar un mensaje por pantalla.
-Es importante ejecutar close() después de realizar la escritura; de esta manera nos
-aseguramos que se graba toda la información en el disco.
-Al realizar escrituras en ficheros con Java hay que tener ciertas precauciones. Cuando
-toca dar este tema en clase es frecuente que a más de un alumno le empiece a ir
-lento el ordenador, luego se le queda inutilizado y, por último, ni siquiera le arranca
-¿qué ha pasado? Pues que ha estado escribiendo datos en ficheros y por alguna razón,
-su programa se ha metido en un bucle infinito lo que da como resultado cuelgues y
-ficheros de varios gigabytes de basura. Por eso es muy importante asegurarse bien
-de que la información que se va a enviar a un fichero es la correcta ¿cómo? muy fácil,
-enviándola primero a la pantalla.
-Primero a pantalla y luego a fichero
-Envía primero a la pantalla todo lo que quieras escribir en el fichero. Cuando
-compruebes que lo que se ve por pantalla es realmente lo que quieres grabar
-en el fichero, entonces y solo entonces, cambia System.out.print("texto") por
-manejador.write("texto").
-A continuación se muestra un programa de ejemplo que crea un fichero de texto y
-luego esribe en él tres palabras, una por cada línea.
-Ficheros de texto y paso de parámetros por línea de comandos 160
+La escritura en un fichero de texto es, si cabe, más fácil que la lectura. Solo hay que cambiar System.out.print("texto") por __bw.write("texto")__. Se pueden incluir saltos de línea,  tabuladores y espacios igual que al mostrar un mensaje por pantalla.
+
+Es importante ejecutar el método __bw.close()__ después de realizar la escritura; de esta manera nos aseguramos que se graba toda la información en el disco.
+
+Al realizar escrituras en ficheros con Java hay que tener ciertas precauciones. Cuando toca dar este tema en clase es frecuente que a más de un alumno le empiece a ir lento el ordenador, luego se le queda inutilizado y, por último, ni siquiera le arranca ¿qué ha pasado? Pues que ha estado escribiendo datos en ficheros y por alguna razón, su programa se ha metido en un bucle infinito lo que da como resultado cuelgues y ficheros de varios gigabytes de basura. Por eso es muy importante asegurarse bien de que la información que se va a enviar a un fichero es la correcta ¿cómo? muy fácil, enviándola primero a la pantalla.
+
+> __Nota__: Para probar antes de escribir en fichero podemos imprimir todo primero por consolatodo lo que quieras escribir en el fichero. Cuando compruebes que lo que se ve por pantalla es realmente lo que quieres grabar en el fichero, entonces y solo entonces, cambia System.out.print("texto") por manejador.write("texto").
+
+A continuación se muestra un programa de ejemplo que crea un fichero de texto y luego esribe en él tres palabras, una por cada línea.
+
+```java
 /**
-* Ejemplo de uso de la clase File
-* Escritura en un fichero de texto
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase File
+ * Escritura en un fichero de texto
+ *
+ * @author Jonay Garcia
+ */
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+
 class EjemploFichero02 {
-public static void main(String[] args) {
-try {
-BufferedWriter bw = new BufferedWriter(new FileWriter("fruta.txt"));
-bw.write("naranja\n");
-bw.write("mango\n");
-bw.write("chirimoya\n");
-bw.close();
-} catch (IOException ioe) {
-System.out.println("No se ha podido escribir en el fichero");
+
+    public static void main(String[] args) {
+        try {
+            BufferedWriter bw = new BufferedWriter(new FileWriter("fruta.txt"));
+            bw.write("naranja\n");
+            bw.write("limón\n");
+            bw.write("manzana\n");
+            bw.close();
+        } catch (IOException e) {
+            System.out.println("No se ha podido escribir en el fichero");
+        }  
+    }
 }
-}
-}
-11.3 Lectura y escritura combinadas
-Las operaciones de lectura y escritura sobre ficheros se pueden combinar de tal forma
-que haya un flujo de lectura y otro de escritura, uno de lectura y dos de escritura, tres
-de lectura, etc.
-En el ejemplo que presentamos a continuación hay dos flujos de lectura y uno de
-escritura. Observa que se declaran en total tres manejadores de fichero (dos para
-lectura y uno para escritura). El programa va leyendo, de forma alterna, una línea de
-cada fichero - una línea de fichero1.txt y otra línea de fichero2.txt - mientras queden
-líneas por leer en alguno de los ficheros; y al mismo tiempo va guardando esas líneas
-en otro fichero con nombre mezcla.txt.
-Ficheros de texto y paso de parámetros por línea de comandos 161
+```
+
+## Lectura y escritura combinadas
+
+Las operaciones de lectura y escritura sobre ficheros se pueden combinar de tal forma que haya un flujo de lectura y otro de escritura, uno de lectura y dos de escritura, tres de lectura, etc.
+
+En el ejemplo que presentamos a continuación hay dos flujos de lectura y uno de escritura. Observa que se declaran en total tres manejadores de fichero (dos para lectura y uno para escritura). El programa va leyendo, de forma alterna, una línea de cada fichero - una línea de fichero1.txt y otra línea de fichero2.txt - mientras queden líneas por leer en alguno de los ficheros; y al mismo tiempo va guardando esas líneas en otro fichero con nombre mezcla.txt.
+
+```java
 /**
-* Ejemplo de uso de la clase File
-* Mezcla de dos ficheros
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase File
+ * Mezcla de dos ficheros
+ *
+ * @author Jonay Garcia
+ */
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
 class EjemploFichero03 {
-public static void main(String[] args) {
-try {
-BufferedReader bf1 = new BufferedReader(new FileReader("fichero1.txt"));
-BufferedReader bf2 = new BufferedReader(new FileReader("fichero2.txt"));
-BufferedWriter bw = new BufferedWriter(new FileWriter("mezcla.txt"));
-String linea1 = "";
-String linea2 = "";
-while ( (linea1 != null) || (linea2 != null) ) {
-linea1 = bf1.readLine();
-linea2 = bf2.readLine();
-if (linea1 != null) bw.write(linea1 + "\n");
-if (linea2 != null) bw.write(linea2 + "\n");
+
+    public static void main(String[] args) {
+        try {
+            BufferedReader bf1 = new BufferedReader(new FileReader("fichero1.txt"));
+            BufferedReader bf2 = new BufferedReader(new FileReader("fichero2.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("mezcla.txt"));
+
+            String linea1 = "";
+            String linea2 = "";
+            while ( (linea1 != null) || (linea2 != null) ) {
+                linea1 = bf1.readLine();
+                linea2 = bf2.readLine();
+                if (linea1 != null)
+                    bw.write(linea1 + "\n");
+                if (linea2 != null)
+                    bw.write(linea2 + "\n");
+            }
+            bf1.close();
+            bf2.close();
+            bw.close();
+        } catch (IOException ioe) {
+            System.out.println("Se ha producido un error de lectura/escritura");
+            System.err.println(ioe.getMessage());
+        }
+    }
 }
-bf1.close();
-bf2.close();
-bw.close();
-} catch (IOException ioe) {
-System.out.println("Se ha producido un error de lectura/escritura");
-System.err.println(ioe.getMessage());
-}
-}
-}
-Ficheros de texto y paso de parámetros por línea de comandos 162
-11.4 Otras operaciones sobre ficheros
-Además de leer desde o escribir en un fichero, hay otras operaciones relacionadas con
-los archivos que se pueden realizar desde un programa escrito en Java.
+```
+
+## Otras operaciones sobre ficheros
+
+Además de leer desde o escribir en un fichero, hay otras operaciones relacionadas con los archivos que se pueden realizar desde un programa escrito en Java.
+
 Veremos tan solo un par de ejemplos. Si quieres profundizar más, échale un vistazo a
-la documentación oficial de la clase File2.
-El siguiente ejemplo muestra por pantalla un listado con todos los archivos que
-contiene un directorio.
+la documentación oficial de la clase _File_ en la URL [https://docs.oracle.com/javase/8/docs/api/java/io/File.html](https://docs.oracle.com/javase/8/docs/api/java/io/File.html).
+
+El siguiente ejemplo muestra por pantalla un listado con todos los archivos que contiene un directorio.
+
+```java
 /**
-* Ejemplo de uso de la clase File
-* Listado de los archivos del directorio actual
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase File
+ * Listado de los archivos del directorio actual
+ *
+ * @author Jonay Garcia
+ */
 import java.io.File;
+
 class EjemploFichero04 {
-public static void main(String[] args) {
-File fichero = new File("."); // se indica la ruta entre comillas
-// el punto (.) es el directorio actual
-String[] listaArchivos = fichero.list();
-for(int i = 0; i < listaArchivos.length; i++){
-System.out.println(listaArchivos[i]);
+    public static void main(String[] args) {
+        File fichero = new File("."); // se indica la ruta entre comillas
+        // el punto (.) es el directorio actual
+        String[] listaArchivos = fichero.list();
+        for(int i = 0; i < listaArchivos.length; i++){
+            System.out.println(listaArchivos[i]);
+        }
+    }
 }
-}
-}
-El siguiente programa de ejemplo comprueba si un determinado archivo existe o
-no mediante exists() y, en caso de que exista, lo elimina mediante delete(). Si
-intentáramos borrar un archivo que no existe obtendríamos un error.
-2http://docs.oracle.com/javase/7/docs/api/java/io/File.html
-Ficheros de texto y paso de parámetros por línea de comandos 163
+```
+
+El siguiente programa de ejemplo comprueba si un determinado archivo existe o no mediante  el método __exists()__ y, en caso de que exista, lo elimina mediante el médoto __delete()__. Si intentáramos borrar un archivo que no existe obtendríamos un error.
+
+```java
 /**
-* Ejemplo de uso de la clase File
-* Comprobación de existencia y borrado de un fichero
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase File
+ * Comprobación de existencia y borrado de un fichero
+ *
+ * @author Luis José Sánchez
+ */
 import java.io.File;
+
 class EjemploFichero05 {
-public static void main(String[] args) {
-System.out.print("Introduzca el nombre del archivo que desea borrar: ");
-String nombreFichero = System.console().readLine();
-File fichero = new File(nombreFichero);
-if (fichero.exists()) {
-fichero.delete();
-System.out.println("El fichero se ha borrado correctamente.");
-} else {
-System.out.println("El fichero " + nombreFichero + " no existe.");
+
+    public static void main(String[] args) {
+        System.out.print("Introduzca el nombre del archivo que desea borrar: ");
+        String nombreFichero = System.console().readLine();
+        File fichero = new File(nombreFichero);
+        if (fichero.exists()) {
+            fichero.delete();
+            System.out.println("El fichero se ha borrado correctamente.");
+        } 
+        else {
+            System.out.println("El fichero " + nombreFichero + " no existe.");
+        }
+    }
 }
-}
-}
+```
