@@ -93,49 +93,47 @@ class EjemploFichero01 {
 
 Es importante __cerrar el fichero__ cuando se han realizado todas las operaciones necesarias sobre él. En este ejemplo, esta acción se ha llevado a cabo con el método __bf.close()__.
 
-A continuación se muestra un programa un poco más complejo. Se trata de una
-aplicación que pide por teclado un nombre de fichero. Previamente en ese fichero
-(por ejemplo numeros.txt) habremos introducido una serie de números, a razón de uno
-por línea. Se podrían leer también los números si estuvieran separados por comas
-o espacios aunque sería un poco más complicado (no mucho más). Los números
-pueden contener decimales ya que se van a leer como Double. Cada número que se
-lee del fichero se va sumando de tal forma que la suma total estará contenida en la
-variable suma; a la par se va llevando la cuenta de los elementos que se van leyendo
-en la variable i. Finalmente, dividiendo la suma total entre el número de elementos
-obtenemos la media aritmética de los números contenidos en el fichero.
+A continuación se muestra un programa un poco más complejo. Se trata de una aplicación que pide por teclado un nombre de fichero. Previamente en ese fichero (por ejemplo numeros.txt) habremos introducido una serie de números, a razón de uno por línea. Se podrían leer también los números si estuvieran separados por comas o espacios aunque sería un poco más complicado (no mucho más). Los números pueden contener decimales ya que se van a leer como Double. Cada número que se lee del fichero se va sumando de tal forma que la suma total estará contenida en la variable suma; a la par se va llevando la cuenta de los elementos que se van leyendo en la variable i. Finalmente, dividiendo la suma total entre el número de elementos obtenemos la media aritmética de los números contenidos en el fichero.
+
+```java
 /**
-* Ejemplo de uso de la clase File
-* Calcula la media de los números que se encuentran en un fichero de texto
-*
-* @author Luis José Sánchez
-*/
+ * Ejemplo de uso de la clase File
+ * Calcula la media de los números que se encuentran en un fichero de texto
+ *
+ * @author Jonay Garcia
+ */
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+
 class EjemploFichero08 {
-public static void main(String[] args) {
-System.out.print("Introduzca el nombre del archivo donde se encuentran los números: ");
-String nombreFichero = System.console().readLine();
-try {
-BufferedReader bf = new BufferedReader(new FileReader(nombreFichero));
-String linea = "0";
-int i = 0;
-double suma = 0;
-Ficheros de texto y paso de parámetros por línea de comandos 159
-while (linea != null) {
-i++;
-suma += Double.parseDouble(linea);
-linea = bf.readLine();
+
+    public static void main(String[] args) {
+        System.out.print("Introduzca el nombre del archivo donde se encuentran los números: ");
+        String nombreFichero = System.console().readLine();
+        try {
+            BufferedReader bf = new BufferedReader(new FileReader(nombreFichero));
+            String linea = "0";
+            int i = 0;
+            double suma = 0;
+            
+            while (linea != null) {
+                i++;
+                suma += Double.parseDouble(linea);
+                linea = bf.readLine();
+            }
+            i--;
+            bf.close();
+            System.out.println("La media es " + suma / (double)i);
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
 }
-i--;
-bf.close();
-System.out.println("La media es " + suma / (double)i);
-} catch (IOException e) {
-System.out.println(e.getMessage());
-}
-}
-}
-11.2 Escritura sobre un fichero de texto
+```
+
+## Escritura sobre un fichero de texto
+
 La escritura en un fichero de texto es, si cabe, más fácil que la lectura. Solo hay que
 cambiar System.out.print("texto") por manejador.write("texto"). Se pueden incluir saltos
 de línea, tabuladores y espacios igual que al mostrar un mensaje por pantalla.
