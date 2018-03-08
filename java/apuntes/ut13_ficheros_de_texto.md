@@ -251,7 +251,7 @@ class EjemploFichero05 {
 }
 ```
 
-El siguiente programa de ejemplo comprueba si un determinado archivo existe o no mediante  el método __exists()__ y, en caso de que exista, lo elimina mediante el médoto __delete()__. Si intentáramos borrar un archivo que no existe obtendríamos un error.
+El siguiente programa de ejemplo comprueba si un determinado archivo existe o no mediante  el método __exists()__ y, en caso de que exista, lo elimina mediante el método __delete()__. Si intentáramos borrar un archivo que no existe obtendríamos un error.
 
 ```java
 /**
