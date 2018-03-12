@@ -27,3 +27,15 @@ Escribe un programa capaz de quitar los comentarios de un programa de Java. Crea
 __Ejercicio 6__
 
 Realiza un programa que diga cuántas ocurrencias de una palabra hay en un fichero.
+
+__Ejercicio 7__
+
+Dado el fichero _datos.csv_ con la siguiente información:
+
+```bash
+2001;Jorge Luis Garcia Sifuentes;jlgarcias@gmail.com
+2002;Miguel Jose Guevara Martinez;mguevara@yahoo.com
+2003;Juan Carlos Mendoza Cruz;jcmendoza@hotmail.com
+```
+
+Cargar los datos del fichero en una estructura que permita ordenarlos por nombre. Una vez ordenado, guardarlo en el fichero _datos_ordenados.csv_.
