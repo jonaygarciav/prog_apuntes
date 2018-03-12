@@ -1,6 +1,5 @@
-# UT12. Colecciones y Diccionarios
+# UT13. Ficheros de Texto
 
-## Ejercicios ArrayList
 
 __Ejercicio 1__
 
@@ -27,6 +26,11 @@ Escribe un programa capaz de quitar los comentarios de un programa de Java. Crea
 __Ejercicio 6__
 
 Realiza un programa que diga cuántas ocurrencias de una palabra hay en un fichero.
+
+## Ejercicios ArrayList
+
+
+
 
 __Ejercicio 7__
 
