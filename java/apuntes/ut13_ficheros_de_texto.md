@@ -406,7 +406,7 @@ public class CSVReader {
 
     public static void main(String[] args) {
 
-        String csvFile = "/Users/mkyong/csv/country.csv";
+        String csvFile = "country.csv";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";
@@ -433,7 +433,7 @@ public class CSVReader {
 }
 ```
 
-La salida del programa sería la siguiente:
+La salida del programa anterior:
 
 ```bash
 Country [code= "AU" , name="Australia"]
