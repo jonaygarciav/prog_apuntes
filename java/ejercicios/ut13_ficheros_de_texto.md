@@ -27,10 +27,7 @@ __Ejercicio 6__
 
 Realiza un programa que diga cuántas ocurrencias de una palabra hay en un fichero.
 
-## Ejercicios ArrayList
-
-
-
+## Ejercicios CSV
 
 __Ejercicio 7__
 
@@ -43,3 +40,9 @@ Dado el fichero _datos.csv_ con la siguiente información:
 ```
 
 Cargar los datos del fichero en una estructura que permita ordenarlos por nombre. Una vez ordenado, guardarlo en el fichero _datos_ordenados.csv_.
+
+__Ejercicio 8__
+
+Dado el fichero [books.csv](https://gist.githubusercontent.com/jaidevd/23aef12e9bf56c618c41/raw/c05e98672b8d52fa0cb94aad80f75eb78342e5d4/books.csv), realizar un programa que permita cargar los datos en memoria y luego ordenados por nombre y guardar los datos ordenados en el fichero _libros_ordenados.csv_.
+
+> __Nota__: Tener en cuenta que este fichero contiene una cabecera (primera línea con los nombres de los campos).
