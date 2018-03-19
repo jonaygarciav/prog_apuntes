@@ -26,7 +26,8 @@
 1. Colecciones y Diccionarios \([Apuntes](./java/apuntes/ut12_colecciones_y_diccionarios.md) - [Ejercicios](./java/ejercicios/ut12_colecciones_y_diccionarios.md) - [Practica a Entregar](./java/practicas_a_entregar/ut12_colecciones_y_diccionarios.md)\)
 
 2. Ficheros de texto \([Apuntes](./java/apuntes/ut13_ficheros_de_texto.md) - [Ejercicios](./java/ejercicios/ut13_ficheros_de_texto.md) - [Practica a Entregar](./java/practicas_a_entregar/ut13_ficheros_de_texto.md)\)
-3. Paquetes
+3. Librerías Externas \([Apuntes](./java/apuntes/ut14_librerias_externas.md) - Practica a Entregar](./java/practicas_a_entregar/ut14_librerias_externas.md)\)
+
 
 **BLOQUE V**
 
